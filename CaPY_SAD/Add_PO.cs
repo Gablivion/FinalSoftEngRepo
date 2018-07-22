@@ -530,38 +530,44 @@ namespace CaPY_SAD
 
             conn.Close();
 
-            for (int i = 0; i <= dtgvPO.Rows.Count - 1; i++)
-            {
-                int orderline_index = int.Parse(dtgvPO.Rows[i].Cells["id"].Value.ToString());
-                if (decimal.Parse(dtgvPO.Rows[i].Cells["total"].Value.ToString()) == 0)
-                {
-                    MessageBox.Show("wat");
-                    string cancel_order_query = "UPDATE purchase_order SET purchase_order.status = 'cancelled' WHERE purchase_order.id = " + orderline_index + " ";
-                    conn.Open();
-                    MySqlCommand comm_cancel_order = new MySqlCommand(cancel_order_query, conn);
-                    comm_cancel_order.ExecuteNonQuery();
-                    conn.Close();
-
-                }
-
-            }
-
+       
             string query_change_delivered = "UPDATE purchase_order, purchase_order_line SET purchase_order.status = 'delivered' WHERE purchase_order.id = purchase_order_line.purchase_order_id AND purchase_order_line.status = 'delivered'";
             conn.Open();
             MySqlCommand comm_change_delivered = new MySqlCommand(query_change_delivered, conn);
             comm_change_delivered.ExecuteNonQuery();
             conn.Close();
 
-            string query_change_ordered = "UPDATE purchase_order, purchase_order_line SET purchase_order.status = 'ordered'WHERE purchase_order.id = purchase_order_line.purchase_order_id AND purchase_order_line.status = 'ordered'";
+            string query_change_ordered = "UPDATE purchase_order, purchase_order_line SET purchase_order.status = 'ordered' WHERE purchase_order.id = purchase_order_line.purchase_order_id AND purchase_order_line.status = 'ordered'";
             conn.Open();
             MySqlCommand comm_change_ordered = new MySqlCommand(query_change_ordered, conn);
             comm_change_ordered.ExecuteNonQuery();
             conn.Close();
+
             loadPurchasingData();
             dtgvOrderLine.DataSource = null;
             delcancelBtn.Enabled = false;
             deliveredBtn.Enabled = false;
             del_details_reset();
+
+            for (int i = 0; i <= dtgvPO.Rows.Count - 1; i++)
+            {
+                int orderline_index = int.Parse(dtgvPO.Rows[i].Cells["id"].Value.ToString());
+                if (dtgvPO.Rows[i].Cells["total"].Value.ToString() == "0.00")
+                {
+
+                    string cancel_order_query = "UPDATE purchase_order SET purchase_order.status = 'cancelled' WHERE purchase_order.id = " + orderline_index + " ";
+                    conn.Open();
+                    MySqlCommand comm_cancel_order = new MySqlCommand(cancel_order_query, conn);
+                    comm_cancel_order.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("CANCELLED");
+                }
+
+            }
+
+            loadPurchasingData();
+            dtgvOrderLine.DataSource = null;
+            statPanel.Visible = false;
         }
 
         private void cancelPOBtn_Click(object sender, EventArgs e)
@@ -696,6 +702,11 @@ namespace CaPY_SAD
                     return;
                 }
             }
+        }
+
+        private void btnback_Click(object sender, EventArgs e)
+        {
+            statPanel.Visible = false;
         }
     }
 

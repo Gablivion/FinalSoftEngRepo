@@ -276,6 +276,7 @@ namespace CaPY_SAD
                 EndorsedProds();
                 getTotal();
                 loadAllergies();
+                petdata();
                 if (dtgvHospitalization.Rows[e.RowIndex].Cells["status"].Value.ToString() == "discharged")
                 {
                     checkoutBtn.Enabled = false;
@@ -596,11 +597,11 @@ namespace CaPY_SAD
         public void addfee()
         {
             //int addfee;
-            //double days = 0 ;
+            //double days = 0;
             ////double month = 0;
             //double total = 0;
 
-            // month = (DateTime.Now.Month - admission_date.Month);
+            //month = (DateTime.Now.Month - admission_date.Month);
             //days = (DateTime.Now.Day - admission_date.Day);
             //dayTxt.Text = days.ToString();
 
@@ -610,7 +611,7 @@ namespace CaPY_SAD
             //addfee = int.Parse(addfeeTxt.Text);
 
             //total = days * addfee;
-            //totalTxt.Text  = total.ToString();
+            //totalTxt.Text = total.ToString();
 
 
 
@@ -653,7 +654,30 @@ namespace CaPY_SAD
                 loadAllergies();
             }
         }
+        public void petdata()
+        {
+            String query_petdetails = "SELECT name,color,breed,species,gender,DATEDIFF(now(), birthdate) as age from pets WHERE id = " + pets_id + "";
 
+
+            MySqlCommand comm_petdetails = new MySqlCommand(query_petdetails, conn);
+            comm_petdetails.CommandText = query_petdetails;
+
+            conn.Open();
+            MySqlDataReader drd_petdetails = comm_petdetails.ExecuteReader();
+
+            while (drd_petdetails.Read())
+            {
+                nameLbl.Text = drd_petdetails["name"].ToString();
+                colorLbl.Text = drd_petdetails["color"].ToString();
+                breedLbl.Text = drd_petdetails["breed"].ToString();
+                speciesLbl.Text = drd_petdetails["species"].ToString();
+                genderLbl.Text = drd_petdetails["gender"].ToString();
+                ageLbl.Text = drd_petdetails["age"].ToString() + " days old" ;
+
+            }
+            conn.Close();
+
+        }
         public void loadAllergies()
         {
             String query_allergies = "SELECT pet_allergy from allergies WHERE pets_id = " + pets_id + "";
