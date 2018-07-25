@@ -70,6 +70,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.dtgvOrderLine = new System.Windows.Forms.DataGridView();
             this.statPanel = new System.Windows.Forms.Panel();
+            this.btnback = new System.Windows.Forms.Button();
             this.prodName = new System.Windows.Forms.Label();
             this.subLbl = new System.Windows.Forms.Label();
             this.quanLbl = new System.Windows.Forms.Label();
@@ -89,7 +90,6 @@
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.btnback = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvPurchaseOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanNum)).BeginInit();
             this.prodpanel.SuspendLayout();
@@ -324,7 +324,7 @@
             this.prodpanel.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.prodpanel.Location = new System.Drawing.Point(629, 6);
             this.prodpanel.Name = "prodpanel";
-            this.prodpanel.Size = new System.Drawing.Size(60, 26);
+            this.prodpanel.Size = new System.Drawing.Size(77, 36);
             this.prodpanel.TabIndex = 160;
             this.prodpanel.Visible = false;
             // 
@@ -583,9 +583,23 @@
             this.statPanel.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.statPanel.Location = new System.Drawing.Point(470, 12);
             this.statPanel.Name = "statPanel";
-            this.statPanel.Size = new System.Drawing.Size(541, 486);
+            this.statPanel.Size = new System.Drawing.Size(30, 30);
             this.statPanel.TabIndex = 169;
             this.statPanel.Visible = false;
+            // 
+            // btnback
+            // 
+            this.btnback.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(42)))), ((int)(((byte)(15)))));
+            this.btnback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnback.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnback.ForeColor = System.Drawing.Color.Transparent;
+            this.btnback.Image = ((System.Drawing.Image)(resources.GetObject("btnback.Image")));
+            this.btnback.Location = new System.Drawing.Point(392, 16);
+            this.btnback.Name = "btnback";
+            this.btnback.Size = new System.Drawing.Size(42, 40);
+            this.btnback.TabIndex = 183;
+            this.btnback.UseVisualStyleBackColor = false;
+            this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
             // prodName
             // 
@@ -802,20 +816,6 @@
             this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
-            // 
-            // btnback
-            // 
-            this.btnback.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(42)))), ((int)(((byte)(15)))));
-            this.btnback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnback.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnback.ForeColor = System.Drawing.Color.Transparent;
-            this.btnback.Image = ((System.Drawing.Image)(resources.GetObject("btnback.Image")));
-            this.btnback.Location = new System.Drawing.Point(392, 16);
-            this.btnback.Name = "btnback";
-            this.btnback.Size = new System.Drawing.Size(42, 40);
-            this.btnback.TabIndex = 183;
-            this.btnback.UseVisualStyleBackColor = false;
-            this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
             // Add_PO
             // 

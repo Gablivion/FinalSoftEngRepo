@@ -29,7 +29,9 @@ namespace CaPY_SAD
             checkoutBtn.Enabled = false;
             loadCageData();
             loadHospData();
-            
+            loadpets();
+
+
 
 
         }
@@ -70,7 +72,7 @@ namespace CaPY_SAD
             dtgvHospitalization.Columns["id"].Visible = false;
             dtgvHospitalization.Columns["pets_id"].Visible = false;
             dtgvHospitalization.Columns["cage"].HeaderText = "Cage";
-            dtgvHospitalization.Columns["pet"].HeaderText = "Pet";
+            dtgvHospitalization.Columns["pet"].Visible = false;
             dtgvHospitalization.Columns["date_in"].HeaderText = "Admission Date";
             dtgvHospitalization.Columns["date_out"].HeaderText = "Discharge Date";
             dtgvHospitalization.Columns["subtotal"].HeaderText = "Subtotal";
@@ -421,13 +423,13 @@ namespace CaPY_SAD
             adp_inventory.Fill(dt_inventory);
 
 
-            dtgvProd.DataSource = dt_inventory;
-            dtgvProd.Columns["hospitalization_id"].Visible = false;
-            dtgvProd.Columns["id"].Visible = false;
-            dtgvProd.Columns["name"].HeaderText = "Product";
-            dtgvProd.Columns["price"].HeaderText = "Price";
-            dtgvProd.Columns["quantity"].HeaderText = "Quantity";
-            dtgvProd.Columns["subtotal"].HeaderText = "Subtotal";
+            dtgvAddProd.DataSource = dt_inventory;
+            dtgvAddProd.Columns["hospitalization_id"].Visible = false;
+            dtgvAddProd.Columns["id"].Visible = false;
+            dtgvAddProd.Columns["name"].HeaderText = "Product";
+            dtgvAddProd.Columns["price"].HeaderText = "Price";
+            dtgvAddProd.Columns["quantity"].HeaderText = "Quantity";
+            dtgvAddProd.Columns["subtotal"].HeaderText = "Subtotal";
 
         }
 
@@ -577,10 +579,10 @@ namespace CaPY_SAD
         {
             decimal total = 0;
 
-            for (int i = 0; i <= dtgvProd.Rows.Count - 1; i++)
+            for (int i = 0; i <= dtgvAddProd.Rows.Count - 1; i++)
             {
 
-                string subs = dtgvProd.Rows[i].Cells["Subtotal"].Value.ToString();
+                string subs = dtgvAddProd.Rows[i].Cells["Subtotal"].Value.ToString();
 
                 decimal decimal_sub = decimal.Parse(subs);
 
@@ -692,6 +694,51 @@ namespace CaPY_SAD
 
             dtgvAllergies.DataSource = dt_allergies;
             dtgvAllergies.Columns["pet_allergy"].HeaderText = "Allergies";
+
+        }
+
+        private void petTxt_MouseClick(object sender, MouseEventArgs e)
+        {
+            petPanel.Visible = true;
+        }
+
+        private void petBackBtn_Click(object sender, EventArgs e)
+        {
+            petPanel.Visible = false;
+        }
+
+        public void loadpets()
+        {
+            String query = "SELECT pets.id, pets.customer_id as cust, name,  concat(person.firstname,' ',person.middlename,' ',person.lastname) as owner, color, species, breed, pets.gender as gen, pets.birthdate as bday, microchip_number, sterilized, pets.date_added as p_added, pets.date_modified as p_modified FROM pets,person,customers where customers.person_id = person.id AND customers.id = pets.customer_id AND pets.archived = 'no'";
+
+            conn.Open();
+            MySqlCommand comm = new MySqlCommand(query, conn);
+            MySqlDataAdapter adp = new MySqlDataAdapter(comm);
+            conn.Close();
+            DataTable dt = new DataTable();
+            adp.Fill(dt);
+
+            dtgvPet.DataSource = dt;
+            dtgvPet.Columns["id"].Visible = false;
+            dtgvPet.Columns["cust"].Visible = false;
+            dtgvPet.Columns["name"].HeaderText = "Name";
+            dtgvPet.Columns["color"].Visible = false;
+            dtgvPet.Columns["species"].HeaderText = "Species";
+            dtgvPet.Columns["breed"].HeaderText = "Breed";
+            dtgvPet.Columns["gen"].HeaderText = "Gender";
+            dtgvPet.Columns["bday"].Visible = false;
+            dtgvPet.Columns["microchip_number"].Visible = false;
+            dtgvPet.Columns["sterilized"].Visible = false;
+            dtgvPet.Columns["owner"].HeaderText = "Owner";
+            dtgvPet.Columns["p_added"].Visible = false;
+            dtgvPet.Columns["p_modified"].Visible = false;
+
+        }
+
+        private void dtgvPet_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            petPanel.Visible = false;
+            petTxt.Text = dtgvPet.Rows[e.RowIndex].Cells["name"].Value.ToString();
 
         }
     }
