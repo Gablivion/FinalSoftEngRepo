@@ -54,7 +54,7 @@ namespace CaPY_SAD
                 string password = dt.Rows[0]["password"].ToString();
                 string pos = dt.Rows[0]["name"].ToString();
 
-                UserDisplayDetails.position = pos;
+                UserDisplayDetails.position = pos ;
                 UserDisplayDetails.id = id;
                 UserDisplayDetails.name = fname + " " + mname + " " + lname;
                 UserDisplayDetails.username = username;
