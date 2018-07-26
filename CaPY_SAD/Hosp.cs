@@ -28,7 +28,6 @@ namespace CaPY_SAD
             addProdBtn.Enabled = false;
             checkoutBtn.Enabled = false;
             loadCageData();
-            loadHospData();
             loadpets();
 
 
@@ -59,7 +58,7 @@ namespace CaPY_SAD
         public void loadHospData()
         {
 
-            String query_hosp = "SELECT id,pets_id,(SELECT name FROM pets WHERE id = pets_id ) as pet,(SELECT name FROM cage WHERE id = cage_id ) as cage,DATE_FORMAT(date_in, '%d/%m/%Y %H:%i %p') as date_in, IF(date_out='','Pending',DATE_FORMAT(date_out, '%Y/%m/%d %H:%i %p'))  as date_out,subtotal,status FROM hospitalization WHERE archived = 'no'";
+            String query_hosp = "SELECT id,pets_id,(SELECT name FROM pets WHERE id = pets_id ) as pet,(SELECT name FROM cage WHERE id = cage_id ) as cage,DATE_FORMAT(date_in, '%d/%m/%Y %H:%i %p') as date_in, IF(date_out='','Pending',DATE_FORMAT(date_out, '%Y/%m/%d %H:%i %p'))  as date_out,subtotal,status FROM hospitalization WHERE archived = 'no' AND pets_id = "+ pets_id + " ";
 
             conn.Open();
             MySqlCommand comm_hosp = new MySqlCommand(query_hosp, conn);
@@ -84,16 +83,17 @@ namespace CaPY_SAD
         {
             cagePanel.Visible = false;
             addCagePanel.Visible = true;
-            addCagePanel.Size = new Size(493, 301);
-            addCagePanel.Location = new Point(19, 86);
+            addCagePanel.Size = new Size(486, 233);
+            addCagePanel.Location = new Point(367, 380);
+
 
         }
 
         private void addHospBtn_Click(object sender, EventArgs e)
         {
             cagePanel.Visible = true;
-            cagePanel.Size = new Size(493, 301);
-            cagePanel.Location = new Point(19, 86);
+            cagePanel.Size = new Size(486, 233);
+            cagePanel.Location = new Point(367, 380);
 
         }
 
@@ -210,13 +210,30 @@ namespace CaPY_SAD
                 }
                 else
                 {
+                   
+
                     int selected_id = int.Parse(dtgvCage.Rows[e.RowIndex].Cells["id"].Value.ToString());
                     selected_data.cage_id = selected_id;
                     cagePanel.Visible = false;
-                    Add_hosp addHosp = new Add_hosp();
-                    addHosp.Show();
-                    addHosp.previousform = this;
-                    this.Hide();
+
+                    String query_cage = "SELECT * FROM cage where id = " + selected_id + "";
+
+                    MySqlCommand comm_cage = new MySqlCommand(query_cage, conn);
+                    comm_cage.CommandText = query_cage;
+                    conn.Open();
+                    MySqlDataReader drd_cage = comm_cage.ExecuteReader();
+
+
+                    while (drd_cage.Read())
+                    {
+                        cageTxt.Text = drd_cage["name"].ToString();
+                    }
+                    conn.Close();
+
+                    addHospPanel.Visible = true;
+                    addHospPanel.Size = new Size(486, 233);
+                    addHospPanel.Location = new Point(367, 380);
+
                 }
             }
 
@@ -257,7 +274,7 @@ namespace CaPY_SAD
             cagePanel.Visible = false;
         }
         DateTime admission_date;
-        public static int pets_id;
+    
         private void dtgvHospitalization_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -270,15 +287,15 @@ namespace CaPY_SAD
             {
                 int selected_id = int.Parse(dtgvHospitalization.Rows[e.RowIndex].Cells["id"].Value.ToString());
                 admission_date = DateTime.Parse(dtgvHospitalization.Rows[e.RowIndex].Cells["date_in"].Value.ToString());
-                pets_id = int.Parse(dtgvHospitalization.Rows[e.RowIndex].Cells["pets_id"].Value.ToString());
+             
                 addfee();
                 selected_data.hosp_id = selected_id;
                 loadVitals();
                 HospProds();
                 EndorsedProds();
+              
                 getTotal();
-                loadAllergies();
-                petdata();
+            
                 if (dtgvHospitalization.Rows[e.RowIndex].Cells["status"].Value.ToString() == "discharged")
                 {
                     checkoutBtn.Enabled = false;
@@ -621,8 +638,8 @@ namespace CaPY_SAD
 
         private void btnAddAllergies_Click(object sender, EventArgs e)
         {
-            allergyPanel.Size = new Size(392, 285);
-            allergyPanel.Location = new Point(725, 6);
+            allergyPanel.Size = new Size(408, 222);
+            allergyPanel.Location = new Point(747, 134);
             allergyPanel.Visible = true;
 
         }
@@ -669,12 +686,12 @@ namespace CaPY_SAD
 
             while (drd_petdetails.Read())
             {
-                nameLbl.Text = drd_petdetails["name"].ToString();
-                colorLbl.Text = drd_petdetails["color"].ToString();
-                breedLbl.Text = drd_petdetails["breed"].ToString();
-                speciesLbl.Text = drd_petdetails["species"].ToString();
-                genderLbl.Text = drd_petdetails["gender"].ToString();
-                ageLbl.Text = drd_petdetails["age"].ToString() + " days old" ;
+                petTxt.Text = drd_petdetails["name"].ToString();
+                colorTxt.Text = drd_petdetails["color"].ToString();
+                breedTxt.Text = drd_petdetails["breed"].ToString();
+                speciesTxt.Text = drd_petdetails["species"].ToString();
+                genderTxt.Text = drd_petdetails["gender"].ToString();
+                ageTxt.Text = drd_petdetails["age"].ToString() + " days old" ;
 
             }
             conn.Close();
@@ -700,6 +717,8 @@ namespace CaPY_SAD
         private void petTxt_MouseClick(object sender, MouseEventArgs e)
         {
             petPanel.Visible = true;
+            petPanel.Size = new Size(696, 208);
+            petPanel.Location = new Point(20, 8);
         }
 
         private void petBackBtn_Click(object sender, EventArgs e)
@@ -735,11 +754,32 @@ namespace CaPY_SAD
 
         }
 
+        public static int pets_id;
         private void dtgvPet_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             petPanel.Visible = false;
-            petTxt.Text = dtgvPet.Rows[e.RowIndex].Cells["name"].Value.ToString();
 
+            if (e.RowIndex > -1)
+            {
+                petTxt.Text = dtgvPet.Rows[e.RowIndex].Cells["name"].Value.ToString();
+                addHospPetTxt.Text = petTxt.Text;
+                pets_id = int.Parse(dtgvPet.Rows[e.RowIndex].Cells["id"].Value.ToString());
+                loadHospData();
+                petdata();
+                loadAllergies();
+            }
+
+        }
+
+        private void hospcancelBtn_Click(object sender, EventArgs e)
+        {
+            addHospPanel.Visible = false;
+         
+        }
+
+        private void hospaddBtn_Click(object sender, EventArgs e)
+        {
+            addHospPanel.Visible = false;
         }
     }
 

@@ -188,7 +188,7 @@
             this.PetPanel.Controls.Add(this.dtgvPet);
             this.PetPanel.Location = new System.Drawing.Point(25, 12);
             this.PetPanel.Name = "PetPanel";
-            this.PetPanel.Size = new System.Drawing.Size(443, 283);
+            this.PetPanel.Size = new System.Drawing.Size(18, 90);
             this.PetPanel.TabIndex = 115;
             this.PetPanel.Visible = false;
             // 
