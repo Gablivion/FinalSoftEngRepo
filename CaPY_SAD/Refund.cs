@@ -76,31 +76,7 @@ namespace CaPY_SAD
 
         }
 
-        //Makes form movable
-        private bool dragging = false;
-        private Point dragCursorPoint;
-        private Point dragFormPoint;
-
-        private void Refund_MouseDown(object sender, MouseEventArgs e)
-        {
-            dragging = true;
-            dragCursorPoint = Cursor.Position;
-            dragFormPoint = this.Location;
-        }
-
-        private void Refund_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (dragging)
-            {
-                Point dif = Point.Subtract(Cursor.Position, new Size(dragCursorPoint));
-                this.Location = Point.Add(dragFormPoint, new Size(dif));
-            }
-        }
-
-        private void Refund_MouseUp(object sender, MouseEventArgs e)
-        {
-            dragging = false;
-        }
+        
         public static int sales_order_id;
         private void dtgvSalesOrder_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -137,7 +113,7 @@ namespace CaPY_SAD
         public void orderline()
         {
 
-            String query_order_line = "SELECT sales_order_line.id as id, products.name as product, sales_order_line.price, quantity, subtotal FROM sales_order_line, products WHERE order_id = " + sales_order_id + " AND products.id = sales_order_line.products_id  AND refunded = 'no' group by sales_order_line.id";
+            String query_order_line = "SELECT sales_order_line.id as id, products.name as product, sales_order_line.price, quantity, subtotal FROM sales_order_line, products WHERE order_id = " + sales_order_id + " AND products.id = sales_order_line.products_id group by sales_order_line.id";
 
             conn.Open();
             MySqlCommand comm = new MySqlCommand(query_order_line, conn);
@@ -206,15 +182,12 @@ namespace CaPY_SAD
             conn.Close();
             MessageBox.Show(sales_order_id.ToString());
 
-            string query_refunded = "UPDATE sales_order_line set refunded = 'yes' where sales_order_line.id =" + orderline_id + "";
+            //Deduct from quantity
+            string query_subtract_quantity = "UPDATE sales_order_line set quantity = (quantity - " + quanNum.Value + ") where sales_order_line.id =" + orderline_id + "";
             conn.Open();
-            MySqlCommand comm_refunded = new MySqlCommand(query_refunded, conn);
-            comm_refunded.ExecuteNonQuery();
+            MySqlCommand comm_subtract = new MySqlCommand(query_subtract_quantity, conn);
+            comm_subtract.ExecuteNonQuery();
             conn.Close();
-
-            loadSalesData();
-            orderline();
-
             
             MessageBox.Show("Item Refunded and back to the inventory!");
             toInventoryBtn.Enabled = false;
@@ -226,6 +199,7 @@ namespace CaPY_SAD
             quanNum.Maximum = 1000;
             SubtotalTxt.Text = "";
 
+            loadSalesData();
             orderline();
             
         }
@@ -287,5 +261,32 @@ namespace CaPY_SAD
             subtotal = quanNum.Value * decimal.Parse(priceTxt.Text);
             SubtotalTxt.Text = subtotal.ToString();
         }
+
+        //Makes form movable
+        private bool dragging = false;
+        private Point dragCursorPoint;
+        private Point dragFormPoint;
+
+        private void Refund_MouseDown(object sender, MouseEventArgs e)
+        {
+            dragging = true;
+            dragCursorPoint = Cursor.Position;
+            dragFormPoint = this.Location;
+        }
+
+        private void Refund_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point dif = Point.Subtract(Cursor.Position, new Size(dragCursorPoint));
+                this.Location = Point.Add(dragFormPoint, new Size(dif));
+            }
+        }
+
+        private void Refund_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
+        }
+
     }
 }

@@ -122,7 +122,7 @@ namespace CaPY_SAD
             e.Graphics.DrawString(company, new Font("Arial", 35, FontStyle.Bold), Brushes.Black, 130, 50);
 
             string viewsales = "Refund Report";
-            e.Graphics.DrawString(viewsales, new Font("Arial", 28, FontStyle.Bold), Brushes.Black, 310, 100);
+            e.Graphics.DrawString(viewsales, new Font("Arial", 28, FontStyle.Bold), Brushes.Black, 295, 100);
             //Header
 
             e.HasMorePages = false;

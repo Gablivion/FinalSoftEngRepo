@@ -125,10 +125,11 @@ namespace CaPY_SAD
         public static int pid;
         public static string exp;
         public static int prod_id;
+        public static string desc, unit, expirable, reorder, price;
 
         public void repackDetails()
         {
-            String query = "SELECT products.id as prod_id, product_inventory.id as pid, products.name as name , product_inventory.quantity as quantity, volume, DATE_FORMAT(expiration_date, '%Y/%m/%d') as expiration FROM products, product_inventory where products.id = product_inventory.products_id AND product_inventory.id = '" + selected_data.inventory_id + "'";
+            String query = "SELECT products.id as prod_id, product_inventory.id as pid, products.name as name , product_inventory.quantity as quantity, volume, DATE_FORMAT(expiration_date, '%Y/%m/%d') as expiration, description, unit, expirable, reorder, price FROM products, product_inventory where products.id = product_inventory.products_id AND product_inventory.id = '" + selected_data.inventory_id + "'";
             
             MySqlCommand comm = new MySqlCommand(query, conn);
             comm.CommandText = query;
@@ -146,6 +147,17 @@ namespace CaPY_SAD
                 Quan.Maximum = int.Parse(drd["quantity"].ToString());
                 itemVol.Text = drd["volume"].ToString();
                 exp = drd["expiration"].ToString();
+
+                desc = drd["description"].ToString();
+                unit = drd["unit"].ToString();
+                expirable = drd["expirable"].ToString();
+                reorder = drd["reorder"].ToString();
+                price = drd["price"].ToString();
+
+                descTxt.Text = desc;
+                unitTxt.Text = unit;
+                expirableTxt.Text = expirable;
+                origpriceTxt.Text = price;
             }
             conn.Close();
 
@@ -169,6 +181,10 @@ namespace CaPY_SAD
         {
             repackDetails();
             repackPanel.Visible = true;
+
+            repackPanel.Size = new Size(947, 540);
+            repackPanel.Location = new Point(12, 12);
+            
         }
 
         private void cancelRepackBtn_Click(object sender, EventArgs e)
@@ -245,11 +261,27 @@ namespace CaPY_SAD
             conn.Open();
             MySqlCommand comm_updateavail = new MySqlCommand(query_updateavail, conn);
             comm_updateavail.ExecuteNonQuery();
-            MessageBox.Show("Item Stocked out to Shelf");
             conn.Close();
 
+            //New product
+            string query_new = "INSERT INTO products(name,description,price,volume,unit,expirable,date_added,date_modified,archived,reorder)" +
+                               "VALUES('" + productTxt.Text + " (Repacked)','" + descTxt.Text + "','" + (decimal.Parse(origpriceTxt.Text)/int.Parse(repackedQuan.Text)) + "'," + repackBy.Value + ",'" + unitTxt.Text + "','" + expirable + "', current_timestamp(),current_timestamp(),'no'," + reorder + ")";
+            conn.Open();
+            MySqlCommand comm_new = new MySqlCommand(query_new, conn);
+            comm_new.ExecuteNonQuery();
+            conn.Close();
+
+            MessageBox.Show("Item Stocked out to Shelf");
+
             repackProdsLoad();
+            loadInventoryData();
             repackPanel.Visible = false;
+
+            productTxt.Clear();
+            itemVol.Refresh();
+            repackBy.Refresh();
+            Quan.Refresh();
+            repackedQuan.Refresh();
         }
 
         public void repackProdsLoad()
