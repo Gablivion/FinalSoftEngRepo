@@ -15,6 +15,7 @@ namespace CaPY_SAD
     {
         public Form previousform { get; set; }
         MySqlConnection conn;
+        DataTable services = new DataTable();
         public Hosp()
         {
             conn = new MySqlConnection("SERVER=localhost; DATABASE=fabpets; uid = root; pwd = root; Allow Zero Datetime=True ");
@@ -31,7 +32,12 @@ namespace CaPY_SAD
             checkoutBtn.Enabled = false;
             loadCageData();
             loadpets();
-
+            service();
+            services.Columns.Add("serv_id", typeof(string));
+            services.Columns.Add("pet_id", typeof(string));
+            services.Columns.Add("Service", typeof(string));
+            services.Columns.Add("Pet", typeof(string));
+            services.Columns.Add("Price", typeof(string));
 
 
 
@@ -60,8 +66,8 @@ namespace CaPY_SAD
         public void loadHospData()
         {
 
-            String query_hosp = "SELECT id,pets_id,(SELECT name FROM pets WHERE id = pets_id ) as pet,(SELECT name FROM cage WHERE id = cage_id ) as cage,DATE_FORMAT(date_in, '%d/%m/%Y %H:%i %p') as date_in, IF(date_out='','Pending',DATE_FORMAT(date_out, '%Y/%m/%d %H:%i %p'))  as date_out,subtotal,status FROM hospitalization WHERE archived = 'no' AND pets_id = "+ pets_id + " ";
-
+            String query_hosp = "SELECT id,pets_id,(SELECT name FROM pets WHERE id = pets_id ) as pet,(SELECT name FROM cage WHERE id = cage_id ) as cage,DATE_FORMAT(date_in, '%Y-%m-%d %H:%i %p') as date_in,DATE_FORMAT(date_in, '%Y-%m-%d %H:%i:%s') as d_in, IF(date_out='','Pending',DATE_FORMAT(date_out, '%Y/%m/%d %H:%i %p'))  as date_out,subtotal,status FROM hospitalization WHERE archived = 'no' AND pets_id = " + pets_id + " ";
+           
             conn.Open();
             MySqlCommand comm_hosp = new MySqlCommand(query_hosp, conn);
             MySqlDataAdapter adp_hosp = new MySqlDataAdapter(comm_hosp);
@@ -74,6 +80,7 @@ namespace CaPY_SAD
             dtgvHospitalization.Columns["pets_id"].Visible = false;
             dtgvHospitalization.Columns["cage"].HeaderText = "Cage";
             dtgvHospitalization.Columns["pet"].Visible = false;
+            dtgvHospitalization.Columns["d_in"].Visible = false;
             dtgvHospitalization.Columns["date_in"].HeaderText = "Admission Date";
             dtgvHospitalization.Columns["date_out"].HeaderText = "Discharge Date";
             dtgvHospitalization.Columns["subtotal"].HeaderText = "Subtotal";
@@ -285,19 +292,20 @@ namespace CaPY_SAD
         {
             cagePanel.Visible = false;
         }
-        DateTime admission_date;
+        public static string admission_date;
     
         private void dtgvHospitalization_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+           
             detailPanel.Visible = false;
-            addHospBtn.Enabled = false;
+           // addHospBtn.Enabled = false;
             addvitalBtn.Enabled = true;
             addProdBtn.Enabled = true;
 
             if (e.RowIndex > -1)
             {
                 int selected_id = int.Parse(dtgvHospitalization.Rows[e.RowIndex].Cells["id"].Value.ToString());
-                admission_date = DateTime.Parse(dtgvHospitalization.Rows[e.RowIndex].Cells["date_in"].Value.ToString());
+                admission_date = dtgvHospitalization.Rows[e.RowIndex].Cells["d_in"].Value.ToString();
              
                 addfee();
                 selected_data.hosp_id = selected_id;
@@ -622,13 +630,29 @@ namespace CaPY_SAD
         }
 
 
-
+        public static string days;
         public void addfee()
         {
             //int addfee;
-            //double days = 0;
-            ////double month = 0;
-            //double total = 0;
+         
+            //int date;
+
+            String get_date = "SELECT DATEDIFF(now(), '"+ admission_date +"') as days;";
+
+
+            MySqlCommand comm_getdate = new MySqlCommand(get_date, conn);
+            comm_getdate.CommandText = get_date;
+
+
+            conn.Open();
+            MySqlDataReader drd_getdate = comm_getdate.ExecuteReader();
+
+            while (drd_getdate.Read())
+            {
+                 days = drd_getdate["days"].ToString();
+            }
+            conn.Close();
+            dayTxt.Text = days;
 
             //month = (DateTime.Now.Month - admission_date.Month);
             //days = (DateTime.Now.Day - admission_date.Day);
@@ -731,7 +755,7 @@ namespace CaPY_SAD
             petPanel.Visible = true;
             petPanel.Size = new Size(696, 208);
             petPanel.Location = new Point(20, 8);
-            detailControl.Enabled = false;
+            detailPanel.Visible = true;
         }
 
         private void petBackBtn_Click(object sender, EventArgs e)
@@ -813,7 +837,103 @@ namespace CaPY_SAD
            
         }
 
-     
+        private void backserviceBtn_Click(object sender, EventArgs e)
+        {
+            servPanel.Visible = false;
+        }
+
+        private void servAdd_Click(object sender, EventArgs e)
+        {
+            servPanel.Visible = true;
+            servPanel.Size = new Size(1093, 260);
+            servPanel.Location = new Point(17, 12);
+        }
+        public void service()
+        {
+            String query_serv = "SELECT id, name, description, price FROM services";
+
+            conn.Open();
+            MySqlCommand comm_serve = new MySqlCommand(query_serv, conn);
+            MySqlDataAdapter adp_serve = new MySqlDataAdapter(comm_serve);
+            conn.Close();
+            DataTable dt_serve = new DataTable();
+            adp_serve.Fill(dt_serve);
+
+
+            dtgvServices.DataSource = dt_serve;
+            dtgvServices.Columns["id"].Visible = false;
+            dtgvServices.Columns["name"].HeaderText = "Name";
+            dtgvServices.Columns["description"].HeaderText = "Description";
+            dtgvServices.Columns["price"].HeaderText = "Price";
+
+        }
+
+        public static int selected_serv;
+        private void dtgvServices_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex > -1)
+            {
+                dtgvServices.Enabled = true;
+
+                selected_serv = int.Parse(dtgvServices.Rows[e.RowIndex].Cells["id"].Value.ToString());
+                load_service_acquired();
+                //getTotal();
+                servTotal();
+                servPanel.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("Please select a service!");
+            }
+
+        }
+
+        public void load_service_acquired()
+        {
+            int id;
+            string serv_name;
+            decimal serv_price;
+
+            String query_get_service_details = "SELECT id,name,price FROM services WHERE id = " + selected_serv + "";
+            MySqlCommand comm_get_service_details = new MySqlCommand(query_get_service_details, conn);
+            comm_get_service_details.CommandText = query_get_service_details;
+
+            conn.Open();
+            MySqlDataReader drd_get_service_details = comm_get_service_details.ExecuteReader();
+
+            while (drd_get_service_details.Read())
+            {
+                id = int.Parse(drd_get_service_details["id"].ToString());
+                serv_name = drd_get_service_details["name"].ToString();
+                serv_price = decimal.Parse(drd_get_service_details["price"].ToString());
+
+                services.Rows.Add(id, pets_id, serv_name, petTxt.Text, serv_price);
+                dtgvAccServices.DataSource = services;
+                dtgvAccServices.Columns["serv_id"].Visible = false;
+                dtgvAccServices.Columns["pet_id"].Visible = false;
+
+            }
+
+            conn.Close();
+        }
+
+        public void servTotal()
+        {
+            decimal total = decimal.Parse(ServTotalTxt.Text);
+
+            for (int i = 0; i <= dtgvAccServices.Rows.Count - 1; i++)
+            {
+
+                string subs = dtgvAccServices.Rows[i].Cells["Price"].Value.ToString();
+
+                decimal decimal_sub = decimal.Parse(subs);
+
+                total = total + decimal_sub;
+
+            }
+            ServTotalTxt.Text = total.ToString();
+        }
     }
 
 }
