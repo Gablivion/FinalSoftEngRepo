@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Edit_pet));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.ownerCmb = new System.Windows.Forms.ComboBox();
@@ -73,14 +75,18 @@
             this.editMedRecBtn = new System.Windows.Forms.Button();
             this.archiveMedRecBtn = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.med_Rec = new System.Windows.Forms.TabControl();
             this.dtgvMedical = new System.Windows.Forms.DataGridView();
+            this.med_Rec = new System.Windows.Forms.TabControl();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dtgvAllergies = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             this.medRecPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.weighTxt)).BeginInit();
             this.tabPage1.SuspendLayout();
-            this.med_Rec.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvMedical)).BeginInit();
+            this.med_Rec.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvAllergies)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -417,7 +423,7 @@
             this.medRecPanel.Enabled = false;
             this.medRecPanel.Location = new System.Drawing.Point(43, 25);
             this.medRecPanel.Name = "medRecPanel";
-            this.medRecPanel.Size = new System.Drawing.Size(107, 56);
+            this.medRecPanel.Size = new System.Drawing.Size(145, 15);
             this.medRecPanel.TabIndex = 160;
             this.medRecPanel.Visible = false;
             // 
@@ -610,16 +616,6 @@
             this.tabPage1.Text = "Medical Record";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // med_Rec
-            // 
-            this.med_Rec.Controls.Add(this.tabPage1);
-            this.med_Rec.Location = new System.Drawing.Point(43, 387);
-            this.med_Rec.Name = "med_Rec";
-            this.med_Rec.SelectedIndex = 0;
-            this.med_Rec.Size = new System.Drawing.Size(995, 412);
-            this.med_Rec.TabIndex = 159;
-            this.med_Rec.SelectedIndexChanged += new System.EventHandler(this.med_Rec_SelectedIndexChanged);
-            // 
             // dtgvMedical
             // 
             this.dtgvMedical.AllowUserToAddRows = false;
@@ -654,6 +650,61 @@
             this.dtgvMedical.Size = new System.Drawing.Size(995, 390);
             this.dtgvMedical.TabIndex = 158;
             this.dtgvMedical.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvMedical_CellClick);
+            // 
+            // med_Rec
+            // 
+            this.med_Rec.Controls.Add(this.tabPage1);
+            this.med_Rec.Controls.Add(this.tabPage2);
+            this.med_Rec.Location = new System.Drawing.Point(43, 387);
+            this.med_Rec.Name = "med_Rec";
+            this.med_Rec.SelectedIndex = 0;
+            this.med_Rec.Size = new System.Drawing.Size(995, 412);
+            this.med_Rec.TabIndex = 159;
+            this.med_Rec.SelectedIndexChanged += new System.EventHandler(this.med_Rec_SelectedIndexChanged);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(40)))), ((int)(((byte)(54)))));
+            this.tabPage2.Controls.Add(this.dtgvAllergies);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Size = new System.Drawing.Size(987, 386);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Allergies";
+            // 
+            // dtgvAllergies
+            // 
+            this.dtgvAllergies.AccessibleName = "";
+            this.dtgvAllergies.AllowUserToAddRows = false;
+            this.dtgvAllergies.AllowUserToDeleteRows = false;
+            this.dtgvAllergies.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvAllergies.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dtgvAllergies.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgvAllergies.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvAllergies.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dtgvAllergies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvAllergies.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dtgvAllergies.Location = new System.Drawing.Point(-4, 0);
+            this.dtgvAllergies.Name = "dtgvAllergies";
+            this.dtgvAllergies.ReadOnly = true;
+            this.dtgvAllergies.RowHeadersVisible = false;
+            this.dtgvAllergies.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvAllergies.Size = new System.Drawing.Size(995, 390);
+            this.dtgvAllergies.TabIndex = 164;
             // 
             // Edit_pet
             // 
@@ -690,8 +741,10 @@
             this.medRecPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.weighTxt)).EndInit();
             this.tabPage1.ResumeLayout(false);
-            this.med_Rec.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvMedical)).EndInit();
+            this.med_Rec.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvAllergies)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -742,5 +795,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabControl med_Rec;
         private System.Windows.Forms.DataGridView dtgvMedical;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView dtgvAllergies;
     }
 }

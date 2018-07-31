@@ -23,7 +23,9 @@ namespace CaPY_SAD
 
         private void Hosp_Load(object sender, EventArgs e)
         {
-            editHospBtn.Enabled = false;
+            detailPanel.Size = new Size(1134, 336);
+            detailPanel.Location = new Point(21, 604);
+            detailPanel.Visible = true;
             addvitalBtn.Enabled = false;
             addProdBtn.Enabled = false;
             checkoutBtn.Enabled = false;
@@ -77,6 +79,21 @@ namespace CaPY_SAD
             dtgvHospitalization.Columns["subtotal"].HeaderText = "Subtotal";
             dtgvHospitalization.Columns["status"].HeaderText = "Status";
 
+
+            for (int i = 0; i <= dtgvHospitalization.Rows.Count - 1; i++)
+            {
+                if (dtgvHospitalization.Rows[i].Cells["status"].Value.ToString() == "discharged")
+                {
+                    addHospBtn.Visible = true;
+                }
+                else
+                {
+                     addHospBtn.Visible = false;
+                }
+            }
+
+
+
         }
 
         private void addcageBtn_Click(object sender, EventArgs e)
@@ -97,13 +114,6 @@ namespace CaPY_SAD
 
         }
 
-        private void editHospBtn_Click(object sender, EventArgs e)
-        {
-            Edit_hosp editHosp = new Edit_hosp();
-            editHosp.Show();
-            editHosp.previousform = this;
-            this.Hide();
-        }
 
         private void addVitalsBtn_Click(object sender, EventArgs e)
         {
@@ -197,6 +207,7 @@ namespace CaPY_SAD
             public static int cage_id;
             public static int hosp_id;
         }
+   
         private void dtgvCage_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             addvitalBtn.Enabled = true;
@@ -226,6 +237,7 @@ namespace CaPY_SAD
 
                     while (drd_cage.Read())
                     {
+                    
                         cageTxt.Text = drd_cage["name"].ToString();
                     }
                     conn.Close();
@@ -277,8 +289,7 @@ namespace CaPY_SAD
     
         private void dtgvHospitalization_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            editHospBtn.Enabled = true;
+            detailPanel.Visible = false;
             addHospBtn.Enabled = false;
             addvitalBtn.Enabled = true;
             addProdBtn.Enabled = true;
@@ -311,7 +322,7 @@ namespace CaPY_SAD
 
         private void Hosp_Click(object sender, EventArgs e)
         {
-            editHospBtn.Enabled = false;
+          
             addHospBtn.Enabled = true;
             addvitalBtn.Enabled = false;
             addProdBtn.Enabled = false;
@@ -319,7 +330,6 @@ namespace CaPY_SAD
 
         private void Hosp_VisibleChanged(object sender, EventArgs e)
         {
-            editHospBtn.Enabled = false;
             addvitalBtn.Enabled = false;
             addProdBtn.Enabled = false;
             loadCageData();
@@ -659,7 +669,7 @@ namespace CaPY_SAD
             }
             else
             {
-                string query_hospprods = "INSERT INTO allergies (pets_id,pet_allergy) VALUES("+ pets_id + ",'" + allergtTxt.Text + "')";
+                string query_hospprods = "INSERT INTO allergies (pets_id,pet_allergy,recorded_on) VALUES("+ pets_id + ",'" + allergtTxt.Text + "',current_timestamp())";
                 conn.Open();
                 MySqlCommand comm_hospprods = new MySqlCommand(query_hospprods, conn);
                 comm_hospprods.ExecuteNonQuery();
@@ -673,9 +683,10 @@ namespace CaPY_SAD
                 loadAllergies();
             }
         }
+        public static string owner;
         public void petdata()
         {
-            String query_petdetails = "SELECT name,color,breed,species,gender,DATEDIFF(now(), birthdate) as age from pets WHERE id = " + pets_id + "";
+            String query_petdetails = "SELECT customer_id,name,color,breed,species,gender,DATEDIFF(now(), birthdate) as age from pets WHERE id = " + pets_id + "";
 
 
             MySqlCommand comm_petdetails = new MySqlCommand(query_petdetails, conn);
@@ -686,6 +697,7 @@ namespace CaPY_SAD
 
             while (drd_petdetails.Read())
             {
+                owner = drd_petdetails["customer_id"].ToString();
                 petTxt.Text = drd_petdetails["name"].ToString();
                 colorTxt.Text = drd_petdetails["color"].ToString();
                 breedTxt.Text = drd_petdetails["breed"].ToString();
@@ -719,6 +731,7 @@ namespace CaPY_SAD
             petPanel.Visible = true;
             petPanel.Size = new Size(696, 208);
             petPanel.Location = new Point(20, 8);
+            detailControl.Enabled = false;
         }
 
         private void petBackBtn_Click(object sender, EventArgs e)
@@ -757,7 +770,9 @@ namespace CaPY_SAD
         public static int pets_id;
         private void dtgvPet_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            detailPanel.Visible = true;
             petPanel.Visible = false;
+            addHospBtn.Visible = true;
 
             if (e.RowIndex > -1)
             {
@@ -780,7 +795,25 @@ namespace CaPY_SAD
         private void hospaddBtn_Click(object sender, EventArgs e)
         {
             addHospPanel.Visible = false;
+
+
+            string query_insert_hosp = "INSERT INTO hospitalization(pets_id,cage_id,date_in,subtotal,status,archived) VALUES ((SELECT id from pets WHERE name = '" + petTxt.Text + "' AND customer_id = " + owner + "),(SELECT id from cage WHERE name = '" + cageTxt.Text + "'), current_timestamp(),0,'active','no')";
+            conn.Open();
+            MySqlCommand comm_insert_hosp = new MySqlCommand(query_insert_hosp, conn);
+            comm_insert_hosp.ExecuteNonQuery();
+            conn.Close();
+
+            string query_update_cage = "UPDATE cage SET status = 'unavailable' WHERE cage.id = "+ selected_data.cage_id +"";
+
+            conn.Open();
+            MySqlCommand comm_update_cage = new MySqlCommand(query_update_cage, conn);
+            comm_update_cage.ExecuteNonQuery();
+            conn.Close();
+            loadHospData();
+           
         }
+
+     
     }
 
 }

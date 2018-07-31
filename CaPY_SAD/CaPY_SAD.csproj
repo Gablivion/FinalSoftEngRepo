@@ -156,12 +156,6 @@
     <Compile Include="View_customer.Designer.cs">
       <DependentUpon>View_customer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Edit_hosp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Edit_hosp.Designer.cs">
-      <DependentUpon>Edit_hosp.cs</DependentUpon>
-    </Compile>
     <Compile Include="Edit_pet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -284,6 +278,12 @@
     <Compile Include="View_sales.Designer.cs">
       <DependentUpon>View_sales.cs</DependentUpon>
     </Compile>
+    <Compile Include="View_staff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View_staff.Designer.cs">
+      <DependentUpon>View_staff.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Add_customer.resx">
       <DependentUpon>Add_customer.cs</DependentUpon>
     </EmbeddedResource>
@@ -328,9 +328,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View_customer.resx">
       <DependentUpon>View_customer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Edit_hosp.resx">
-      <DependentUpon>Edit_hosp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Edit_pet.resx">
       <DependentUpon>Edit_pet.cs</DependentUpon>
@@ -401,6 +398,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View_sales.resx">
       <DependentUpon>View_sales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View_staff.resx">
+      <DependentUpon>View_staff.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

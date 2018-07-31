@@ -166,6 +166,7 @@ namespace CaPY_SAD
         private void View_pet_Load(object sender, EventArgs e)
         {
             ownercmbData();
+            
             String query = "SELECT pets.id, name, color, species, breed, pets.gender as gen, pets.birthdate as bday, microchip_number, sterilized, concat(firstname,' ',middlename,' ',lastname) as owner FROM pets,person,customers where customers.person_id = person.id AND customers.id = pets.customer_id AND pets.id = '" + pet_id + "'";
 
             MySqlCommand comm = new MySqlCommand(query, conn);
@@ -207,6 +208,24 @@ namespace CaPY_SAD
                 micronumTxt.Text = (drd["microchip_number"].ToString());
             }
             conn.Close();
+            loadAllergies();
+        }
+
+        public void loadAllergies()
+        {
+            String query_allergies = "SELECT pet_allergy,recorded_on from allergies WHERE pets_id = " + pet_id + "";
+
+            conn.Open();
+            MySqlCommand comm_allergies = new MySqlCommand(query_allergies, conn);
+            MySqlDataAdapter adp_allergies = new MySqlDataAdapter(comm_allergies);
+            conn.Close();
+            DataTable dt_allergies = new DataTable();
+            adp_allergies.Fill(dt_allergies);
+
+
+            dtgvAllergies.DataSource = dt_allergies;
+            dtgvAllergies.Columns["pet_allergy"].HeaderText = "Allergies";
+            dtgvAllergies.Columns["recorded_on"].HeaderText = "Date Recpor";
         }
     }
 }

@@ -30,6 +30,8 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_pet));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.editBtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
@@ -57,8 +59,12 @@
             this.maleRadio = new MaterialSkin.Controls.MaterialRadioButton();
             this.saveBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.cancelBtn = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dtgvAllergies = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvAllergies)).BeginInit();
             this.SuspendLayout();
             // 
             // editBtn
@@ -66,9 +72,9 @@
             this.editBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(156)))), ((int)(((byte)(120)))));
             this.editBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.editBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editBtn.Location = new System.Drawing.Point(781, 64);
+            this.editBtn.Location = new System.Drawing.Point(389, 46);
             this.editBtn.Name = "editBtn";
-            this.editBtn.Size = new System.Drawing.Size(53, 34);
+            this.editBtn.Size = new System.Drawing.Size(53, 25);
             this.editBtn.TabIndex = 153;
             this.editBtn.Text = "EDIT";
             this.editBtn.UseVisualStyleBackColor = false;
@@ -92,10 +98,10 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(19, 368);
+            this.dataGridView1.Location = new System.Drawing.Point(19, 493);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(822, 359);
+            this.dataGridView1.Size = new System.Drawing.Size(829, 234);
             this.dataGridView1.TabIndex = 152;
             // 
             // label10
@@ -104,7 +110,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Tw Cen MT", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(294, 322);
+            this.label10.Location = new System.Drawing.Point(293, 436);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(272, 43);
             this.label10.TabIndex = 150;
@@ -116,7 +122,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tw Cen MT", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(313, 16);
+            this.label1.Location = new System.Drawing.Point(328, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(216, 43);
             this.label1.TabIndex = 151;
@@ -140,7 +146,7 @@
             // 
             this.colorTxt.Enabled = false;
             this.colorTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colorTxt.Location = new System.Drawing.Point(600, 169);
+            this.colorTxt.Location = new System.Drawing.Point(165, 253);
             this.colorTxt.MaxLength = 45;
             this.colorTxt.Name = "colorTxt";
             this.colorTxt.Size = new System.Drawing.Size(234, 26);
@@ -150,7 +156,7 @@
             // 
             this.breedTxt.Enabled = false;
             this.breedTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.breedTxt.Location = new System.Drawing.Point(177, 233);
+            this.breedTxt.Location = new System.Drawing.Point(165, 144);
             this.breedTxt.MaxLength = 45;
             this.breedTxt.Name = "breedTxt";
             this.breedTxt.Size = new System.Drawing.Size(234, 26);
@@ -160,7 +166,7 @@
             // 
             this.speciesTxt.Enabled = false;
             this.speciesTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.speciesTxt.Location = new System.Drawing.Point(177, 201);
+            this.speciesTxt.Location = new System.Drawing.Point(165, 112);
             this.speciesTxt.MaxLength = 45;
             this.speciesTxt.Name = "speciesTxt";
             this.speciesTxt.Size = new System.Drawing.Size(234, 26);
@@ -170,7 +176,7 @@
             // 
             this.micronumTxt.Enabled = false;
             this.micronumTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.micronumTxt.Location = new System.Drawing.Point(177, 169);
+            this.micronumTxt.Location = new System.Drawing.Point(165, 80);
             this.micronumTxt.MaxLength = 45;
             this.micronumTxt.Name = "micronumTxt";
             this.micronumTxt.Size = new System.Drawing.Size(234, 26);
@@ -180,7 +186,7 @@
             // 
             this.nameTxt.Enabled = false;
             this.nameTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameTxt.Location = new System.Drawing.Point(177, 137);
+            this.nameTxt.Location = new System.Drawing.Point(165, 48);
             this.nameTxt.MaxLength = 45;
             this.nameTxt.Name = "nameTxt";
             this.nameTxt.Size = new System.Drawing.Size(234, 26);
@@ -192,7 +198,7 @@
             this.ownerCmb.Enabled = false;
             this.ownerCmb.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ownerCmb.FormattingEnabled = true;
-            this.ownerCmb.Location = new System.Drawing.Point(177, 103);
+            this.ownerCmb.Location = new System.Drawing.Point(165, 14);
             this.ownerCmb.Name = "ownerCmb";
             this.ownerCmb.Size = new System.Drawing.Size(234, 28);
             this.ownerCmb.TabIndex = 154;
@@ -203,7 +209,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(27, 103);
+            this.label2.Location = new System.Drawing.Point(15, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 28);
             this.label2.TabIndex = 170;
@@ -215,7 +221,7 @@
             this.sterilizedBox.Depth = 0;
             this.sterilizedBox.Enabled = false;
             this.sterilizedBox.Font = new System.Drawing.Font("Roboto", 10F);
-            this.sterilizedBox.Location = new System.Drawing.Point(604, 201);
+            this.sterilizedBox.Location = new System.Drawing.Point(194, 283);
             this.sterilizedBox.Margin = new System.Windows.Forms.Padding(0);
             this.sterilizedBox.MouseLocation = new System.Drawing.Point(-1, -1);
             this.sterilizedBox.MouseState = MaterialSkin.MouseState.HOVER;
@@ -232,7 +238,7 @@
             this.bdayTxt.Enabled = false;
             this.bdayTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bdayTxt.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.bdayTxt.Location = new System.Drawing.Point(600, 103);
+            this.bdayTxt.Location = new System.Drawing.Point(165, 182);
             this.bdayTxt.Name = "bdayTxt";
             this.bdayTxt.Size = new System.Drawing.Size(234, 26);
             this.bdayTxt.TabIndex = 159;
@@ -243,7 +249,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(425, 138);
+            this.label6.Location = new System.Drawing.Point(15, 216);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(74, 28);
             this.label6.TabIndex = 169;
@@ -255,7 +261,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(425, 102);
+            this.label5.Location = new System.Drawing.Point(15, 180);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(87, 28);
             this.label5.TabIndex = 168;
@@ -267,7 +273,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(425, 202);
+            this.label4.Location = new System.Drawing.Point(15, 280);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(176, 28);
             this.label4.TabIndex = 167;
@@ -279,7 +285,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(425, 168);
+            this.label3.Location = new System.Drawing.Point(15, 246);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 28);
             this.label3.TabIndex = 166;
@@ -291,7 +297,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(27, 226);
+            this.label9.Location = new System.Drawing.Point(15, 137);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(62, 28);
             this.label9.TabIndex = 165;
@@ -303,7 +309,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(27, 196);
+            this.label8.Location = new System.Drawing.Point(15, 107);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(72, 28);
             this.label8.TabIndex = 164;
@@ -315,7 +321,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(27, 163);
+            this.label7.Location = new System.Drawing.Point(15, 74);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(114, 28);
             this.label7.TabIndex = 163;
@@ -327,7 +333,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(27, 133);
+            this.label11.Location = new System.Drawing.Point(15, 44);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(61, 28);
             this.label11.TabIndex = 162;
@@ -338,7 +344,7 @@
             this.panel1.Controls.Add(this.femaleRadio);
             this.panel1.Controls.Add(this.maleRadio);
             this.panel1.Enabled = false;
-            this.panel1.Location = new System.Drawing.Point(600, 136);
+            this.panel1.Location = new System.Drawing.Point(165, 214);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(156, 33);
             this.panel1.TabIndex = 171;
@@ -380,7 +386,7 @@
             // saveBtn
             // 
             this.saveBtn.Depth = 0;
-            this.saveBtn.Location = new System.Drawing.Point(343, 274);
+            this.saveBtn.Location = new System.Drawing.Point(336, 400);
             this.saveBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Primary = true;
@@ -394,7 +400,7 @@
             // 
             this.cancelBtn.Depth = 0;
             this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelBtn.Location = new System.Drawing.Point(442, 274);
+            this.cancelBtn.Location = new System.Drawing.Point(435, 400);
             this.cancelBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Primary = true;
@@ -404,6 +410,66 @@
             this.cancelBtn.UseVisualStyleBackColor = true;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(96)))), ((int)(((byte)(113)))));
+            this.panel2.Controls.Add(this.ownerCmb);
+            this.panel2.Controls.Add(this.sterilizedBox);
+            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.colorTxt);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.breedTxt);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.speciesTxt);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.micronumTxt);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.nameTxt);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.bdayTxt);
+            this.panel2.Location = new System.Drawing.Point(19, 72);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(423, 322);
+            this.panel2.TabIndex = 173;
+            // 
+            // dtgvAllergies
+            // 
+            this.dtgvAllergies.AccessibleName = "";
+            this.dtgvAllergies.AllowUserToAddRows = false;
+            this.dtgvAllergies.AllowUserToDeleteRows = false;
+            this.dtgvAllergies.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvAllergies.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dtgvAllergies.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgvAllergies.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvAllergies.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dtgvAllergies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvAllergies.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dtgvAllergies.Location = new System.Drawing.Point(458, 72);
+            this.dtgvAllergies.Name = "dtgvAllergies";
+            this.dtgvAllergies.ReadOnly = true;
+            this.dtgvAllergies.RowHeadersVisible = false;
+            this.dtgvAllergies.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvAllergies.Size = new System.Drawing.Size(367, 322);
+            this.dtgvAllergies.TabIndex = 174;
+            // 
             // View_pet
             // 
             this.AcceptButton = this.saveBtn;
@@ -412,26 +478,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(40)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(860, 744);
             this.ControlBox = false;
-            this.Controls.Add(this.sterilizedBox);
+            this.Controls.Add(this.dtgvAllergies);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.saveBtn);
-            this.Controls.Add(this.colorTxt);
-            this.Controls.Add(this.breedTxt);
-            this.Controls.Add(this.speciesTxt);
-            this.Controls.Add(this.micronumTxt);
-            this.Controls.Add(this.nameTxt);
-            this.Controls.Add(this.ownerCmb);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.bdayTxt);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.editBtn);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label10);
@@ -442,7 +492,7 @@
             this.MinimizeBox = false;
             this.Name = "View_pet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "View_pet";
+            this.Text = "m";
             this.Load += new System.EventHandler(this.View_pet_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.View_pet_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.View_pet_MouseMove);
@@ -450,6 +500,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvAllergies)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -483,5 +536,7 @@
         private MaterialSkin.Controls.MaterialRadioButton maleRadio;
         private MaterialSkin.Controls.MaterialRaisedButton saveBtn;
         private MaterialSkin.Controls.MaterialRaisedButton cancelBtn;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView dtgvAllergies;
     }
 }

@@ -76,8 +76,25 @@ namespace CaPY_SAD
             ownercmbData();
             loadPetDetails();
             loadMedRec();
+            loadAllergies();
         }
 
+        public void loadAllergies()
+        {
+            String query_allergies = "SELECT pet_allergy,recorded_on from allergies WHERE pets_id = " + pet_id + "";
+
+            conn.Open();
+            MySqlCommand comm_allergies = new MySqlCommand(query_allergies, conn);
+            MySqlDataAdapter adp_allergies = new MySqlDataAdapter(comm_allergies);
+            conn.Close();
+            DataTable dt_allergies = new DataTable();
+            adp_allergies.Fill(dt_allergies);
+
+
+            dtgvAllergies.DataSource = dt_allergies;
+            dtgvAllergies.Columns["pet_allergy"].HeaderText = "Allergies";
+            dtgvAllergies.Columns["recorded_on"].HeaderText = "Date Recorded";
+        }
 
         public void loadMedRec()
         {
