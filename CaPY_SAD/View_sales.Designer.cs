@@ -41,7 +41,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.resetBtn = new System.Windows.Forms.Button();
             this.printBtn = new System.Windows.Forms.Button();
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
@@ -193,16 +192,6 @@
             this.printBtn.UseVisualStyleBackColor = false;
             this.printBtn.Click += new System.EventHandler(this.printBtn_Click);
             // 
-            // crystalReportViewer1
-            // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(953, 669);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(129, 80);
-            this.crystalReportViewer1.TabIndex = 89;
-            // 
             // printDocument1
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
@@ -228,7 +217,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(40)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(975, 678);
             this.ControlBox = false;
-            this.Controls.Add(this.crystalReportViewer1);
             this.Controls.Add(this.printBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.quitBtn);
