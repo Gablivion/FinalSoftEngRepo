@@ -56,6 +56,16 @@ namespace CaPY_SAD
                 {
                     expCbox.Checked = false;
                 }
+
+                if (int.Parse(drd["medicine"].ToString()) == 1)
+                {
+                    MedCbox.Checked = true;
+
+                }
+                else
+                {
+                    MedCbox.Checked = false;
+                }
             }
             conn.Close();
 
@@ -95,7 +105,7 @@ namespace CaPY_SAD
               
 
                 string expirable;
-
+                int med;
                 if (expCbox.Checked == true)
                 {
                     expirable = "yes";
@@ -110,7 +120,16 @@ namespace CaPY_SAD
                     unitTxt.Text = "N/A";
                 }
 
-                string query = "UPDATE products set name = '" + nameTxt.Text + "' , description ='" + descTxt.Text + "', price = '" + priceTxt.Text + "',volume = "+ volNum.Value + ",unit = '" + unitTxt.Text + "', expirable = '" + expirable + "',reorder = "+reOrderQuan.Value+" , date_modified = current_timestamp() where id = '" + product_id + "'";
+                if (MedCbox.Checked == true)
+                {
+                    med = 1;
+                }
+                else
+                {
+                    med = 0;
+                }
+
+                string query = "UPDATE products set name = '" + nameTxt.Text + "' , description ='" + descTxt.Text + "', price = '" + priceTxt.Text + "',volume = "+ volNum.Value + ",unit = '" + unitTxt.Text + "', expirable = '" + expirable + "',reorder = "+reOrderQuan.Value+" , date_modified = current_timestamp(), medicine = "+med+" where id = '" + product_id + "'";
 
                 conn.Open();
                 MySqlCommand comm = new MySqlCommand(query, conn);

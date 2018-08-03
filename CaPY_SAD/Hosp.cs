@@ -934,6 +934,22 @@ namespace CaPY_SAD
             }
             ServTotalTxt.Text = total.ToString();
         }
+
+
+
+        private void ServTotalTxt_TextChanged(object sender, EventArgs e)
+        {
+            decimal total;
+
+            totalTxt.Text = "0.00";
+
+            total = decimal.Parse(ServTotalTxt.Text) + decimal.Parse(totalTxt.Text);
+
+            totalTxt.Text = total.ToString();
+         
+
+
+        }
     }
 
 }

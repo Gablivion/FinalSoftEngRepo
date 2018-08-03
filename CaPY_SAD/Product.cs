@@ -88,10 +88,12 @@ namespace CaPY_SAD
 
             dtgvProducts.DataSource = dt;
             dtgvProducts.Columns["id"].Visible = false;
+            dtgvProducts.Columns["medicine"].Visible = false;
             dtgvProducts.Columns["name"].HeaderText = "Name";
             dtgvProducts.Columns["description"].HeaderText = "Description";
             dtgvProducts.Columns["price"].HeaderText = "Price";
             dtgvProducts.Columns["expirable"].HeaderText = "Expirable";
+            dtgvProducts.Columns["reorder"].HeaderText = "Reorder Point";
             dtgvProducts.Columns["date_added"].HeaderText = "Date Added";
             dtgvProducts.Columns["date_modified"].HeaderText = "Date Modified";
             dtgvProducts.Columns["archived"].Visible = false;

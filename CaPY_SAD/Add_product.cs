@@ -95,7 +95,7 @@ namespace CaPY_SAD
                 {
 
                     string expirable;
-
+                    int med;
                     if (unitTxt.Text == "")
                     {
                         unitTxt.Text = "N/A";
@@ -111,8 +111,16 @@ namespace CaPY_SAD
 
                     }
 
-                    string query = "INSERT INTO products(name,description,price,volume,unit,expirable,date_added,date_modified,archived,reorder)" +
-                                   "VALUES('" + nameTxt.Text + "','" + descTxt.Text + "','" + priceTxt.Text + "',"+ volNum.Value + ",'" + unitTxt.Text + "','" + expirable + "', current_timestamp(),current_timestamp(),'no'," + reOrderQuan.Value + ")";
+                    if (MedCbox.Checked == true)
+                    {
+                        med = 1;
+                    }
+                    else
+                    {
+                        med = 0;
+                    }
+                    string query = "INSERT INTO products(name,description,price,volume,unit,expirable,date_added,date_modified,archived,reorder,medicine)" +
+                                   "VALUES('" + nameTxt.Text + "','" + descTxt.Text + "','" + priceTxt.Text + "',"+ volNum.Value + ",'" + unitTxt.Text + "','" + expirable + "', current_timestamp(),current_timestamp(),'no'," + reOrderQuan.Value + ","+ med +")";
                     conn.Open();
                     MySqlCommand comm = new MySqlCommand(query, conn);
                     comm.ExecuteNonQuery();

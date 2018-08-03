@@ -47,6 +47,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.reOrderQuan = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
+            this.MedCbox = new System.Windows.Forms.CheckBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.volNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reOrderQuan)).BeginInit();
             this.SuspendLayout();
@@ -119,7 +121,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(25, 315);
+            this.label6.Location = new System.Drawing.Point(25, 318);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(93, 28);
             this.label6.TabIndex = 109;
@@ -158,7 +160,7 @@
             this.saveBtn.BackColor = System.Drawing.Color.White;
             this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveBtn.Location = new System.Drawing.Point(122, 389);
+            this.saveBtn.Location = new System.Drawing.Point(116, 419);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(75, 32);
             this.saveBtn.TabIndex = 111;
@@ -171,7 +173,7 @@
             this.cancelBtn.BackColor = System.Drawing.Color.White;
             this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelBtn.Location = new System.Drawing.Point(220, 389);
+            this.cancelBtn.Location = new System.Drawing.Point(214, 419);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 32);
             this.cancelBtn.TabIndex = 112;
@@ -184,7 +186,7 @@
             this.expCbox.AutoSize = true;
             this.expCbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.expCbox.ForeColor = System.Drawing.Color.White;
-            this.expCbox.Location = new System.Drawing.Point(153, 322);
+            this.expCbox.Location = new System.Drawing.Point(153, 325);
             this.expCbox.Name = "expCbox";
             this.expCbox.Size = new System.Drawing.Size(15, 14);
             this.expCbox.TabIndex = 113;
@@ -240,7 +242,7 @@
             // reOrderQuan
             // 
             this.reOrderQuan.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reOrderQuan.Location = new System.Drawing.Point(153, 351);
+            this.reOrderQuan.Location = new System.Drawing.Point(148, 384);
             this.reOrderQuan.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -257,19 +259,44 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(17, 346);
+            this.label8.Location = new System.Drawing.Point(12, 379);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(130, 28);
             this.label8.TabIndex = 122;
             this.label8.Text = "Reorder Point";
+            // 
+            // MedCbox
+            // 
+            this.MedCbox.AutoSize = true;
+            this.MedCbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MedCbox.ForeColor = System.Drawing.Color.White;
+            this.MedCbox.Location = new System.Drawing.Point(153, 358);
+            this.MedCbox.Name = "MedCbox";
+            this.MedCbox.Size = new System.Drawing.Size(15, 14);
+            this.MedCbox.TabIndex = 125;
+            this.MedCbox.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(25, 351);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(88, 28);
+            this.label9.TabIndex = 124;
+            this.label9.Text = "Medicine";
             // 
             // Edit_product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(40)))), ((int)(((byte)(54)))));
-            this.ClientSize = new System.Drawing.Size(400, 433);
+            this.ClientSize = new System.Drawing.Size(400, 475);
             this.ControlBox = false;
+            this.Controls.Add(this.MedCbox);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.reOrderQuan);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.unitTxt);
@@ -322,5 +349,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown reOrderQuan;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.CheckBox MedCbox;
+        private System.Windows.Forms.Label label9;
     }
 }
