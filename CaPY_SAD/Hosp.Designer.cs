@@ -90,6 +90,9 @@
             this.addvitalBtn = new System.Windows.Forms.Button();
             this.dtgvVitals = new System.Windows.Forms.DataGridView();
             this.Ordered = new System.Windows.Forms.TabPage();
+            this.addProdPaneldtgv = new System.Windows.Forms.Panel();
+            this.dtgvAvailProd = new System.Windows.Forms.DataGridView();
+            this.BtnExitProd = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.addEndorsedPanel = new System.Windows.Forms.Panel();
@@ -104,9 +107,6 @@
             this.dtgvEndorsed = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.addEndorsedBtn = new System.Windows.Forms.Button();
-            this.addProdPaneldtgv = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
             this.addProdBtn = new System.Windows.Forms.Button();
             this.dtgvAddProd = new System.Windows.Forms.DataGridView();
             this.Services = new System.Windows.Forms.TabPage();
@@ -171,11 +171,11 @@
             this.Vitals.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvVitals)).BeginInit();
             this.Ordered.SuspendLayout();
+            this.addProdPaneldtgv.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvAvailProd)).BeginInit();
             this.addEndorsedPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.endorsedQuanNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvEndorsed)).BeginInit();
-            this.addProdPaneldtgv.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAddProd)).BeginInit();
             this.Services.SuspendLayout();
             this.servPanel.SuspendLayout();
@@ -739,13 +739,13 @@
             // Ordered
             // 
             this.Ordered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(40)))), ((int)(((byte)(54)))));
+            this.Ordered.Controls.Add(this.addProdPaneldtgv);
             this.Ordered.Controls.Add(this.label20);
             this.Ordered.Controls.Add(this.label3);
             this.Ordered.Controls.Add(this.addEndorsedPanel);
             this.Ordered.Controls.Add(this.dtgvEndorsed);
             this.Ordered.Controls.Add(this.button1);
             this.Ordered.Controls.Add(this.addEndorsedBtn);
-            this.Ordered.Controls.Add(this.addProdPaneldtgv);
             this.Ordered.Controls.Add(this.addProdBtn);
             this.Ordered.Controls.Add(this.dtgvAddProd);
             this.Ordered.Location = new System.Drawing.Point(4, 22);
@@ -753,6 +753,66 @@
             this.Ordered.Size = new System.Drawing.Size(1123, 297);
             this.Ordered.TabIndex = 2;
             this.Ordered.Text = "Products";
+            // 
+            // addProdPaneldtgv
+            // 
+            this.addProdPaneldtgv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(96)))), ((int)(((byte)(113)))));
+            this.addProdPaneldtgv.Controls.Add(this.dtgvAvailProd);
+            this.addProdPaneldtgv.Controls.Add(this.BtnExitProd);
+            this.addProdPaneldtgv.Enabled = false;
+            this.addProdPaneldtgv.Location = new System.Drawing.Point(20, 4);
+            this.addProdPaneldtgv.Name = "addProdPaneldtgv";
+            this.addProdPaneldtgv.Size = new System.Drawing.Size(439, 198);
+            this.addProdPaneldtgv.TabIndex = 116;
+            this.addProdPaneldtgv.Visible = false;
+            // 
+            // dtgvAvailProd
+            // 
+            this.dtgvAvailProd.AccessibleName = "";
+            this.dtgvAvailProd.AllowUserToAddRows = false;
+            this.dtgvAvailProd.AllowUserToDeleteRows = false;
+            this.dtgvAvailProd.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvAvailProd.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dtgvAvailProd.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgvAvailProd.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvAvailProd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dtgvAvailProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvAvailProd.DefaultCellStyle = dataGridViewCellStyle10;
+            this.dtgvAvailProd.Location = new System.Drawing.Point(20, 33);
+            this.dtgvAvailProd.Name = "dtgvAvailProd";
+            this.dtgvAvailProd.ReadOnly = true;
+            this.dtgvAvailProd.RowHeadersVisible = false;
+            this.dtgvAvailProd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvAvailProd.Size = new System.Drawing.Size(484, 229);
+            this.dtgvAvailProd.TabIndex = 115;
+            // 
+            // BtnExitProd
+            // 
+            this.BtnExitProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(42)))), ((int)(((byte)(15)))));
+            this.BtnExitProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnExitProd.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnExitProd.ForeColor = System.Drawing.Color.White;
+            this.BtnExitProd.Location = new System.Drawing.Point(505, -1);
+            this.BtnExitProd.Name = "BtnExitProd";
+            this.BtnExitProd.Size = new System.Drawing.Size(35, 26);
+            this.BtnExitProd.TabIndex = 18;
+            this.BtnExitProd.Text = "X";
+            this.BtnExitProd.UseVisualStyleBackColor = false;
+            this.BtnExitProd.Click += new System.EventHandler(this.BtnExitProd_Click);
             // 
             // label20
             // 
@@ -897,23 +957,23 @@
             this.dtgvEndorsed.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtgvEndorsed.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvEndorsed.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvEndorsed.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvEndorsed.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dtgvEndorsed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvEndorsed.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvEndorsed.DefaultCellStyle = dataGridViewCellStyle12;
             this.dtgvEndorsed.Location = new System.Drawing.Point(566, 61);
             this.dtgvEndorsed.Name = "dtgvEndorsed";
             this.dtgvEndorsed.ReadOnly = true;
@@ -948,77 +1008,19 @@
             this.addEndorsedBtn.Text = "ADD";
             this.addEndorsedBtn.UseVisualStyleBackColor = false;
             // 
-            // addProdPaneldtgv
-            // 
-            this.addProdPaneldtgv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(96)))), ((int)(((byte)(113)))));
-            this.addProdPaneldtgv.Controls.Add(this.dataGridView1);
-            this.addProdPaneldtgv.Controls.Add(this.button4);
-            this.addProdPaneldtgv.Enabled = false;
-            this.addProdPaneldtgv.Location = new System.Drawing.Point(20, 21);
-            this.addProdPaneldtgv.Name = "addProdPaneldtgv";
-            this.addProdPaneldtgv.Size = new System.Drawing.Size(33, 11);
-            this.addProdPaneldtgv.TabIndex = 116;
-            this.addProdPaneldtgv.Visible = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AccessibleName = "";
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle12;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 22);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(520, 315);
-            this.dataGridView1.TabIndex = 115;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(42)))), ((int)(((byte)(15)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(470, -1);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(70, 26);
-            this.button4.TabIndex = 18;
-            this.button4.Text = "BACK";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
             // addProdBtn
             // 
             this.addProdBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(209)))), ((int)(((byte)(187)))));
             this.addProdBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.addProdBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addProdBtn.ForeColor = System.Drawing.Color.Black;
-            this.addProdBtn.Location = new System.Drawing.Point(411, 37);
+            this.addProdBtn.Location = new System.Drawing.Point(474, 30);
             this.addProdBtn.Name = "addProdBtn";
             this.addProdBtn.Size = new System.Drawing.Size(56, 23);
             this.addProdBtn.TabIndex = 114;
             this.addProdBtn.Text = "ADD";
             this.addProdBtn.UseVisualStyleBackColor = false;
+            this.addProdBtn.Click += new System.EventHandler(this.addProdBtn_Click);
             // 
             // dtgvAddProd
             // 
@@ -1046,7 +1048,7 @@
             dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvAddProd.DefaultCellStyle = dataGridViewCellStyle14;
-            this.dtgvAddProd.Location = new System.Drawing.Point(20, 61);
+            this.dtgvAddProd.Location = new System.Drawing.Point(20, 52);
             this.dtgvAddProd.Name = "dtgvAddProd";
             this.dtgvAddProd.ReadOnly = true;
             this.dtgvAddProd.RowHeadersVisible = false;
@@ -1787,12 +1789,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvVitals)).EndInit();
             this.Ordered.ResumeLayout(false);
             this.Ordered.PerformLayout();
+            this.addProdPaneldtgv.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvAvailProd)).EndInit();
             this.addEndorsedPanel.ResumeLayout(false);
             this.addEndorsedPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.endorsedQuanNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvEndorsed)).EndInit();
-            this.addProdPaneldtgv.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAddProd)).EndInit();
             this.Services.ResumeLayout(false);
             this.Services.PerformLayout();
@@ -1875,8 +1877,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button addEndorsedBtn;
         private System.Windows.Forms.Panel addProdPaneldtgv;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridView dtgvAvailProd;
+        private System.Windows.Forms.Button BtnExitProd;
         private System.Windows.Forms.Button addProdBtn;
         private System.Windows.Forms.DataGridView dtgvAddProd;
         private System.Windows.Forms.Button servAdd;

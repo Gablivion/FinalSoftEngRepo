@@ -387,9 +387,9 @@
             this.salesPanel.Controls.Add(this.back2Btn);
             this.salesPanel.Controls.Add(this.salesreportBtn);
             this.salesPanel.Controls.Add(this.posBtn);
-            this.salesPanel.Location = new System.Drawing.Point(276, 32);
+            this.salesPanel.Location = new System.Drawing.Point(267, 74);
             this.salesPanel.Name = "salesPanel";
-            this.salesPanel.Size = new System.Drawing.Size(502, 344);
+            this.salesPanel.Size = new System.Drawing.Size(50, 137);
             this.salesPanel.TabIndex = 0;
             this.salesPanel.Visible = false;
             // 

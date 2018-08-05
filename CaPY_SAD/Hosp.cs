@@ -413,20 +413,23 @@ namespace CaPY_SAD
         {
             addProdPaneldtgv.Visible = true;
             addProdPaneldtgv.Enabled = true;
-            addProdPaneldtgv.Size = new Size(551, 343); 
-            addProdPaneldtgv.Location = new Point(0,0);
+            addProdPaneldtgv.Size = new Size(540, 279); 
+            addProdPaneldtgv.Location = new Point(20, 4);
+
             Addproducts();
         }
 
-        private void productBackBtn_Click(object sender, EventArgs e)
+
+        private void BtnExitProd_Click(object sender, EventArgs e)
         {
             addProdPaneldtgv.Visible = false;
-            addProdPaneldtgv.Enabled = false;
         }
 
         public void Addproducts()
         {
-            String query_inventory = "SELECT product_inventory.id as id, products.name as product, quantity, expiration_date FROM products, product_inventory WHERE expiration_date > CURDATE() AND product_inventory.products_id = products.id AND status = 'available' ";
+            
+
+            String query_inventory = "SELECT product_inventory.id as id, products.name as product, quantity,  DATE_FORMAT(expiration_date, '%Y/%m/%d') as expiration_date FROM products, product_inventory WHERE (expiration_date = '0000/00/00' OR expiration_date > CURDATE()) AND product_inventory.products_id = products.id AND status = 'available'  ";
 
             conn.Open();
             MySqlCommand comm = new MySqlCommand(query_inventory, conn);
@@ -436,12 +439,12 @@ namespace CaPY_SAD
             adp_inventory.Fill(dt_inventory);
 
 
-            dtgvAddProd.DataSource = dt_inventory;
-            dtgvAddProd.Columns["id"].Visible = false;
-            dtgvAddProd.Columns["product"].HeaderText = "Product";
-            dtgvAddProd.Columns["quantity"].HeaderText = "Quantity";
-            dtgvAddProd.Columns["expiration_date"].HeaderText = "Expiration Date";
-            MessageBox.Show("yo");
+            dtgvAvailProd.DataSource = dt_inventory;
+            dtgvAvailProd.Columns["id"].Visible = false;
+            dtgvAvailProd.Columns["product"].HeaderText = "Product";
+            dtgvAvailProd.Columns["quantity"].HeaderText = "Quantity";
+            dtgvAvailProd.Columns["expiration_date"].HeaderText = "Expiration Date";
+
 
         }
 
@@ -946,10 +949,9 @@ namespace CaPY_SAD
             total = decimal.Parse(ServTotalTxt.Text) + decimal.Parse(totalTxt.Text);
 
             totalTxt.Text = total.ToString();
-         
-
 
         }
+
     }
 
 }
