@@ -44,6 +44,11 @@
             this.RepackInv = new System.Windows.Forms.TabPage();
             this.dtgvRepack = new System.Windows.Forms.DataGridView();
             this.repackPanel = new System.Windows.Forms.Panel();
+            this.origpriceTxt = new System.Windows.Forms.Label();
+            this.reorderTxt = new System.Windows.Forms.Label();
+            this.descTxt = new System.Windows.Forms.Label();
+            this.unitTxt = new System.Windows.Forms.Label();
+            this.expirableTxt = new System.Windows.Forms.Label();
             this.productTxt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.repackBy = new System.Windows.Forms.NumericUpDown();
@@ -58,11 +63,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.addLabel = new System.Windows.Forms.Label();
             this.reorderBtn = new System.Windows.Forms.Button();
-            this.expirableTxt = new System.Windows.Forms.Label();
-            this.unitTxt = new System.Windows.Forms.Label();
-            this.descTxt = new System.Windows.Forms.Label();
-            this.reorderTxt = new System.Windows.Forms.Label();
-            this.origpriceTxt = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.MainInv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvInventory)).BeginInit();
@@ -266,9 +270,69 @@
             this.repackPanel.Controls.Add(this.addLabel);
             this.repackPanel.Location = new System.Drawing.Point(12, 12);
             this.repackPanel.Name = "repackPanel";
-            this.repackPanel.Size = new System.Drawing.Size(947, 540);
+            this.repackPanel.Size = new System.Drawing.Size(276, 20);
             this.repackPanel.TabIndex = 161;
             this.repackPanel.Visible = false;
+            // 
+            // origpriceTxt
+            // 
+            this.origpriceTxt.AutoSize = true;
+            this.origpriceTxt.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.origpriceTxt.ForeColor = System.Drawing.Color.White;
+            this.origpriceTxt.Location = new System.Drawing.Point(674, 312);
+            this.origpriceTxt.Name = "origpriceTxt";
+            this.origpriceTxt.Size = new System.Drawing.Size(99, 28);
+            this.origpriceTxt.TabIndex = 24;
+            this.origpriceTxt.Text = "Orig price";
+            this.origpriceTxt.Visible = false;
+            // 
+            // reorderTxt
+            // 
+            this.reorderTxt.AutoSize = true;
+            this.reorderTxt.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reorderTxt.ForeColor = System.Drawing.Color.White;
+            this.reorderTxt.Location = new System.Drawing.Point(674, 271);
+            this.reorderTxt.Name = "reorderTxt";
+            this.reorderTxt.Size = new System.Drawing.Size(82, 28);
+            this.reorderTxt.TabIndex = 23;
+            this.reorderTxt.Text = "Reorder";
+            this.reorderTxt.Visible = false;
+            // 
+            // descTxt
+            // 
+            this.descTxt.AutoSize = true;
+            this.descTxt.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descTxt.ForeColor = System.Drawing.Color.White;
+            this.descTxt.Location = new System.Drawing.Point(674, 130);
+            this.descTxt.Name = "descTxt";
+            this.descTxt.Size = new System.Drawing.Size(52, 28);
+            this.descTxt.TabIndex = 20;
+            this.descTxt.Text = "Desc";
+            this.descTxt.Visible = false;
+            // 
+            // unitTxt
+            // 
+            this.unitTxt.AutoSize = true;
+            this.unitTxt.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unitTxt.ForeColor = System.Drawing.Color.White;
+            this.unitTxt.Location = new System.Drawing.Point(674, 176);
+            this.unitTxt.Name = "unitTxt";
+            this.unitTxt.Size = new System.Drawing.Size(48, 28);
+            this.unitTxt.TabIndex = 19;
+            this.unitTxt.Text = "Unit";
+            this.unitTxt.Visible = false;
+            // 
+            // expirableTxt
+            // 
+            this.expirableTxt.AutoSize = true;
+            this.expirableTxt.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.expirableTxt.ForeColor = System.Drawing.Color.White;
+            this.expirableTxt.Location = new System.Drawing.Point(674, 222);
+            this.expirableTxt.Name = "expirableTxt";
+            this.expirableTxt.Size = new System.Drawing.Size(96, 28);
+            this.expirableTxt.TabIndex = 18;
+            this.expirableTxt.Text = "Expirable";
+            this.expirableTxt.Visible = false;
             // 
             // productTxt
             // 
@@ -488,65 +552,45 @@
             this.reorderBtn.UseVisualStyleBackColor = false;
             this.reorderBtn.Visible = false;
             // 
-            // expirableTxt
+            // panel1
             // 
-            this.expirableTxt.AutoSize = true;
-            this.expirableTxt.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.expirableTxt.ForeColor = System.Drawing.Color.White;
-            this.expirableTxt.Location = new System.Drawing.Point(674, 222);
-            this.expirableTxt.Name = "expirableTxt";
-            this.expirableTxt.Size = new System.Drawing.Size(96, 28);
-            this.expirableTxt.TabIndex = 18;
-            this.expirableTxt.Text = "Expirable";
-            this.expirableTxt.Visible = false;
+            this.panel1.BackColor = System.Drawing.Color.Red;
+            this.panel1.Location = new System.Drawing.Point(99, 58);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(22, 17);
+            this.panel1.TabIndex = 68;
             // 
-            // unitTxt
+            // panel2
             // 
-            this.unitTxt.AutoSize = true;
-            this.unitTxt.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unitTxt.ForeColor = System.Drawing.Color.White;
-            this.unitTxt.Location = new System.Drawing.Point(674, 176);
-            this.unitTxt.Name = "unitTxt";
-            this.unitTxt.Size = new System.Drawing.Size(48, 28);
-            this.unitTxt.TabIndex = 19;
-            this.unitTxt.Text = "Unit";
-            this.unitTxt.Visible = false;
+            this.panel2.BackColor = System.Drawing.Color.Lime;
+            this.panel2.Location = new System.Drawing.Point(260, 58);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(22, 17);
+            this.panel2.TabIndex = 69;
             // 
-            // descTxt
+            // label7
             // 
-            this.descTxt.AutoSize = true;
-            this.descTxt.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descTxt.ForeColor = System.Drawing.Color.White;
-            this.descTxt.Location = new System.Drawing.Point(674, 130);
-            this.descTxt.Name = "descTxt";
-            this.descTxt.Size = new System.Drawing.Size(52, 28);
-            this.descTxt.TabIndex = 20;
-            this.descTxt.Text = "Desc";
-            this.descTxt.Visible = false;
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Tw Cen MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(127, 58);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(66, 15);
+            this.label7.TabIndex = 163;
+            this.label7.Text = "Low Stocks";
             // 
-            // reorderTxt
+            // label8
             // 
-            this.reorderTxt.AutoSize = true;
-            this.reorderTxt.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reorderTxt.ForeColor = System.Drawing.Color.White;
-            this.reorderTxt.Location = new System.Drawing.Point(674, 271);
-            this.reorderTxt.Name = "reorderTxt";
-            this.reorderTxt.Size = new System.Drawing.Size(82, 28);
-            this.reorderTxt.TabIndex = 23;
-            this.reorderTxt.Text = "Reorder";
-            this.reorderTxt.Visible = false;
-            // 
-            // origpriceTxt
-            // 
-            this.origpriceTxt.AutoSize = true;
-            this.origpriceTxt.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.origpriceTxt.ForeColor = System.Drawing.Color.White;
-            this.origpriceTxt.Location = new System.Drawing.Point(674, 312);
-            this.origpriceTxt.Name = "origpriceTxt";
-            this.origpriceTxt.Size = new System.Drawing.Size(99, 28);
-            this.origpriceTxt.TabIndex = 24;
-            this.origpriceTxt.Text = "Orig price";
-            this.origpriceTxt.Visible = false;
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Tw Cen MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(292, 60);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(55, 15);
+            this.label8.TabIndex = 164;
+            this.label8.Text = "Sufficient";
             // 
             // Inventory
             // 
@@ -556,6 +600,10 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(971, 564);
             this.ControlBox = false;
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.quitBtn);
             this.Controls.Add(this.repackPanel);
             this.Controls.Add(this.reorderBtn);
@@ -621,5 +669,9 @@
         private System.Windows.Forms.Label expirableTxt;
         private System.Windows.Forms.Label reorderTxt;
         private System.Windows.Forms.Label origpriceTxt;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }

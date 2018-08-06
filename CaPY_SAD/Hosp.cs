@@ -27,20 +27,19 @@ namespace CaPY_SAD
             detailPanel.Size = new Size(1134, 336);
             detailPanel.Location = new Point(21, 604);
             detailPanel.Visible = true;
-            addvitalBtn.Enabled = false;
-            addProdBtn.Enabled = false;
             checkoutBtn.Enabled = false;
             loadCageData();
             loadpets();
             service();
+
             services.Columns.Add("serv_id", typeof(string));
             services.Columns.Add("pet_id", typeof(string));
             services.Columns.Add("Service", typeof(string));
             services.Columns.Add("Pet", typeof(string));
             services.Columns.Add("Price", typeof(string));
-
-
-
+            
+            
+           
         }
 
         public void loadCageData()
@@ -217,8 +216,7 @@ namespace CaPY_SAD
    
         private void dtgvCage_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            addvitalBtn.Enabled = true;
-            addProdBtn.Enabled = true;
+        
 
             if (e.RowIndex > -1)
             {
@@ -299,8 +297,7 @@ namespace CaPY_SAD
            
             detailPanel.Visible = false;
            // addHospBtn.Enabled = false;
-            addvitalBtn.Enabled = true;
-            addProdBtn.Enabled = true;
+        
 
             if (e.RowIndex > -1)
             {
@@ -332,14 +329,12 @@ namespace CaPY_SAD
         {
           
             addHospBtn.Enabled = true;
-            addvitalBtn.Enabled = false;
-            addProdBtn.Enabled = false;
+           
         }
 
         private void Hosp_VisibleChanged(object sender, EventArgs e)
         {
-            addvitalBtn.Enabled = false;
-            addProdBtn.Enabled = false;
+            
             loadCageData();
             loadHospData();
 
@@ -393,8 +388,8 @@ namespace CaPY_SAD
         {
             addEndorsedPanel.Visible = true;
             addEndorsedPanel.Enabled = true;
-            addEndorsedPanel.Size = new Size(551, 343);
-            addEndorsedPanel.Location = new Point(0,0); 
+            addEndorsedPanel.Size = new Size(572, 290);
+            addEndorsedPanel.Location = new Point(548, 4); 
         }
 
         private void endorsedBackBtn_Click(object sender, EventArgs e)
@@ -409,67 +404,6 @@ namespace CaPY_SAD
             addEndorsedPanel.Enabled = false;
         }
 
-        private void addProdBtn_Click(object sender, EventArgs e)
-        {
-            addProdPaneldtgv.Visible = true;
-            addProdPaneldtgv.Enabled = true;
-            addProdPaneldtgv.Size = new Size(540, 279); 
-            addProdPaneldtgv.Location = new Point(20, 4);
-
-            Addproducts();
-        }
-
-
-        private void BtnExitProd_Click(object sender, EventArgs e)
-        {
-            addProdPaneldtgv.Visible = false;
-        }
-
-        public void Addproducts()
-        {
-            
-
-            String query_inventory = "SELECT product_inventory.id as id, products.name as product, quantity,  DATE_FORMAT(expiration_date, '%Y/%m/%d') as expiration_date FROM products, product_inventory WHERE (expiration_date = '0000/00/00' OR expiration_date > CURDATE()) AND product_inventory.products_id = products.id AND status = 'available'  ";
-
-            conn.Open();
-            MySqlCommand comm = new MySqlCommand(query_inventory, conn);
-            MySqlDataAdapter adp_inventory = new MySqlDataAdapter(comm);
-            conn.Close();
-            DataTable dt_inventory = new DataTable();
-            adp_inventory.Fill(dt_inventory);
-
-
-            dtgvAvailProd.DataSource = dt_inventory;
-            dtgvAvailProd.Columns["id"].Visible = false;
-            dtgvAvailProd.Columns["product"].HeaderText = "Product";
-            dtgvAvailProd.Columns["quantity"].HeaderText = "Quantity";
-            dtgvAvailProd.Columns["expiration_date"].HeaderText = "Expiration Date";
-
-
-        }
-
-
-        public void HospProds()
-        {
-            String query_inventory = "SELECT * from hosp_prods WHERE hospitalization_id = "+selected_data.hosp_id+"";
-
-            conn.Open();
-            MySqlCommand comm = new MySqlCommand(query_inventory, conn);
-            MySqlDataAdapter adp_inventory = new MySqlDataAdapter(comm);
-            conn.Close();
-            DataTable dt_inventory = new DataTable();
-            adp_inventory.Fill(dt_inventory);
-
-
-            dtgvAddProd.DataSource = dt_inventory;
-            dtgvAddProd.Columns["hospitalization_id"].Visible = false;
-            dtgvAddProd.Columns["id"].Visible = false;
-            dtgvAddProd.Columns["name"].HeaderText = "Product";
-            dtgvAddProd.Columns["price"].HeaderText = "Price";
-            dtgvAddProd.Columns["quantity"].HeaderText = "Quantity";
-            dtgvAddProd.Columns["subtotal"].HeaderText = "Subtotal";
-
-        }
 
 
         public void EndorsedProds()
@@ -602,7 +536,19 @@ namespace CaPY_SAD
             }
             else
             {
-                string query_hospprods = "INSERT INTO endorsed_prods (hospitalization_id,name,quantity,expiration_date) VALUES(" + selected_data.hosp_id + ", '" + addEndorsedname.Text + "',  '" + endorsedQuanNum.Text + "',  '" + expirationDtp.Text+ "')";
+                int med;
+
+                if (MedCbox.Checked == true)
+                {
+                    med = 1;
+                }
+                else
+                {
+                    med = 0;
+                }
+
+
+                string query_hospprods = "INSERT INTO endorsed_prods (hospitalization_id,name,quantity,expiration_date,medicine) VALUES(" + selected_data.hosp_id + ", '" + addEndorsedname.Text + "',  '" + endorsedQuanNum.Text + "',  '" + expirationDtp.Text+ "',"+med+")";
                 conn.Open();
                 MySqlCommand comm_hospprods = new MySqlCommand(query_hospprods, conn);
                 comm_hospprods.ExecuteNonQuery();
@@ -938,8 +884,6 @@ namespace CaPY_SAD
             ServTotalTxt.Text = total.ToString();
         }
 
-
-
         private void ServTotalTxt_TextChanged(object sender, EventArgs e)
         {
             decimal total;
@@ -952,6 +896,150 @@ namespace CaPY_SAD
 
         }
 
+
+
+        public static int selected_prod;
+        private void dtgvAvailProd_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex > -1)
+            {
+                addProdPaneldtgv.Visible = true;
+                selected_prod = int.Parse(dtgvAvailProd.Rows[e.RowIndex].Cells["prod_id"].Value.ToString());
+                hosp_prod_quan.Maximum = int.Parse(dtgvAvailProd.Rows[e.RowIndex].Cells["quantity"].Value.ToString());
+                load_prod_details();
+                addProdPaneldtgv.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("Please select a service!");
+            }
+       
+        }
+
+
+        private void addProdBtn_Click(object sender, EventArgs e)
+        {
+            addProdPaneldtgv.Visible = true;
+            addProdPaneldtgv.Enabled = true;
+            addProdPaneldtgv.Size = new Size(540, 279);
+            addProdPaneldtgv.Location = new Point(20, 4);
+
+            Addproducts();
+        }
+
+
+        private void BtnExitProd_Click(object sender, EventArgs e)
+        {
+            addProdPaneldtgv.Visible = false;
+        }
+
+        public void Addproducts()
+        {
+
+            String query_inventory = "SELECT product_inventory.id as id, products.id as prod_id, products.name as product, quantity,  DATE_FORMAT(expiration_date, '%Y/%m/%d') as expiration_date FROM products, product_inventory WHERE (expiration_date = '0000/00/00' OR expiration_date > CURDATE()) AND product_inventory.products_id = products.id AND status = 'available'";
+
+            conn.Open();
+            MySqlCommand comm = new MySqlCommand(query_inventory, conn);
+            MySqlDataAdapter adp_inventory = new MySqlDataAdapter(comm);
+            conn.Close();
+            DataTable dt_inventory = new DataTable();
+            adp_inventory.Fill(dt_inventory);
+
+
+            dtgvAvailProd.DataSource = dt_inventory;
+            dtgvAvailProd.Columns["id"].Visible = false;
+            dtgvAvailProd.Columns["prod_id"].Visible = false;
+            dtgvAvailProd.Columns["product"].HeaderText = "Product";
+            dtgvAvailProd.Columns["quantity"].HeaderText = "Quantity";
+            dtgvAvailProd.Columns["expiration_date"].HeaderText = "Expiration Date";
+
+
+        }
+
+
+        public void HospProds()
+        {
+            String query_inventory = "SELECT * from hosp_prods WHERE hospitalization_id = " + selected_data.hosp_id + "";
+
+            conn.Open();
+            MySqlCommand comm = new MySqlCommand(query_inventory, conn);
+            MySqlDataAdapter adp_inventory = new MySqlDataAdapter(comm);
+            conn.Close();
+            DataTable dt_inventory = new DataTable();
+            adp_inventory.Fill(dt_inventory);
+
+
+            dtgvAddProd.DataSource = dt_inventory;
+            dtgvAddProd.Columns["hospitalization_id"].Visible = false;
+            dtgvAddProd.Columns["id"].Visible = false;
+            dtgvAddProd.Columns["products_id"].HeaderText = "Product";
+            dtgvAddProd.Columns["quantity"].HeaderText = "Quantity";
+            dtgvAddProd.Columns["subtotal"].HeaderText = "Subtotal";
+
+        }
+
+
+        public static int medic_val;
+        public void load_prod_details()
+        {
+
+
+
+            String query_get_prod_det = "SELECT name,price,medicine from products WHERE id = " + selected_prod + "";
+            MySqlCommand comm_get_prod_det = new MySqlCommand(query_get_prod_det, conn);
+            comm_get_prod_det.CommandText = query_get_prod_det;
+
+
+
+            conn.Open();
+            MySqlDataReader drd_get_prod_det = comm_get_prod_det.ExecuteReader();
+
+            while (drd_get_prod_det.Read())
+            {
+                hosp_prod_name.Text = drd_get_prod_det["name"].ToString();
+                hosp_prod_price.Text = drd_get_prod_det["price"].ToString();
+                medic_val = int.Parse(drd_get_prod_det["medicine"].ToString());
+
+            }
+
+
+            conn.Close();
+
+            hospprodPanel.Visible = true;
+            hospprodPanel.Enabled = true;
+            hospprodPanel.Size = new Size(540, 279);
+            hospprodPanel.Location = new Point(20, 4);
+
+            /* guide lang
+            hosp_prods.Columns.Add("hosp_id", typeof(string));
+            hosp_prods.Columns.Add("prod_id", typeof(string));
+            hosp_prods.Columns.Add("product", typeof(string));
+            hosp_prods.Columns.Add("Price", typeof(string));
+            hosp_prods.Columns.Add("Quantity", typeof(string));
+            hosp_prods.Columns.Add("Subtotal", typeof(string));
+            */
+      
+        }
+        
+
+        private void CancelHospProds_Click(object sender, EventArgs e)
+        {
+            hospprodPanel.Visible = false;
+        }
+
+        private void SaveHospProds_Click(object sender, EventArgs e)
+        {
+            hospprodPanel.Visible = true;
+        }
+
+        private void hosp_prod_quan_ValueChanged(object sender, EventArgs e)
+        {
+            decimal price = decimal.Parse(hosp_prod_price.Text);
+            decimal subtotal = price * hosp_prod_quan.Value;
+
+            hosp_prod_subtotal.Text = subtotal.ToString();
+        }
     }
 
 }
