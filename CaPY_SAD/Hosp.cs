@@ -30,6 +30,7 @@ namespace CaPY_SAD
             checkoutBtn.Enabled = false;
             loadCageData();
             loadpets();
+        
             service();
 
             services.Columns.Add("serv_id", typeof(string));
@@ -309,7 +310,7 @@ namespace CaPY_SAD
                 loadVitals();
                 HospProds();
                 EndorsedProds();
-              
+                load_medicine_given();
                 getTotal();
             
                 if (dtgvHospitalization.Rows[e.RowIndex].Cells["status"].Value.ToString() == "discharged")
@@ -429,33 +430,7 @@ namespace CaPY_SAD
         public static int inv_id;
         private void dtgvAddProd_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex > -1)
-            {
-                int selected_id = int.Parse(dtgvAddProd.Rows[e.RowIndex].Cells["id"].Value.ToString());
-                inv_id = selected_id;
 
-                String query_prods = "SELECT product_inventory.id as id, products.name as product, products.price as price, quantity FROM products, product_inventory WHERE product_inventory.products_id = products.id AND  product_inventory.id  = " + inv_id + " ";
-
-                MySqlCommand comm_prods = new MySqlCommand(query_prods, conn);
-                comm_prods.CommandText = query_prods;
-
-                conn.Open();
-                MySqlDataReader drd_addprod = comm_prods.ExecuteReader();
-
-
-                while (drd_addprod.Read())
-                {
-                    addprodname.Text = drd_addprod["product"].ToString();                   
-                    addprodquan.Maximum = int.Parse(drd_addprod["quantity"].ToString());
-                    addprodprice.Text = drd_addprod["price"].ToString();
-                }
-                conn.Close();
-                addProdPaneldtgv.Visible = false;
-                addprodsPanel.Visible = true;
-                addprodsPanel.Size = new Size(454, 269);
-                addprodsPanel.Location = new Point(45, 756);
-
-            }
         }
 
         private void addCancelBtn_Click(object sender, EventArgs e)
@@ -469,46 +444,8 @@ namespace CaPY_SAD
 
         private void addprodsBtn_Click(object sender, EventArgs e)
         {
-            string query_hospprods = "INSERT INTO hosp_prods (hospitalization_id,name,quantity,price,subtotal) VALUES("+selected_data.hosp_id+", '"+addprodname.Text+ "',  '" + addprodquan.Text + "',  '" + addprodprice.Text + "', '" + subtotalTxt.Text + "')";
-            conn.Open();
-            MySqlCommand comm_hospprods = new MySqlCommand(query_hospprods, conn);
-            comm_hospprods.ExecuteNonQuery();
-            conn.Close();
+           
 
-            string query_add_quantity = "UPDATE product_inventory SET quantity = quantity - " + addprodquan.Value + " WHERE id = " + inv_id + " ";
-            conn.Open();
-            MySqlCommand comm_add_quantity = new MySqlCommand(query_add_quantity, conn);
-            comm_add_quantity.ExecuteNonQuery();
-            conn.Close();
-
-            string query_log = "INSERT INTO inventory_log (process_type,date,product,quantity,remarks,staff_id) VALUES('Stock Out (Hospitalization Product)' , current_timestamp(),'" + addprodname.Text + "','" + addprodquan.Text + "', 'Used in hospitalization', (SELECT staff.id FROM person,staff WHERE person.id = staff.person_id AND concat(firstname,' ', middlename,' ',lastname) = '" + CaPY_SAD.Login.UserDisplayDetails.name + "'))";
-            conn.Open();
-            MySqlCommand comm_log = new MySqlCommand(query_log, conn);
-            comm_log.ExecuteNonQuery();
-            conn.Close();
-
-            string query_updateavail = "UPDATE product_inventory SET status = 'unavailable' WHERE quantity <= 0";
-            conn.Open();
-            MySqlCommand comm_updateavail = new MySqlCommand(query_updateavail, conn);
-            comm_updateavail.ExecuteNonQuery();
-            conn.Close();
-
-            getTotal();
-            HospProds();
-
-            string query_total = "UPDATE hospitalization SET subtotal = subtotal + "+decimal.Parse(totalTxt.Text)+" WHERE  id =  " + selected_data.hosp_id + "";
-
-            conn.Open();
-            MySqlCommand comm_total = new MySqlCommand(query_total, conn);
-            comm_total.ExecuteNonQuery();
-            conn.Close();
-
-            loadHospData();
-
-            addprodname.Text = "";
-            addprodprice.Text = "";
-            addprodquan.Maximum = 1000;
-            addprodsPanel.Visible = false;
 
         }
 
@@ -541,12 +478,20 @@ namespace CaPY_SAD
                 if (MedCbox.Checked == true)
                 {
                     med = 1;
+
+                    string medicine_insert = "INSERT INTO medicines_given (pets_id,medicine_name,endorsed,given_on) VALUES(" + pets_id + ", '" + addEndorsedname.Text + "', 'Endorsed', current_timestamp())";
+                    conn.Open();
+                    MySqlCommand comm_medinsert = new MySqlCommand(medicine_insert, conn);
+                    comm_medinsert.ExecuteNonQuery();
+                    conn.Close();
+                    load_medicine_given();
                 }
                 else
                 {
                     med = 0;
-                }
 
+                    
+                }
 
                 string query_hospprods = "INSERT INTO endorsed_prods (hospitalization_id,name,quantity,expiration_date,medicine) VALUES(" + selected_data.hosp_id + ", '" + addEndorsedname.Text + "',  '" + endorsedQuanNum.Text + "',  '" + expirationDtp.Text+ "',"+med+")";
                 conn.Open();
@@ -635,14 +580,14 @@ namespace CaPY_SAD
         private void btnSaveAllergy_Click(object sender, EventArgs e)
         {
 
-            if (allergtTxt.Text == "")
+            if (allergyTxt.Text == "")
             {
                 MessageBox.Show("Please fill up all fields!", "Missing Fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
             {
-                string query_hospprods = "INSERT INTO allergies (pets_id,pet_allergy,recorded_on) VALUES("+ pets_id + ",'" + allergtTxt.Text + "',current_timestamp())";
+                string query_hospprods = "INSERT INTO allergies (pets_id,pet_allergy,recorded_on) VALUES("+ pets_id + ",'" + allergyTxt.Text + "',current_timestamp())";
                 conn.Open();
                 MySqlCommand comm_hospprods = new MySqlCommand(query_hospprods, conn);
                 comm_hospprods.ExecuteNonQuery();
@@ -651,7 +596,7 @@ namespace CaPY_SAD
                 addEndorsedPanel.Visible = false;
                 addEndorsedPanel.Enabled = false;
                 MessageBox.Show("Added Allegy");
-                allergtTxt.Text = "";
+                allergyTxt.Text = "";
                 allergyPanel.Visible = false;
                 loadAllergies();
             }
@@ -960,7 +905,7 @@ namespace CaPY_SAD
 
         public void HospProds()
         {
-            String query_inventory = "SELECT * from hosp_prods WHERE hospitalization_id = " + selected_data.hosp_id + "";
+            String query_inventory = "SELECT products.name as pname,hospitalization_id,hosp_prods.id,products_id,quantity,subtotal from products,hosp_prods WHERE products.id = products_id AND hospitalization_id = " + selected_data.hosp_id + "";
 
             conn.Open();
             MySqlCommand comm = new MySqlCommand(query_inventory, conn);
@@ -973,7 +918,8 @@ namespace CaPY_SAD
             dtgvAddProd.DataSource = dt_inventory;
             dtgvAddProd.Columns["hospitalization_id"].Visible = false;
             dtgvAddProd.Columns["id"].Visible = false;
-            dtgvAddProd.Columns["products_id"].HeaderText = "Product";
+            dtgvAddProd.Columns["products_id"].Visible = false;
+            dtgvAddProd.Columns["pname"].HeaderText = "Product";
             dtgvAddProd.Columns["quantity"].HeaderText = "Quantity";
             dtgvAddProd.Columns["subtotal"].HeaderText = "Subtotal";
 
@@ -983,8 +929,6 @@ namespace CaPY_SAD
         public static int medic_val;
         public void load_prod_details()
         {
-
-
 
             String query_get_prod_det = "SELECT name,price,medicine from products WHERE id = " + selected_prod + "";
             MySqlCommand comm_get_prod_det = new MySqlCommand(query_get_prod_det, conn);
@@ -999,7 +943,17 @@ namespace CaPY_SAD
             {
                 hosp_prod_name.Text = drd_get_prod_det["name"].ToString();
                 hosp_prod_price.Text = drd_get_prod_det["price"].ToString();
+                hosp_prod_subtotal.Text = hosp_prod_price.Text;
                 medic_val = int.Parse(drd_get_prod_det["medicine"].ToString());
+
+                if (medic_val == 1)
+                {
+                    medCbxHospProd.Checked = true;
+                }
+                else
+                {
+                    medCbxHospProd.Checked = false;
+                }
 
             }
 
@@ -1030,7 +984,48 @@ namespace CaPY_SAD
 
         private void SaveHospProds_Click(object sender, EventArgs e)
         {
-            hospprodPanel.Visible = true;
+
+            if (medic_val == 1)
+            {
+                string medicine_insert = "INSERT INTO medicines_given (pets_id,hosp_id,medicine_name,endorsed,given_on) VALUES(" + pets_id + ","+ selected_data.hosp_id + ", '" + hosp_prod_name.Text + "', 'Inventory', current_timestamp())";
+                conn.Open();
+                MySqlCommand comm_medinsert = new MySqlCommand(medicine_insert, conn);
+                comm_medinsert.ExecuteNonQuery();
+                conn.Close();
+                load_medicine_given();
+            }
+            string query_hospprods = "INSERT INTO hosp_prods (hospitalization_id,products_id,quantity,subtotal) VALUES(" + selected_data.hosp_id + ", '" + selected_prod + "',  " + hosp_prod_quan.Value + ", '" + hosp_prod_subtotal.Text + "')";
+            conn.Open();
+            MySqlCommand comm_hospprods = new MySqlCommand(query_hospprods, conn);
+            comm_hospprods.ExecuteNonQuery();
+            conn.Close();
+
+            string query_add_quantity = "UPDATE product_inventory SET quantity = quantity - " + hosp_prod_quan.Value + " WHERE id = " + inv_id + " ";
+            conn.Open();
+            MySqlCommand comm_add_quantity = new MySqlCommand(query_add_quantity, conn);
+            comm_add_quantity.ExecuteNonQuery();
+            conn.Close();
+
+            string query_log = "INSERT INTO inventory_log (process_type,date,product,quantity,remarks,staff_id) VALUES('Stock Out (Hospitalization Product)' , current_timestamp(),'" + hosp_prod_name.Text + "','" + hosp_prod_quan.Text + "', 'Used in hospitalization', (SELECT staff.id FROM person,staff WHERE person.id = staff.person_id AND concat(firstname,' ', middlename,' ',lastname) = '" + CaPY_SAD.Login.UserDisplayDetails.name + "'))";
+            conn.Open();
+            MySqlCommand comm_log = new MySqlCommand(query_log, conn);
+            comm_log.ExecuteNonQuery();
+            conn.Close();
+
+            string query_updateavail = "UPDATE product_inventory SET status = 'unavailable' WHERE quantity <= 0";
+            conn.Open();
+            MySqlCommand comm_updateavail = new MySqlCommand(query_updateavail, conn);
+            comm_updateavail.ExecuteNonQuery();
+            conn.Close();
+
+
+            HospProds();
+
+            loadHospData();
+            hospprodPanel.Visible = false;
+
+
+
         }
 
         private void hosp_prod_quan_ValueChanged(object sender, EventArgs e)
@@ -1039,6 +1034,27 @@ namespace CaPY_SAD
             decimal subtotal = price * hosp_prod_quan.Value;
 
             hosp_prod_subtotal.Text = subtotal.ToString();
+        }
+
+        public void load_medicine_given()
+        {
+            String medicine_load = "SELECT * FROM medicines_given WHERE hosp_id = " + selected_data.hosp_id + "";
+
+            conn.Open();
+            MySqlCommand comm_loadmeds = new MySqlCommand(medicine_load, conn);
+            MySqlDataAdapter adp_loadmeds = new MySqlDataAdapter(comm_loadmeds);
+            conn.Close();
+            DataTable dt_meds = new DataTable();
+            adp_loadmeds.Fill(dt_meds);
+
+            dtgvMeds.DataSource = dt_meds;
+            dtgvMeds.Columns["id"].Visible = false;
+            dtgvMeds.Columns["pets_id"].Visible = false;
+            dtgvMeds.Columns["hosp_id"].Visible = false;
+            dtgvMeds.Columns["medicine_name"].HeaderText = "Medicine Name";
+            dtgvMeds.Columns["endorsed"].HeaderText = "Medicine Source";
+            dtgvMeds.Columns["given_on"].HeaderText = "Date Given";
+
         }
     }
 
