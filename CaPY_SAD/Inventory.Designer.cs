@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inventory));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,11 +36,7 @@
             this.quitBtn = new System.Windows.Forms.Button();
             this.logBtn = new System.Windows.Forms.Button();
             this.repackBtn = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.MainInv = new System.Windows.Forms.TabPage();
             this.dtgvInventory = new System.Windows.Forms.DataGridView();
-            this.RepackInv = new System.Windows.Forms.TabPage();
-            this.dtgvRepack = new System.Windows.Forms.DataGridView();
             this.repackPanel = new System.Windows.Forms.Panel();
             this.origpriceTxt = new System.Windows.Forms.Label();
             this.reorderTxt = new System.Windows.Forms.Label();
@@ -67,11 +61,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
-            this.MainInv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvInventory)).BeginInit();
-            this.RepackInv.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvRepack)).BeginInit();
             this.repackPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.repackBy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repackedQuan)).BeginInit();
@@ -148,28 +138,6 @@
             this.repackBtn.UseVisualStyleBackColor = false;
             this.repackBtn.Click += new System.EventHandler(this.repackBtn_Click);
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.MainInv);
-            this.tabControl1.Controls.Add(this.RepackInv);
-            this.tabControl1.Location = new System.Drawing.Point(12, 102);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(947, 450);
-            this.tabControl1.TabIndex = 79;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
-            // 
-            // MainInv
-            // 
-            this.MainInv.Controls.Add(this.dtgvInventory);
-            this.MainInv.Location = new System.Drawing.Point(4, 22);
-            this.MainInv.Name = "MainInv";
-            this.MainInv.Padding = new System.Windows.Forms.Padding(3);
-            this.MainInv.Size = new System.Drawing.Size(939, 424);
-            this.MainInv.TabIndex = 0;
-            this.MainInv.Text = "Main Inventory";
-            this.MainInv.UseVisualStyleBackColor = true;
-            // 
             // dtgvInventory
             // 
             this.dtgvInventory.AllowUserToAddRows = false;
@@ -178,51 +146,6 @@
             this.dtgvInventory.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtgvInventory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvInventory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dtgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvInventory.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dtgvInventory.Location = new System.Drawing.Point(3, 0);
-            this.dtgvInventory.Name = "dtgvInventory";
-            this.dtgvInventory.ReadOnly = true;
-            this.dtgvInventory.RowHeadersVisible = false;
-            this.dtgvInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvInventory.Size = new System.Drawing.Size(933, 424);
-            this.dtgvInventory.TabIndex = 66;
-            this.dtgvInventory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvInventory_CellClick);
-            // 
-            // RepackInv
-            // 
-            this.RepackInv.Controls.Add(this.dtgvRepack);
-            this.RepackInv.Location = new System.Drawing.Point(4, 22);
-            this.RepackInv.Name = "RepackInv";
-            this.RepackInv.Padding = new System.Windows.Forms.Padding(3);
-            this.RepackInv.Size = new System.Drawing.Size(939, 424);
-            this.RepackInv.TabIndex = 1;
-            this.RepackInv.Text = "Repack Inventory";
-            this.RepackInv.UseVisualStyleBackColor = true;
-            // 
-            // dtgvRepack
-            // 
-            this.dtgvRepack.AllowUserToAddRows = false;
-            this.dtgvRepack.AllowUserToDeleteRows = false;
-            this.dtgvRepack.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvRepack.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dtgvRepack.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtgvRepack.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -230,8 +153,8 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvRepack.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dtgvRepack.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dtgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -239,14 +162,15 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvRepack.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dtgvRepack.Location = new System.Drawing.Point(3, 0);
-            this.dtgvRepack.Name = "dtgvRepack";
-            this.dtgvRepack.ReadOnly = true;
-            this.dtgvRepack.RowHeadersVisible = false;
-            this.dtgvRepack.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvRepack.Size = new System.Drawing.Size(933, 424);
-            this.dtgvRepack.TabIndex = 67;
+            this.dtgvInventory.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dtgvInventory.Location = new System.Drawing.Point(12, 128);
+            this.dtgvInventory.Name = "dtgvInventory";
+            this.dtgvInventory.ReadOnly = true;
+            this.dtgvInventory.RowHeadersVisible = false;
+            this.dtgvInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvInventory.Size = new System.Drawing.Size(947, 424);
+            this.dtgvInventory.TabIndex = 66;
+            this.dtgvInventory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvInventory_CellClick);
             // 
             // repackPanel
             // 
@@ -270,7 +194,7 @@
             this.repackPanel.Controls.Add(this.addLabel);
             this.repackPanel.Location = new System.Drawing.Point(12, 12);
             this.repackPanel.Name = "repackPanel";
-            this.repackPanel.Size = new System.Drawing.Size(276, 20);
+            this.repackPanel.Size = new System.Drawing.Size(181, 28);
             this.repackPanel.TabIndex = 161;
             this.repackPanel.Visible = false;
             // 
@@ -555,7 +479,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Red;
-            this.panel1.Location = new System.Drawing.Point(99, 58);
+            this.panel1.Location = new System.Drawing.Point(14, 90);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(22, 17);
             this.panel1.TabIndex = 68;
@@ -563,7 +487,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Lime;
-            this.panel2.Location = new System.Drawing.Point(260, 58);
+            this.panel2.Location = new System.Drawing.Point(122, 90);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(22, 17);
             this.panel2.TabIndex = 69;
@@ -574,7 +498,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Tw Cen MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(127, 58);
+            this.label7.Location = new System.Drawing.Point(42, 90);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(66, 15);
             this.label7.TabIndex = 163;
@@ -586,7 +510,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Tw Cen MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(292, 60);
+            this.label8.Location = new System.Drawing.Point(154, 92);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(55, 15);
             this.label8.TabIndex = 164;
@@ -600,17 +524,17 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(971, 564);
             this.ControlBox = false;
+            this.Controls.Add(this.repackPanel);
+            this.Controls.Add(this.dtgvInventory);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.quitBtn);
-            this.Controls.Add(this.repackPanel);
             this.Controls.Add(this.reorderBtn);
             this.Controls.Add(this.repackBtn);
             this.Controls.Add(this.logBtn);
             this.Controls.Add(this.stockoutBtn);
-            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -622,11 +546,7 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Inventory_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Inventory_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Inventory_MouseUp);
-            this.tabControl1.ResumeLayout(false);
-            this.MainInv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvInventory)).EndInit();
-            this.RepackInv.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvRepack)).EndInit();
             this.repackPanel.ResumeLayout(false);
             this.repackPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.repackBy)).EndInit();
@@ -644,11 +564,7 @@
         private System.Windows.Forms.Button quitBtn;
         private System.Windows.Forms.Button logBtn;
         private System.Windows.Forms.Button repackBtn;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage MainInv;
         private System.Windows.Forms.DataGridView dtgvInventory;
-        private System.Windows.Forms.TabPage RepackInv;
-        private System.Windows.Forms.DataGridView dtgvRepack;
         private System.Windows.Forms.Panel repackPanel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown repackBy;

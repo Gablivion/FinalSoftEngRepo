@@ -26,7 +26,6 @@ namespace CaPY_SAD
         {
             stockoutBtn.Enabled = false;
             loadInventoryData();
-            repackProdsLoad();
 
         }
 
@@ -49,7 +48,7 @@ namespace CaPY_SAD
         public void loadInventoryData()
         {
 
-            String query_inventory = "SELECT product_inventory.id as id,reorder, products.name as product,volume, quantity, expiration_date FROM products, product_inventory WHERE product_inventory.products_id = products.id AND status = 'available' ";
+            String query_inventory = "SELECT product_inventory.id as id,reorder,medicine, products.name as product,volume, quantity, expiration_date FROM products, product_inventory WHERE product_inventory.products_id = products.id AND status = 'available' ";
 
             conn.Open();
             MySqlCommand comm = new MySqlCommand(query_inventory, conn);
@@ -61,6 +60,7 @@ namespace CaPY_SAD
             dtgvInventory.DataSource = dt_inventory;
             dtgvInventory.Columns["id"].Visible = false;
             dtgvInventory.Columns["reorder"].Visible = false;
+            dtgvInventory.Columns["medicine"].Visible = false;
             dtgvInventory.Columns["product"].HeaderText = "Product";
             dtgvInventory.Columns["quantity"].HeaderText = "Quantity";
             dtgvInventory.Columns["volume"].HeaderText = "Volume";
@@ -153,7 +153,6 @@ namespace CaPY_SAD
                 expirable = drd["expirable"].ToString();
                 reorder = drd["reorder"].ToString();
                 price = drd["price"].ToString();
-
                 descTxt.Text = desc;
                 unitTxt.Text = unit;
                 expirableTxt.Text = expirable;
@@ -164,18 +163,7 @@ namespace CaPY_SAD
 
         }
 
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (tabControl1.SelectedIndex == 0)
-            {
-                repackBtn.Visible = true;
-            
-            }
-            else
-            {
-                repackBtn.Visible = false;
-            }
-        }
+
 
         private void repackBtn_Click(object sender, EventArgs e)
         {
@@ -191,15 +179,16 @@ namespace CaPY_SAD
         {
             repackPanel.Visible = false;
         }
-
+        public static int medval;
         private void dtgvInventory_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex > -1)
             {
                 int selected_id = int.Parse(dtgvInventory.Rows[e.RowIndex].Cells["id"].Value.ToString());
                 selected_data.inventory_id = selected_id;
-
+                string name = dtgvInventory.Rows[e.RowIndex].Cells["product"].Value.ToString();
                 int quan = int.Parse(dtgvInventory.Rows[e.RowIndex].Cells["quantity"].Value.ToString());
+                medval = int.Parse(dtgvInventory.Rows[e.RowIndex].Cells["medicine"].Value.ToString());
                 int reorder = int.Parse(dtgvInventory.Rows[e.RowIndex].Cells["reorder"].Value.ToString());
                 if (quan <= reorder)
                 {
@@ -209,10 +198,20 @@ namespace CaPY_SAD
                 {
                     reorderBtn.Visible = false;
                 }
-              
 
-                stockoutBtn.Enabled = true;
-                repackBtn.Enabled = true;
+                if (name.Contains("Repacked by"))
+                {
+                    repackBtn.Enabled = false;
+                }
+                else
+                {
+                    repackBtn.Enabled = true;
+
+                }
+
+
+                    stockoutBtn.Enabled = true;
+             
 
             }
         }
@@ -239,11 +238,70 @@ namespace CaPY_SAD
        
         private void saveRepackBtn_Click(object sender, EventArgs e)
         {
+
+            string repacked_name = productTxt.Text + " (Repacked by " + repackBy.Text + " " + unitTxt.Text + " )";
+
+            String query_select = "SELECT * from products where name = '" + repacked_name + "'  AND archived = 'no' ";
+            conn.Open();
+            MySqlCommand comm_select = new MySqlCommand(query_select, conn);
+            MySqlDataAdapter adp = new MySqlDataAdapter(comm_select);
+            conn.Close();
+            DataTable dt = new DataTable();
+            adp.Fill(dt);
+
+            if (dt.Rows.Count == 1)
+            {
+                // DONT ADD A NEW PROFILE
+            }
+            else
+            {
+
+                //New product
+                string query_new = "INSERT INTO products(name,description,price,volume,unit,expirable,date_added,date_modified,archived,reorder,medicine)" +
+                                   "VALUES('" + repacked_name + "' ,'" + descTxt.Text + "','" + (decimal.Parse(origpriceTxt.Text) / int.Parse(repackedQuan.Text)) + "'," + repackBy.Value + ",'" + unitTxt.Text + "','" + expirable + "', current_timestamp(),current_timestamp(),'no'," + reorder + ","+ medval +")";
+                conn.Open();
+                MySqlCommand comm_new = new MySqlCommand(query_new, conn);
+                comm_new.ExecuteNonQuery();
+                conn.Close();
+
+            }
+
+            string query_inventory_duplicate = "SELECT expiration_date FROM product_inventory WHERE expiration_date = '" + exp + "' AND products_id = (SELECT id FROM products where name = '" + repacked_name + "')";
+            conn.Open();
+            MySqlCommand comm_inventory_duplicate = new MySqlCommand(query_inventory_duplicate, conn);
+            MySqlDataAdapter adp_inventory_duplicate = new MySqlDataAdapter(comm_inventory_duplicate);
+            conn.Close();
+            DataTable dt_inventory_duplicate = new DataTable();
+            adp_inventory_duplicate.Fill(dt_inventory_duplicate);
+
+            if (dt_inventory_duplicate.Rows.Count > 0)
+            {
+                // Increment Quantity of existing instance
+                string query_add_quantity = "UPDATE product_inventory set status = 'available', quantity = quantity + " + Quan.Value + " where products_id = (SELECT id FROM products where name = '" + repacked_name + "') AND  expiration_date = '" + exp + "'";
+                conn.Open();
+                MySqlCommand comm_add_quantity = new MySqlCommand(query_add_quantity, conn);
+                comm_add_quantity.ExecuteNonQuery();
+                conn.Close();
+                MessageBox.Show("update ");
+            }
+            else
+            {
+                // Add a new instance 
+                string query_inventory = "INSERT INTO product_inventory (products_id,quantity,expiration_date,status) VALUES((SELECT max(id) FROM products),'" + Quan.Value + "','" + exp + "', 'available')";
+                conn.Open();
+                MySqlCommand comm_inventory = new MySqlCommand(query_inventory, conn);
+                comm_inventory.ExecuteNonQuery();
+                conn.Close();
+
+            }
+            /*
             string query_repack = "INSERT INTO inventory_repack (product_inventory_id,product_inventory_products_id,quantity,status,expiration_date) VALUES(" + pid + "," + prod_id + "," + (int)(repackedQuan.Value) + ", 'available','" + exp + "')";
             conn.Open();
             MySqlCommand comm_repack = new MySqlCommand(query_repack, conn);
             comm_repack.ExecuteNonQuery();
             conn.Close();
+            */
+
 
             string query_subtract_quantity = "UPDATE product_inventory set quantity = quantity - " + int.Parse(Quan.Text) + " where product_inventory.id = '" + pid + "'";
             conn.Open();
@@ -263,17 +321,8 @@ namespace CaPY_SAD
             comm_updateavail.ExecuteNonQuery();
             conn.Close();
 
-            //New product
-            string query_new = "INSERT INTO products(name,description,price,volume,unit,expirable,date_added,date_modified,archived,reorder)" +
-                               "VALUES('" + productTxt.Text + " (Repacked)','" + descTxt.Text + "','" + (decimal.Parse(origpriceTxt.Text)/int.Parse(repackedQuan.Text)) + "'," + repackBy.Value + ",'" + unitTxt.Text + "','" + expirable + "', current_timestamp(),current_timestamp(),'no'," + reorder + ")";
-            conn.Open();
-            MySqlCommand comm_new = new MySqlCommand(query_new, conn);
-            comm_new.ExecuteNonQuery();
-            conn.Close();
+            MessageBox.Show("Item Repacked");
 
-            MessageBox.Show("Item Stocked out to Shelf");
-
-            repackProdsLoad();
             loadInventoryData();
             repackPanel.Visible = false;
 
@@ -284,23 +333,6 @@ namespace CaPY_SAD
             repackedQuan.Refresh();
         }
 
-        public void repackProdsLoad()
-        {
-            String query_repinventory = " SELECT inventory_repack.id as id,product_inventory_id,name,quantity, expiration_date from inventory_repack,products WHERE product_inventory_products_id = products.id";
-            conn.Open();
-            MySqlCommand comm_rep = new MySqlCommand(query_repinventory, conn);
-            MySqlDataAdapter adp_repinventory = new MySqlDataAdapter(comm_rep);
-            conn.Close();
-            DataTable dt_repinventory = new DataTable();
-            adp_repinventory.Fill(dt_repinventory);
-
-            dtgvRepack.DataSource = dt_repinventory;
-            dtgvRepack.Columns["id"].Visible = false;
-            dtgvRepack.Columns["product_inventory_id"].Visible = false;
-            dtgvRepack.Columns["name"].HeaderText = "Product";
-            dtgvRepack.Columns["quantity"].HeaderText = "Quantity";
-            dtgvRepack.Columns["expiration_date"].HeaderText = "Expiration Date";
-
-        }
+  
     }
 }

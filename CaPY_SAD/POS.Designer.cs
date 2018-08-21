@@ -141,7 +141,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Tw Cen MT", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(34, 214);
+            this.label5.Location = new System.Drawing.Point(25, 203);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(355, 43);
             this.label5.TabIndex = 42;
@@ -197,9 +197,9 @@
             this.paypanel.Controls.Add(this.label6);
             this.paypanel.Enabled = false;
             this.paypanel.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.paypanel.Location = new System.Drawing.Point(856, 491);
+            this.paypanel.Location = new System.Drawing.Point(892, 503);
             this.paypanel.Name = "paypanel";
-            this.paypanel.Size = new System.Drawing.Size(84, 30);
+            this.paypanel.Size = new System.Drawing.Size(61, 15);
             this.paypanel.TabIndex = 68;
             this.paypanel.Visible = false;
             // 
@@ -510,9 +510,9 @@
             this.prodpanel.Controls.Add(this.label19);
             this.prodpanel.Enabled = false;
             this.prodpanel.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.prodpanel.Location = new System.Drawing.Point(606, 177);
+            this.prodpanel.Location = new System.Drawing.Point(606, 130);
             this.prodpanel.Name = "prodpanel";
-            this.prodpanel.Size = new System.Drawing.Size(35, 21);
+            this.prodpanel.Size = new System.Drawing.Size(33, 68);
             this.prodpanel.TabIndex = 69;
             this.prodpanel.Visible = false;
             // 
@@ -737,7 +737,7 @@
             this.servPanel.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.servPanel.Location = new System.Drawing.Point(211, 8);
             this.servPanel.Name = "servPanel";
-            this.servPanel.Size = new System.Drawing.Size(88, 20);
+            this.servPanel.Size = new System.Drawing.Size(50, 20);
             this.servPanel.TabIndex = 78;
             this.servPanel.Visible = false;
             // 

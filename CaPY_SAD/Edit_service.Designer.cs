@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Edit_service));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -58,6 +58,8 @@
             this.cancelBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.editserviceBtn = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.bpriceTxt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvServicesProd)).BeginInit();
             this.prodPanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -97,11 +99,11 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(49, 171);
+            this.label4.Location = new System.Drawing.Point(17, 208);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 28);
+            this.label4.Size = new System.Drawing.Size(103, 28);
             this.label4.TabIndex = 96;
-            this.label4.Text = "Price";
+            this.label4.Text = "Total Price";
             // 
             // label3
             // 
@@ -109,7 +111,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(49, 124);
+            this.label3.Location = new System.Drawing.Point(12, 107);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 28);
             this.label3.TabIndex = 97;
@@ -121,7 +123,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(49, 77);
+            this.label2.Location = new System.Drawing.Point(26, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 28);
             this.label2.TabIndex = 95;
@@ -133,7 +135,7 @@
             this.availCbox.Depth = 0;
             this.availCbox.Enabled = false;
             this.availCbox.Font = new System.Drawing.Font("Roboto", 10F);
-            this.availCbox.Location = new System.Drawing.Point(160, 224);
+            this.availCbox.Location = new System.Drawing.Point(124, 257);
             this.availCbox.Margin = new System.Windows.Forms.Padding(0);
             this.availCbox.MouseLocation = new System.Drawing.Point(-1, -1);
             this.availCbox.MouseState = MaterialSkin.MouseState.HOVER;
@@ -149,7 +151,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(49, 221);
+            this.label5.Location = new System.Drawing.Point(13, 254);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(93, 28);
             this.label5.TabIndex = 102;
@@ -158,31 +160,31 @@
             // nameTxt
             // 
             this.nameTxt.Enabled = false;
-            this.nameTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameTxt.Location = new System.Drawing.Point(166, 80);
+            this.nameTxt.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameTxt.Location = new System.Drawing.Point(140, 54);
             this.nameTxt.MaxLength = 45;
             this.nameTxt.Name = "nameTxt";
-            this.nameTxt.Size = new System.Drawing.Size(213, 26);
+            this.nameTxt.Size = new System.Drawing.Size(280, 37);
             this.nameTxt.TabIndex = 1;
             // 
             // descTxt
             // 
             this.descTxt.Enabled = false;
-            this.descTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descTxt.Location = new System.Drawing.Point(165, 127);
+            this.descTxt.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descTxt.Location = new System.Drawing.Point(140, 107);
             this.descTxt.MaxLength = 45;
             this.descTxt.Name = "descTxt";
-            this.descTxt.Size = new System.Drawing.Size(213, 26);
+            this.descTxt.Size = new System.Drawing.Size(280, 37);
             this.descTxt.TabIndex = 2;
             // 
             // priceTxt
             // 
             this.priceTxt.Enabled = false;
-            this.priceTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceTxt.Location = new System.Drawing.Point(165, 174);
+            this.priceTxt.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceTxt.Location = new System.Drawing.Point(140, 208);
             this.priceTxt.MaxLength = 22;
             this.priceTxt.Name = "priceTxt";
-            this.priceTxt.Size = new System.Drawing.Size(213, 26);
+            this.priceTxt.Size = new System.Drawing.Size(280, 37);
             this.priceTxt.TabIndex = 3;
             // 
             // label7
@@ -206,23 +208,23 @@
             this.dtgvServicesProd.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtgvServicesProd.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvServicesProd.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvServicesProd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvServicesProd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dtgvServicesProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvServicesProd.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvServicesProd.DefaultCellStyle = dataGridViewCellStyle10;
             this.dtgvServicesProd.Location = new System.Drawing.Point(499, 98);
             this.dtgvServicesProd.MultiSelect = false;
             this.dtgvServicesProd.Name = "dtgvServicesProd";
@@ -238,7 +240,7 @@
             this.addBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(209)))), ((int)(((byte)(187)))));
             this.addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addBtn.Location = new System.Drawing.Point(818, 67);
+            this.addBtn.Location = new System.Drawing.Point(818, 69);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(65, 30);
             this.addBtn.TabIndex = 106;
@@ -251,7 +253,7 @@
             this.EditBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(156)))), ((int)(((byte)(120)))));
             this.EditBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditBtn.Location = new System.Drawing.Point(884, 67);
+            this.EditBtn.Location = new System.Drawing.Point(884, 69);
             this.EditBtn.Name = "EditBtn";
             this.EditBtn.Size = new System.Drawing.Size(65, 30);
             this.EditBtn.TabIndex = 107;
@@ -266,7 +268,7 @@
             this.prodPanel.Enabled = false;
             this.prodPanel.Location = new System.Drawing.Point(1, 0);
             this.prodPanel.Name = "prodPanel";
-            this.prodPanel.Size = new System.Drawing.Size(39, 51);
+            this.prodPanel.Size = new System.Drawing.Size(476, 385);
             this.prodPanel.TabIndex = 108;
             this.prodPanel.Visible = false;
             this.prodPanel.VisibleChanged += new System.EventHandler(this.prodPanel_VisibleChanged);
@@ -303,9 +305,9 @@
             this.cancelprodBtn.BackColor = System.Drawing.Color.White;
             this.cancelprodBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelprodBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelprodBtn.Location = new System.Drawing.Point(226, 230);
+            this.cancelprodBtn.Location = new System.Drawing.Point(233, 240);
             this.cancelprodBtn.Name = "cancelprodBtn";
-            this.cancelprodBtn.Size = new System.Drawing.Size(75, 30);
+            this.cancelprodBtn.Size = new System.Drawing.Size(87, 42);
             this.cancelprodBtn.TabIndex = 109;
             this.cancelprodBtn.Text = "CANCEL";
             this.cancelprodBtn.UseVisualStyleBackColor = false;
@@ -313,15 +315,15 @@
             // 
             // quantityTxt
             // 
-            this.quantityTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantityTxt.Location = new System.Drawing.Point(184, 165);
+            this.quantityTxt.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quantityTxt.Location = new System.Drawing.Point(139, 154);
             this.quantityTxt.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.quantityTxt.Name = "quantityTxt";
-            this.quantityTxt.Size = new System.Drawing.Size(181, 26);
+            this.quantityTxt.Size = new System.Drawing.Size(66, 37);
             this.quantityTxt.TabIndex = 107;
             this.quantityTxt.Value = new decimal(new int[] {
             1,
@@ -334,9 +336,9 @@
             this.addprodBtn.BackColor = System.Drawing.Color.White;
             this.addprodBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addprodBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addprodBtn.Location = new System.Drawing.Point(123, 230);
+            this.addprodBtn.Location = new System.Drawing.Point(111, 240);
             this.addprodBtn.Name = "addprodBtn";
-            this.addprodBtn.Size = new System.Drawing.Size(75, 30);
+            this.addprodBtn.Size = new System.Drawing.Size(87, 42);
             this.addprodBtn.TabIndex = 108;
             this.addprodBtn.Text = "SAVE";
             this.addprodBtn.UseVisualStyleBackColor = false;
@@ -348,7 +350,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(59, 114);
+            this.label8.Location = new System.Drawing.Point(25, 103);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(61, 28);
             this.label8.TabIndex = 105;
@@ -361,7 +363,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(59, 161);
+            this.label9.Location = new System.Drawing.Point(16, 159);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(89, 28);
             this.label9.TabIndex = 105;
@@ -370,11 +372,11 @@
             // 
             // nameCmb
             // 
-            this.nameCmb.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameCmb.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameCmb.FormattingEnabled = true;
-            this.nameCmb.Location = new System.Drawing.Point(184, 114);
+            this.nameCmb.Location = new System.Drawing.Point(139, 103);
             this.nameCmb.Name = "nameCmb";
-            this.nameCmb.Size = new System.Drawing.Size(182, 28);
+            this.nameCmb.Size = new System.Drawing.Size(249, 30);
             this.nameCmb.TabIndex = 106;
             // 
             // saveBtn
@@ -383,7 +385,7 @@
             this.saveBtn.Enabled = false;
             this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveBtn.Location = new System.Drawing.Point(113, 313);
+            this.saveBtn.Location = new System.Drawing.Point(90, 311);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(77, 34);
             this.saveBtn.TabIndex = 109;
@@ -397,7 +399,7 @@
             this.cancelBtn.Enabled = false;
             this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelBtn.Location = new System.Drawing.Point(208, 313);
+            this.cancelBtn.Location = new System.Drawing.Point(185, 311);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(77, 34);
             this.cancelBtn.TabIndex = 110;
@@ -408,6 +410,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(96)))), ((int)(((byte)(113)))));
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.bpriceTxt);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
@@ -420,7 +424,7 @@
             this.panel1.Controls.Add(this.saveBtn);
             this.panel1.Location = new System.Drawing.Point(34, 98);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(425, 374);
+            this.panel1.Size = new System.Drawing.Size(443, 374);
             this.panel1.TabIndex = 111;
             // 
             // editserviceBtn
@@ -428,13 +432,35 @@
             this.editserviceBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(156)))), ((int)(((byte)(120)))));
             this.editserviceBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editserviceBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editserviceBtn.Location = new System.Drawing.Point(394, 67);
+            this.editserviceBtn.Location = new System.Drawing.Point(413, 69);
             this.editserviceBtn.Name = "editserviceBtn";
             this.editserviceBtn.Size = new System.Drawing.Size(65, 30);
             this.editserviceBtn.TabIndex = 112;
             this.editserviceBtn.Text = "EDIT";
             this.editserviceBtn.UseVisualStyleBackColor = false;
             this.editserviceBtn.Click += new System.EventHandler(this.editserviceBtn_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(17, 159);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(99, 28);
+            this.label10.TabIndex = 111;
+            this.label10.Text = "Base Price";
+            // 
+            // bpriceTxt
+            // 
+            this.bpriceTxt.Enabled = false;
+            this.bpriceTxt.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bpriceTxt.Location = new System.Drawing.Point(140, 159);
+            this.bpriceTxt.MaxLength = 22;
+            this.bpriceTxt.Name = "bpriceTxt";
+            this.bpriceTxt.Size = new System.Drawing.Size(280, 37);
+            this.bpriceTxt.TabIndex = 113;
             // 
             // Edit_service
             // 
@@ -500,5 +526,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button editserviceBtn;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox bpriceTxt;
     }
 }

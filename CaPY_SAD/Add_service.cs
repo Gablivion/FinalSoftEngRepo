@@ -85,8 +85,8 @@ namespace CaPY_SAD
                 {
 
 
-                    string query = "INSERT INTO services(name,description,price,status,date_added,date_modified,archived)" +
-                                   "VALUES('" + nameTxt.Text + "','" + descTxt.Text + "','" + priceTxt.Text + "','available',current_timestamp(), current_timestamp(),'no')";
+                    string query = "INSERT INTO services(name,description,base_price,price,status,date_added,date_modified,archived)" +
+                                   "VALUES('" + nameTxt.Text + "','" + descTxt.Text + "','" + priceTxt.Text + "','" + priceTxt.Text + "','available',current_timestamp(), current_timestamp(),'no')";
                     conn.Open();
                     MySqlCommand comm = new MySqlCommand(query, conn);
                     comm.ExecuteNonQuery();

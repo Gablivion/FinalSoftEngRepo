@@ -77,6 +77,7 @@ namespace CaPY_SAD
             loadPetDetails();
             loadMedRec();
             loadAllergies();
+            load_medicine_given();
         }
 
         public void loadAllergies()
@@ -441,6 +442,27 @@ namespace CaPY_SAD
             editMedRecBtn.Enabled = false;
             archiveMedRecBtn.Enabled = false;
             addMedRecBtn.Enabled = false;
+        }
+
+        public void load_medicine_given()
+        {
+            String medicine_load = "SELECT * FROM medicines_given WHERE pets_id = " + pet_id + "";
+
+            conn.Open();
+            MySqlCommand comm_loadmeds = new MySqlCommand(medicine_load, conn);
+            MySqlDataAdapter adp_loadmeds = new MySqlDataAdapter(comm_loadmeds);
+            conn.Close();
+            DataTable dt_meds = new DataTable();
+            adp_loadmeds.Fill(dt_meds);
+
+            dtgvMed.DataSource = dt_meds;
+            dtgvMed.Columns["id"].Visible = false;
+            dtgvMed.Columns["pets_id"].Visible = false;
+            dtgvMed.Columns["hosp_id"].Visible = false;
+            dtgvMed.Columns["medicine_name"].HeaderText = "Medicine Name";
+            dtgvMed.Columns["endorsed"].HeaderText = "Medicine Source";
+            dtgvMed.Columns["given_on"].HeaderText = "Date Given";
+
         }
     }
 }

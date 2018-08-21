@@ -53,6 +53,7 @@ namespace CaPY_SAD
                 nameTxt.Text = (drd["name"].ToString());
                 descTxt.Text = (drd["description"].ToString());
                 priceTxt.Text = (drd["price"].ToString());
+                bpriceTxt.Text = (drd["base_price"].ToString());
 
                 if ((drd["status"].ToString()) == "available")
                 {
@@ -69,7 +70,7 @@ namespace CaPY_SAD
 
         public void loadServiceProds()
         {
-            String query_service= "SELECT service_products.id as id, products.name as prod, quantity FROM services,products,service_products WHERE service_products.products_id = products.id AND services_id = services.id AND services.id = " + service_id + " ";
+            String query_service= "SELECT service_products.id as id, products.name as prod, products.price as price ,products.price * quantity as subtotal, quantity FROM services,products,service_products WHERE service_products.products_id = products.id AND services_id = services.id AND services.id = " + service_id + " ";
 
             conn.Open();
             MySqlCommand comm_services = new MySqlCommand(query_service, conn);
@@ -82,7 +83,8 @@ namespace CaPY_SAD
             dtgvServicesProd.Columns["id"].Visible = false;
             dtgvServicesProd.Columns["prod"].HeaderText = "Product";
             dtgvServicesProd.Columns["quantity"].HeaderText = "Quantity";
-      
+            dtgvServicesProd.Columns["price"].HeaderText = "Price";
+            dtgvServicesProd.Columns["subtotal"].HeaderText = "Subtotal";
 
         }
         
@@ -108,12 +110,15 @@ namespace CaPY_SAD
             prodPanel.Location = new Point(0, 0);
 
             Type = "Add";
+            load_service_details();
 
         }
+
+
         public static decimal prod_price;
         public void load_service_details()
         {
-            String query = "select products.name as prod, quantity, products.price as price from services,products,service_products WHERE service_products.products_id = products.id AND services_id = services.id AND services.id =" + service_id + "";
+            String query = "SELECT products.name as prod, quantity, products.price as price from services,products,service_products WHERE service_products.products_id = products.id AND services_id = services.id AND services.id =" + service_id + "";
 
             MySqlCommand comm = new MySqlCommand(query, conn);
             comm.CommandText = query;
@@ -128,7 +133,6 @@ namespace CaPY_SAD
                 prod_price = decimal.Parse(drd["price"].ToString());
             }
             conn.Close();
-            MessageBox.Show("reload");
         }
       
         private void EditBtn_Click(object sender, EventArgs e)
@@ -152,13 +156,15 @@ namespace CaPY_SAD
             addBtn.Enabled = true;
             EditBtn.Enabled = false;
             dtgvServicesProd.Enabled = true;
-            
+         
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
+            
             if (nameTxt.Text == "" || descTxt.Text == "" || priceTxt.Text == "")
             {
+                
                 MessageBox.Show("Please fill up all fields!", "Missing Fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
@@ -174,15 +180,19 @@ namespace CaPY_SAD
                     available = "unavailable";
 
                 }
-                string query = "Update services set name = '" + nameTxt.Text + "' , description ='" + descTxt.Text + "', price = '" + priceTxt.Text + "',status = '" + available + "' ,date_modified = current_timestamp() where id = '" + service_id + "'";
+                string query = "Update services set name = '" + nameTxt.Text + "' , description ='" + descTxt.Text + "', base_price = '" + bpriceTxt.Text + "',status = '" + available + "' ,date_modified = current_timestamp() where id = '" + service_id + "'";
 
                 conn.Open();
                 MySqlCommand comm = new MySqlCommand(query, conn);
                 comm.ExecuteNonQuery();
                 conn.Close();
+                servtotal();
+
                 this.Close();
                 previousform.ShowDialog();
+
             }
+          
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)
@@ -215,26 +225,6 @@ namespace CaPY_SAD
        
         private void addprodBtn_Click(object sender, EventArgs e)
         {
-            decimal current_price = decimal.Parse(priceTxt.Text);
-            decimal new_price;
-         
-
-            //String query_select_current_price = "select price from services where id =" + service_id + "";
-
-            //MySqlCommand comm_curr_price = new MySqlCommand(query_select_current_price, conn);
-            //comm_curr_price.CommandText = query_select_current_price;
-            //conn.Open();
-            //MySqlDataReader drd_curr_price = comm_curr_price.ExecuteReader();
-
-
-            //while (drd_curr_price.Read())
-            //{
-            //    prod_price = decimal.Parse(drd_curr_price["price"].ToString());
-            //}
-            //conn.Close();
-
-
-
             if (Type == "Add")
             {
 
@@ -254,18 +244,12 @@ namespace CaPY_SAD
                     MessageBox.Show("Product added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     nameCmb.Text = "";
                     quantityTxt.Text = "";
-                    new_price = current_price + (prod_price * quantityTxt.Value);
-                    priceTxt.Text = new_price.ToString();
-                    string query_update_price = "UPDATE services SET price = '"+ new_price + "'  where id = " + service_id + "";
-                    conn.Open();
-                    MySqlCommand comm_query_update_price = new MySqlCommand(query_update_price, conn);
-                    comm_query_update_price.ExecuteNonQuery();
-                    conn.Close();
-                    
+
                     prodPanel.Visible = false;
                     prodPanel.Enabled = false;
 
                 }
+          
                 
             }
             else if (Type == "Edit")
@@ -293,9 +277,8 @@ namespace CaPY_SAD
           
             }
 
-            addBtn.Enabled = true;
-            EditBtn.Enabled = false;
-            dtgvServicesProd.Enabled = true;
+            servtotal();
+            
         }
 
         public static int serviceprod_id;
@@ -311,6 +294,38 @@ namespace CaPY_SAD
             }
         }
 
+        public void servtotal()
+        {
+            decimal current_price = decimal.Parse(bpriceTxt.Text);
+            decimal new_price;
+            decimal total = 0;
+
+            for (int i = 0; i <= dtgvServicesProd.Rows.Count - 1; i++)
+            {
+                string subs = dtgvServicesProd.Rows[i].Cells["subtotal"].Value.ToString();
+
+                decimal decimal_sub = decimal.Parse(subs);
+
+                total += decimal_sub;
+
+            }
+
+            new_price = current_price + total;
+            priceTxt.Text = new_price.ToString();
+
+            string query_update_price = "UPDATE services SET price = '" + new_price + "'  where id = " + service_id + "";
+            conn.Open();
+            MySqlCommand comm_query_update_price = new MySqlCommand(query_update_price, conn);
+            comm_query_update_price.ExecuteNonQuery();
+            conn.Close();
+
+            nameCmb.Text = "";
+            addBtn.Enabled = true;
+            EditBtn.Enabled = false;
+            dtgvServicesProd.Enabled = true;
+
+        }
+
         private void prodPanel_VisibleChanged(object sender, EventArgs e)
         {
             loadServiceProds();
@@ -321,11 +336,12 @@ namespace CaPY_SAD
         {
             nameTxt.Enabled = true;
             descTxt.Enabled = true;
-            priceTxt.Enabled = true;
             availCbox.Enabled = true;
+            bpriceTxt.Enabled = true;
             saveBtn.Enabled = true;
             cancelBtn.Enabled = true;
             editserviceBtn.Enabled = false;
+        
         }
     }
 }
