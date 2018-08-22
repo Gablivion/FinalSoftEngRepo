@@ -33,8 +33,11 @@ namespace CaPY_SAD
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            recordsPanel.Visible = false;
+            //rPan.Visible = false;
+            //sPan.Visible = false;
+
             salesPanel.Visible = false;
+            recordsPanel.Visible = false;
 
             tm.Tick += new EventHandler(tm_Tick);
             tm.Interval = 1000;
@@ -42,10 +45,51 @@ namespace CaPY_SAD
 
             timeTxt.Text = DateTime.Now.ToLongTimeString();
             userTxt.Text = CaPY_SAD.Login.UserDisplayDetails.name;
+            posTxt.Text = CaPY_SAD.Login.UserDisplayDetails.position;
+
+            loadRestock();
+            loadExpiredProd();
      
         }
 
+        public void loadRestock()
+        {
 
+            String query_restock = "SELECT name, description, quantity FROM products, product_inventory WHERE products.id = product_inventory.products_id AND quantity < reorder";
+
+            conn.Open();
+            MySqlCommand comm_restock = new MySqlCommand(query_restock, conn);
+            MySqlDataAdapter adp = new MySqlDataAdapter(comm_restock);
+            conn.Close();
+            DataTable dt = new DataTable();
+            adp.Fill(dt);
+
+            dtgvRestock.DataSource = dt;
+            dtgvRestock.Columns["name"].HeaderText = "Name";
+            dtgvRestock.Columns["description"].HeaderText = "Description";
+            dtgvRestock.Columns["quantity"].HeaderText = "Quantity";
+        }
+
+        public void loadExpiredProd()
+        {
+
+            String query_expiredprod = "SELECT name, description, quantity, expiration_date FROM products, product_inventory WHERE expiration_date <= CURDATE() AND status = 'available' AND expiration_date != 0000 - 00 - 00";
+
+            conn.Open();
+            MySqlCommand comm_expiredprod = new MySqlCommand(query_expiredprod, conn);
+            MySqlDataAdapter adp = new MySqlDataAdapter(comm_expiredprod);
+            conn.Close();
+            DataTable dt = new DataTable();
+            adp.Fill(dt);
+
+            dtgvExpiredProd.DataSource = dt;
+            dtgvExpiredProd.Columns["name"].HeaderText = "Name";
+            dtgvExpiredProd.Columns["description"].HeaderText = "Description";
+            dtgvExpiredProd.Columns["quantity"].HeaderText = "Quantity";
+            dtgvExpiredProd.Columns["expiration_date"].HeaderText = "Expiration Date";
+        }
+
+        /*
         public void loadExpired()
         {
             String expired_num;
@@ -77,14 +121,13 @@ namespace CaPY_SAD
 
             conn.Close();
         }
+        */
 
         private void recordsBtn_Click(object sender, EventArgs e)
         {
-            salesPanel.Visible = false;
-
             recordsPanel.Visible = true;
-            recordsPanel.Size = new Size(629, 386);
-            recordsPanel.Location = new Point(253, 198);
+            recordsPanel.Size = new Size(877, 726);
+            recordsPanel.Location = new Point(183, 60);
         }
 
         private void inventoryBtn_Click(object sender, EventArgs e)
@@ -183,11 +226,9 @@ namespace CaPY_SAD
 
         private void salesBtn_Click(object sender, EventArgs e)
         {
-            recordsPanel.Visible = false;
-
             salesPanel.Visible = true;
-            salesPanel.Size = new Size(606, 411);
-            salesPanel.Location = new Point(253, 198);
+            salesPanel.Size = new Size(877, 746);
+            salesPanel.Location = new Point(183, 60);
         }
 
         private void posBtn_Click_1(object sender, EventArgs e)
@@ -234,7 +275,7 @@ namespace CaPY_SAD
 
         private void Menu_VisibleChanged(object sender, EventArgs e)
         {
-            loadExpired();
+           // loadExpired();
         }
 
         private void archiveBtn_Click(object sender, EventArgs e)
@@ -271,5 +312,6 @@ namespace CaPY_SAD
         {
             dragging = false;
         }
+        
     }
 }
