@@ -22,6 +22,16 @@ namespace CaPY_SAD
             InitializeComponent();
         }
 
+    
+        public class selected_data
+        {
+            public static int cage_id;
+            public static int hosp_id;
+            public static Boolean checkout;
+            public static int custid;
+            public static string custname;
+            
+        }
         private void Hosp_Load(object sender, EventArgs e)
         {
             detailPanel.Size = new Size(1134, 336);
@@ -32,10 +42,7 @@ namespace CaPY_SAD
             loadpets();
             addHospBtn.Visible = false;
             service();
-
-
-
-
+            
         }
 
         public void loadCageData()
@@ -184,11 +191,7 @@ namespace CaPY_SAD
             dragging = false;
         }
 
-        public class selected_data
-        {
-            public static int cage_id;
-            public static int hosp_id;
-        }
+      
         private void dtgvCage_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -533,6 +536,7 @@ namespace CaPY_SAD
             while (drd_petdetails.Read())
             {
                 owner = drd_petdetails["customer_id"].ToString();
+                
                 petTxt.Text = drd_petdetails["name"].ToString();
                 colorTxt.Text = drd_petdetails["color"].ToString();
                 breedTxt.Text = drd_petdetails["breed"].ToString();
@@ -588,7 +592,7 @@ namespace CaPY_SAD
             dtgvPet.DataSource = dt;
             dtgvPet.Columns["id"].Visible = false;
             dtgvPet.Columns["cust"].Visible = false;
-            dtgvPet.Columns["name"].HeaderText = "Name";
+            dtgvPet.Columns["cust"].Visible = false;
             dtgvPet.Columns["color"].Visible = false;
             dtgvPet.Columns["species"].HeaderText = "Species";
             dtgvPet.Columns["breed"].HeaderText = "Breed";
@@ -615,6 +619,8 @@ namespace CaPY_SAD
                 dischargeBtn.Enabled = false;
                
                 petTxt.Text = dtgvPet.Rows[e.RowIndex].Cells["name"].Value.ToString();
+                selected_data.custid = int.Parse(dtgvPet.Rows[e.RowIndex].Cells["cust"].Value.ToString());
+                selected_data.custname = dtgvPet.Rows[e.RowIndex].Cells["owner"].Value.ToString();
                 addHospPetTxt.Text = petTxt.Text;
                 pets_id = int.Parse(dtgvPet.Rows[e.RowIndex].Cells["id"].Value.ToString());
                 loadHospData();
@@ -1152,29 +1158,18 @@ namespace CaPY_SAD
         private void coutBtn_Click(object sender, EventArgs e)
         {
 
-            string query_checkout = "UPDATE hospitalization SET status = 'discharged' WHERE  id =  " + selected_data.hosp_id + "";
-
-            conn.Open();
-            MySqlCommand comm_checkout = new MySqlCommand(query_checkout, conn);
-            comm_checkout.ExecuteNonQuery();
-            conn.Close();
-
-            string query_update_cage = "UPDATE cage SET status = 'available' WHERE  id = (SELECT cage_id FROM hospitalization WHERE id  = " + selected_data.hosp_id + ")";
-
-            conn.Open();
-            MySqlCommand comm_update_cage = new MySqlCommand(query_update_cage, conn);
-            comm_update_cage.ExecuteNonQuery();
-            conn.Close();
-            MessageBox.Show("Discharged", "Cage Vacated!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           
 
             loadCageData();
             loadHospData();
 
 
             POS pos = new POS();
+            selected_data.checkout = true;
             this.Hide();
             pos.Show();
             pos.previousform = this;
+          
 
         }
 
