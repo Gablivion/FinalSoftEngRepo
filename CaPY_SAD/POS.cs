@@ -42,11 +42,29 @@ namespace CaPY_SAD
             orders.Columns.Add("Quantity", typeof(string));
             orders.Columns.Add("Subtotal", typeof(string));
 
-            services.Columns.Add("serv_id", typeof(string));
-            services.Columns.Add("pet_id", typeof(string));
-            services.Columns.Add("Service", typeof(string));
-            services.Columns.Add("Pet", typeof(string));
-            services.Columns.Add("Price", typeof(string));
+            //services.Columns.Add("serv_id", typeof(string));
+            //services.Columns.Add("pet_id", typeof(string));
+            //services.Columns.Add("Service", typeof(string));
+            //services.Columns.Add("Pet", typeof(string));
+            //services.Columns.Add("Price", typeof(string));
+
+            if (Hosp.selected_data.checkout == true)
+            {
+                hosppayPanel.Visible = true;
+                hosppayPanel.Enabled = true;
+                hosppayPanel.Size = new Size(1078, 472);
+                hosppayPanel.Location = new Point(2, 0);
+                prodaddPanel.Enabled = false;
+                customerTxt.Enabled = false;
+                customerTxt.Text = Hosp.selected_data.custname;
+            }
+            else
+            {
+                hosppayPanel.Visible = false;
+                hosppayPanel.Enabled = false;
+                prodaddPanel.Enabled = true;
+                customerTxt.Enabled = true;
+            }
         }
 
 
@@ -172,7 +190,7 @@ namespace CaPY_SAD
         }
 
         //Add Desired Order to order line
-        private void addBtn_Click_1(object sender, EventArgs e)
+        private void addBtn_Click(object sender, EventArgs e)
         {
             //Texbox in Payment containing customer name
             custpayTxt.Text = customerTxt.Text;
@@ -341,125 +359,150 @@ namespace CaPY_SAD
             {
 
                 paymentDialog = MessageBox.Show("Total: " + decimal.Parse(paytotalTxt.Text) + "\n Amount Given:" + decimal.Parse(moneyTxt.Text) + "\n Change: " + decimal.Parse(changeTxt.Text), "Total", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+              
+
 
                 if (paymentDialog == DialogResult.Yes)
                 {
-                    // Query to check if customer is already a customer
-                    String query_IsCustomer = "SELECT person.id FROM person,customers WHERE concat(firstname, ' ', middlename, ' ', lastname) LIKE '%" + customerTxt.Text + "%' AND customers.person_id = person.id;";
-
-                    conn.Open();
-                    MySqlCommand comm_IsCustomer = new MySqlCommand(query_IsCustomer, conn);
-                    MySqlDataAdapter adp_IsCustomer = new MySqlDataAdapter(comm_IsCustomer);
-                    conn.Close();
-                    DataTable dt_IsCustomer = new DataTable();
-                    adp_IsCustomer.Fill(dt_IsCustomer);
-
-                    if (dt_IsCustomer.Rows.Count == 0)
+                    if (Hosp.selected_data.checkout == true)
                     {
+                        string query_checkout = "UPDATE hospitalization SET status = 'discharged' WHERE  id =  " + Hosp.selected_data.hosp_id + "";
 
-                        string query_customer = "INSERT INTO customers(person_id,archived) VALUES ((SELECT person.id FROM person WHERE concat(firstname, ' ', middlename, ' ', lastname) LIKE '%" + customerTxt.Text + "%'), 'no')";
                         conn.Open();
-                        MySqlCommand comm_customer = new MySqlCommand(query_customer, conn);
-                        comm_customer.ExecuteNonQuery();
-
+                        MySqlCommand comm_checkout = new MySqlCommand(query_checkout, conn);
+                        comm_checkout.ExecuteNonQuery();
                         conn.Close();
 
+                        string query_update_cage = "UPDATE cage SET status = 'available' WHERE  id = (SELECT cage_id FROM hospitalization WHERE id  = " + Hosp.selected_data.hosp_id + ")";
+
+                        conn.Open();
+                        MySqlCommand comm_update_cage = new MySqlCommand(query_update_cage, conn);
+                        comm_update_cage.ExecuteNonQuery();
+                        conn.Close();
+                        MessageBox.Show("Discharged", "Cage Vacated!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        this.Hide();
+                        previousform.Show();
                     }
-
-
-                    String query_insert_transactions = "INSERT INTO transactions(staff_id, customers_id, transaction_date, total) VALUES ((SELECT staff.id FROM person,staff WHERE staff.person_id = person.id AND concat(firstname,' ',middlename,' ',lastname) Like '%" + encoderName.Text + "%'), (SELECT customers.id FROM person,customers WHERE person.id = customers.person_id AND concat(firstname, ' ', middlename, ' ', lastname) LIKE '%" + customerTxt.Text + "%'),current_timestamp()," + decimal.Parse(totalTxt.Text) + ")";
-                    conn.Open();
-                    MySqlCommand comm_insert_transaction = new MySqlCommand(query_insert_transactions, conn);
-                    comm_insert_transaction.ExecuteNonQuery();
-                    MySqlDataAdapter adp_insert_transaction = new MySqlDataAdapter(comm_insert_transaction);
-                    conn.Close();
-
-
-                    String query_insert_sales_order = "INSERT INTO sales_order(transactions_id, subtotal) VALUES((SELECT max(id) FROM transactions),'" + totalTxt.Text + "')";
-                    conn.Open();
-                    MySqlCommand comm_sales_order = new MySqlCommand(query_insert_sales_order, conn);
-                    comm_sales_order.ExecuteNonQuery();
-                    MySqlDataAdapter adp_insert_sales_order = new MySqlDataAdapter(comm_sales_order);
-                    conn.Close();
-
-
-                    for (int i = 0; i <= dtgvOrders.Rows.Count - 1; i++)
+                    else
                     {
+                        // Query to check if customer is already a customer
+                        String query_IsCustomer = "SELECT person.id FROM person,customers WHERE concat(firstname, ' ', middlename, ' ', lastname) LIKE '%" + customerTxt.Text + "%' AND customers.person_id = person.id;";
 
-
-                        string pname = dtgvOrders.Rows[i].Cells["Name"].Value.ToString();
-
-                        string query_prods = "SELECT id FROM products WHERE name = '" + pname + "'";
                         conn.Open();
-                        MySqlCommand comm_prods = new MySqlCommand(query_prods, conn);
-                        MySqlDataAdapter adp_prods = new MySqlDataAdapter(comm_prods);
+                        MySqlCommand comm_IsCustomer = new MySqlCommand(query_IsCustomer, conn);
+                        MySqlDataAdapter adp_IsCustomer = new MySqlDataAdapter(comm_IsCustomer);
                         conn.Close();
-                        DataTable dt_prods = new DataTable();
-                        adp_prods.Fill(dt_prods);
-                        string prod_id = dt_prods.Rows[0][0].ToString();
+                        DataTable dt_IsCustomer = new DataTable();
+                        adp_IsCustomer.Fill(dt_IsCustomer);
 
-                        string inv_id = dtgvOrders.Rows[i].Cells["id"].Value.ToString();
-                        string prod_price = dtgvOrders.Rows[i].Cells["Price"].Value.ToString();
-                        string prod_quantity = dtgvOrders.Rows[i].Cells["Quantity"].Value.ToString();
-                        string prod_subtotal = dtgvOrders.Rows[i].Cells["Subtotal"].Value.ToString();
-                        string expiration_string = dtgvOrders.Rows[i].Cells["Expiration"].Value.ToString();
-
-                        string query_sales_order_line = "INSERT INTO sales_order_line (order_id,products_id,quantity,price,subtotal,expiration,refunded) VALUES((SELECT max(id) FROM sales_order),'" + int.Parse(prod_id) + "','" + int.Parse(prod_quantity) + "','" + decimal.Parse(prod_price) + "','" + decimal.Parse(prod_subtotal) + "','" + expiration_string + "', 'no')";
-                        conn.Open();
-                        MySqlCommand comm_sales_order_line = new MySqlCommand(query_sales_order_line, conn);
-                        comm_sales_order_line.ExecuteNonQuery();
-                        conn.Close();
-
-                        string query_add_quantity = "UPDATE product_inventory SET quantity = quantity - " + int.Parse(quantityTxt.Text) + " WHERE id = " + int.Parse(inv_id) + " ";
-                        conn.Open();
-                        MySqlCommand comm_add_quantity = new MySqlCommand(query_add_quantity, conn);
-                        comm_add_quantity.ExecuteNonQuery();
-                        conn.Close();
-
-                        string query_log = "INSERT INTO inventory_log (process_type,date,product,quantity,remarks,staff_id) VALUES('Stock Out (Sales Order)' , current_timestamp(),'" + prodTxt.Text + "','" + quantityTxt.Text + "', 'Purchased by " + custpayTxt.Text + "', (SELECT staff.id FROM person,staff WHERE person.id = staff.person_id AND concat(firstname,' ', middlename,' ',lastname) = '" + encoderName.Text + "'))";
-                        conn.Open();
-                        MySqlCommand comm_log = new MySqlCommand(query_log, conn);
-                        comm_log.ExecuteNonQuery();
-                        conn.Close();
-
-                        string query_updateavail = "UPDATE product_inventory SET status = 'unavailable' WHERE quantity <= 0";
-                        conn.Open();
-                        MySqlCommand comm_updateavail = new MySqlCommand(query_updateavail, conn);
-                        comm_updateavail.ExecuteNonQuery();
-                        conn.Close();
-
-                    }
-
-                    if (dtgvAcServ.Rows.Count > 0)
-                    {
-                        for (int i = 0; i <= dtgvAcServ.Rows.Count - 1; i++)
+                        if (dt_IsCustomer.Rows.Count == 0)
                         {
 
-                            int serv_id = int.Parse(dtgvAcServ.Rows[i].Cells["serv_id"].Value.ToString());
-                            int pet_id = int.Parse(dtgvAcServ.Rows[i].Cells["pet_id"].Value.ToString());
-                            string serv_price = dtgvAcServ.Rows[i].Cells["Price"].Value.ToString();
-
-                            string query_service_transaction = "INSERT INTO service_transaction (services_id,transactions_id,service_price,pets_id) VALUES ( " + serv_id + ",(SELECT max(id) FROM transactions), " + serv_price + "," + pet_id +")";
-
+                            string query_customer = "INSERT INTO customers(person_id,archived) VALUES ((SELECT person.id FROM person WHERE concat(firstname, ' ', middlename, ' ', lastname) LIKE '%" + customerTxt.Text + "%'), 'no')";
                             conn.Open();
-                            MySqlCommand comm_service_transaction = new MySqlCommand(query_service_transaction, conn);
-                            comm_service_transaction.ExecuteNonQuery();
+                            MySqlCommand comm_customer = new MySqlCommand(query_customer, conn);
+                            comm_customer.ExecuteNonQuery();
+
                             conn.Close();
 
                         }
+
+
+
+                        String query_insert_transactions = "INSERT INTO transactions(staff_id, customers_id, transaction_date, total) VALUES ((SELECT staff.id FROM person,staff WHERE staff.person_id = person.id AND concat(firstname,' ',middlename,' ',lastname) Like '%" + encoderName.Text + "%'), (SELECT customers.id FROM person,customers WHERE person.id = customers.person_id AND concat(firstname, ' ', middlename, ' ', lastname) LIKE '%" + customerTxt.Text + "%'),current_timestamp()," + decimal.Parse(totalTxt.Text) + ")";
+                        conn.Open();
+                        MySqlCommand comm_insert_transaction = new MySqlCommand(query_insert_transactions, conn);
+                        comm_insert_transaction.ExecuteNonQuery();
+                        MySqlDataAdapter adp_insert_transaction = new MySqlDataAdapter(comm_insert_transaction);
+                        conn.Close();
+
+
+                        String query_insert_sales_order = "INSERT INTO sales_order(transactions_id, subtotal) VALUES((SELECT max(id) FROM transactions),'" + totalTxt.Text + "')";
+                        conn.Open();
+                        MySqlCommand comm_sales_order = new MySqlCommand(query_insert_sales_order, conn);
+                        comm_sales_order.ExecuteNonQuery();
+                        MySqlDataAdapter adp_insert_sales_order = new MySqlDataAdapter(comm_sales_order);
+                        conn.Close();
+
+
+                        for (int i = 0; i <= dtgvOrders.Rows.Count - 1; i++)
+                        {
+
+
+                            string pname = dtgvOrders.Rows[i].Cells["Name"].Value.ToString();
+
+                            string query_prods = "SELECT id FROM products WHERE name = '" + pname + "'";
+                            conn.Open();
+                            MySqlCommand comm_prods = new MySqlCommand(query_prods, conn);
+                            MySqlDataAdapter adp_prods = new MySqlDataAdapter(comm_prods);
+                            conn.Close();
+                            DataTable dt_prods = new DataTable();
+                            adp_prods.Fill(dt_prods);
+                            string prod_id = dt_prods.Rows[0][0].ToString();
+
+                            string inv_id = dtgvOrders.Rows[i].Cells["id"].Value.ToString();
+                            string prod_price = dtgvOrders.Rows[i].Cells["Price"].Value.ToString();
+                            string prod_quantity = dtgvOrders.Rows[i].Cells["Quantity"].Value.ToString();
+                            string prod_subtotal = dtgvOrders.Rows[i].Cells["Subtotal"].Value.ToString();
+                            string expiration_string = dtgvOrders.Rows[i].Cells["Expiration"].Value.ToString();
+
+                            string query_sales_order_line = "INSERT INTO sales_order_line (order_id,products_id,quantity,price,subtotal,expiration,refunded) VALUES((SELECT max(id) FROM sales_order),'" + int.Parse(prod_id) + "','" + int.Parse(prod_quantity) + "','" + decimal.Parse(prod_price) + "','" + decimal.Parse(prod_subtotal) + "','" + expiration_string + "', 'no')";
+                            conn.Open();
+                            MySqlCommand comm_sales_order_line = new MySqlCommand(query_sales_order_line, conn);
+                            comm_sales_order_line.ExecuteNonQuery();
+                            conn.Close();
+
+                            string query_add_quantity = "UPDATE product_inventory SET quantity = quantity - " + int.Parse(quantityTxt.Text) + " WHERE id = " + int.Parse(inv_id) + " ";
+                            conn.Open();
+                            MySqlCommand comm_add_quantity = new MySqlCommand(query_add_quantity, conn);
+                            comm_add_quantity.ExecuteNonQuery();
+                            conn.Close();
+
+                            string query_log = "INSERT INTO inventory_log (process_type,date,product,quantity,remarks,staff_id) VALUES('Stock Out (Sales Order)' , current_timestamp(),'" + prodTxt.Text + "','" + quantityTxt.Text + "', 'Purchased by " + custpayTxt.Text + "', (SELECT staff.id FROM person,staff WHERE person.id = staff.person_id AND concat(firstname,' ', middlename,' ',lastname) = '" + encoderName.Text + "'))";
+                            conn.Open();
+                            MySqlCommand comm_log = new MySqlCommand(query_log, conn);
+                            comm_log.ExecuteNonQuery();
+                            conn.Close();
+
+                            string query_updateavail = "UPDATE product_inventory SET status = 'unavailable' WHERE quantity <= 0";
+                            conn.Open();
+                            MySqlCommand comm_updateavail = new MySqlCommand(query_updateavail, conn);
+                            comm_updateavail.ExecuteNonQuery();
+                            conn.Close();
+
+                            resetFields();
+                            custpayTxt.Text = "";
+                            paytotalTxt.Text = "0";
+                            moneyTxt.Text = "0";
+                            changeTxt.Text = "0";
+                            paypanel.Visible = false;
+                            paypanel.Enabled = false;
+                            orders.Clear();
+                        }
+
+
                     }
 
+                    //if (dtgvAcServ.Rows.Count > 0)
+                    //{
+                    //    for (int i = 0; i <= dtgvAcServ.Rows.Count - 1; i++)
+                    //    {
 
+                    //        int serv_id = int.Parse(dtgvAcServ.Rows[i].Cells["serv_id"].Value.ToString());
+                    //        int pet_id = int.Parse(dtgvAcServ.Rows[i].Cells["pet_id"].Value.ToString());
+                    //        string serv_price = dtgvAcServ.Rows[i].Cells["Price"].Value.ToString();
 
-                    resetFields();
-                    custpayTxt.Text = "";
-                    paytotalTxt.Text = "0";
-                    moneyTxt.Text = "0";
-                    changeTxt.Text = "0";
-                    paypanel.Visible = false;
-                    paypanel.Enabled = false;
-                    orders.Clear();
-                    services.Clear();
+                    //        string query_service_transaction = "INSERT INTO service_transaction (services_id,transactions_id,service_price,pets_id) VALUES ( " + serv_id + ",(SELECT max(id) FROM transactions), " + serv_price + "," + pet_id +")";
+
+                    //        conn.Open();
+                    //        MySqlCommand comm_service_transaction = new MySqlCommand(query_service_transaction, conn);
+                    //        comm_service_transaction.ExecuteNonQuery();
+                    //        conn.Close();
+
+                    //    }
+                    //}
+                 
                 }
             }
 
@@ -537,32 +580,10 @@ namespace CaPY_SAD
               
             }
             conn.Close();
-            load_pet();
+          
         }
         //load pet of selected customer
-        public void load_pet()
-        {
-
-            String query_pets = "SELECT pets.id as id ,pets.name as name,species, pets.gender as gender FROM pets,customers,person WHERE customers.person_id = person.id AND customers.id = pets.customer_id AND  concat(firstname, ' ', middlename, ' ', lastname) LIKE '%" + customerTxt.Text + "'";
-
-            conn.Open();
-            MySqlCommand comm_pets = new MySqlCommand(query_pets, conn);
-            MySqlDataAdapter adp_pets = new MySqlDataAdapter(comm_pets);
-            conn.Close();
-
-
-            DataTable dt_pets = new DataTable();
-            adp_pets.Fill(dt_pets);
-
-            dtgvPets.DataSource = dt_pets;
-            dtgvPets.Columns["id"].Visible = false;
-            dtgvPets.Columns["name"].HeaderText = "Name";
-            dtgvPets.Columns["species"].HeaderText = "Species";
-            dtgvPets.Columns["gender"].HeaderText = "Gender";
-
-
-
-        }
+     
 
         public static int selected_customer;
         private void dtgvCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -647,7 +668,7 @@ namespace CaPY_SAD
                     prodpanel.Visible = false;
                     prodpanel.Enabled = false;
                     servPanel.Visible = false;
-                    dtgvPets.Enabled = true;
+                   
                     load_service_acquired();
                     getTotal();
              
@@ -680,30 +701,10 @@ namespace CaPY_SAD
         }
         public static int selected_pet_id;
         public static string selected_pet_name;
-        private void dtgvPets_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            dtgvPets.Enabled = false;
-            if (dtgvPets.SelectedRows.Count > -1)
-            {
-                selected_pet_id = int.Parse(dtgvPets.Rows[e.RowIndex].Cells["id"].Value.ToString());
-                selected_pet_name = dtgvPets.Rows[e.RowIndex].Cells["name"].Value.ToString();
-                dtgvServices.Enabled = true;
-                servPanel.Visible = true;
-                servPanel.Enabled = true;
-                servPanel.Size = new Size(625, 292);
-                servPanel.Location = new Point(14, 9);
-            }
-            else
-            {
-                dtgvServices.Enabled = false;
-
-            }
-
-        }
+     
 
         private void backserviceBtn_Click(object sender, EventArgs e)
         {
-            dtgvPets.Enabled = true;
             servPanel.Visible = false;
         }
 
@@ -809,6 +810,11 @@ namespace CaPY_SAD
             dtgvAcServ.Enabled = true;
             dtgvOrders.Enabled = true;
 
+        }
+
+        private void hosppayBtn_Click(object sender, EventArgs e)
+        {
+            hosppayPanel.Visible = false;
         }
     }
 }
