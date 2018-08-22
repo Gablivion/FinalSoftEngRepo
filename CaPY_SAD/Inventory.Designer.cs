@@ -475,6 +475,7 @@
             this.reorderBtn.Text = "ReOrder";
             this.reorderBtn.UseVisualStyleBackColor = false;
             this.reorderBtn.Visible = false;
+            this.reorderBtn.Click += new System.EventHandler(this.reorderBtn_Click);
             // 
             // panel1
             // 

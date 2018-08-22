@@ -48,7 +48,7 @@ namespace CaPY_SAD
         public void loadInventoryData()
         {
 
-            String query_inventory = "SELECT product_inventory.id as id,reorder,medicine, products.name as product,volume, quantity, expiration_date FROM products, product_inventory WHERE product_inventory.products_id = products.id AND status = 'available' ";
+            String query_inventory = "SELECT product_inventory.id as id,reorder,medicine, products.name as product,products.id as pid,volume, quantity, expiration_date,DATE_FORMAT(expiration_date, '%m/%d/%Y') as expformat FROM products, product_inventory WHERE product_inventory.products_id = products.id AND status = 'available' ";
 
             conn.Open();
             MySqlCommand comm = new MySqlCommand(query_inventory, conn);
@@ -59,8 +59,10 @@ namespace CaPY_SAD
 
             dtgvInventory.DataSource = dt_inventory;
             dtgvInventory.Columns["id"].Visible = false;
+            dtgvInventory.Columns["pid"].Visible = false;
             dtgvInventory.Columns["reorder"].Visible = false;
             dtgvInventory.Columns["medicine"].Visible = false;
+            dtgvInventory.Columns["expformat"].Visible = false;
             dtgvInventory.Columns["product"].HeaderText = "Product";
             dtgvInventory.Columns["quantity"].HeaderText = "Quantity";
             dtgvInventory.Columns["volume"].HeaderText = "Volume";
@@ -69,14 +71,19 @@ namespace CaPY_SAD
            
             foreach (DataGridViewRow row in this.dtgvInventory.Rows)
             {
-                if (int.Parse(row.Cells["quantity"].Value.ToString()) <= int.Parse(row.Cells["reorder"].Value.ToString()))
-                {
-                    row.DefaultCellStyle.BackColor = Color.Red;   
-                }
-                else
-                {
-                    row.DefaultCellStyle.BackColor = Color.LawnGreen;
-                }
+                MessageBox.Show(row.Cells["expformat"].Value.ToString());
+                //DateTime dt1 = DateTime.Parse(row.Cells["expformat"].Value.ToString());
+                //DateTime dt2 = DateTime.Now;
+
+                //if (dt1.Date >= dt2.Date)
+                //{
+                //    row.DefaultCellStyle.BackColor = Color.Red;
+                //}
+                //else
+                //{
+                //    row.DefaultCellStyle.BackColor = Color.LawnGreen;
+                //}
+               
             }
 
         }
@@ -84,6 +91,8 @@ namespace CaPY_SAD
         public class selected_data
         {
             public static int inventory_id;
+            public static int pid;
+            public static Boolean reorder;
         }
         
     
@@ -159,8 +168,6 @@ namespace CaPY_SAD
                 origpriceTxt.Text = price;
             }
             conn.Close();
-
-
         }
 
 
@@ -180,12 +187,25 @@ namespace CaPY_SAD
             repackPanel.Visible = false;
         }
         public static int medval;
+
+        private void reorderBtn_Click(object sender, EventArgs e)
+        {
+            Add_PO addpo = new Add_PO();
+            addpo.previousform = this;
+            selected_data.reorder = true;
+            this.Hide();
+            addpo.Show();
+
+        
+        }
+
         private void dtgvInventory_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex > -1)
             {
                 int selected_id = int.Parse(dtgvInventory.Rows[e.RowIndex].Cells["id"].Value.ToString());
                 selected_data.inventory_id = selected_id;
+                selected_data.pid = int.Parse(dtgvInventory.Rows[e.RowIndex].Cells["pid"].Value.ToString());
                 string name = dtgvInventory.Rows[e.RowIndex].Cells["product"].Value.ToString();
                 int quan = int.Parse(dtgvInventory.Rows[e.RowIndex].Cells["quantity"].Value.ToString());
                 medval = int.Parse(dtgvInventory.Rows[e.RowIndex].Cells["medicine"].Value.ToString());
@@ -193,6 +213,7 @@ namespace CaPY_SAD
                 if (quan <= reorder)
                 {
                     reorderBtn.Visible = true;
+                    reorderBtn.Enabled = true;
                 }
                 else
                 {
@@ -202,17 +223,17 @@ namespace CaPY_SAD
                 if (name.Contains("Repacked by"))
                 {
                     repackBtn.Enabled = false;
+                    reorderBtn.Visible = false;
                 }
                 else
                 {
                     repackBtn.Enabled = true;
+                    reorderBtn.Visible = true;
+                    reorderBtn.Enabled = true;
 
                 }
-
-
                     stockoutBtn.Enabled = true;
-             
-
+         
             }
         }
 

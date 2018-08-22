@@ -324,7 +324,7 @@
             this.prodpanel.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.prodpanel.Location = new System.Drawing.Point(629, 6);
             this.prodpanel.Name = "prodpanel";
-            this.prodpanel.Size = new System.Drawing.Size(77, 36);
+            this.prodpanel.Size = new System.Drawing.Size(77, 81);
             this.prodpanel.TabIndex = 160;
             this.prodpanel.Visible = false;
             // 

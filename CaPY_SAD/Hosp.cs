@@ -1151,26 +1151,31 @@ namespace CaPY_SAD
 
         private void coutBtn_Click(object sender, EventArgs e)
         {
-            addfee();
+
+            string query_checkout = "UPDATE hospitalization SET status = 'discharged' WHERE  id =  " + selected_data.hosp_id + "";
+
+            conn.Open();
+            MySqlCommand comm_checkout = new MySqlCommand(query_checkout, conn);
+            comm_checkout.ExecuteNonQuery();
+            conn.Close();
+
+            string query_update_cage = "UPDATE cage SET status = 'available' WHERE  id = (SELECT cage_id FROM hospitalization WHERE id  = " + selected_data.hosp_id + ")";
+
+            conn.Open();
+            MySqlCommand comm_update_cage = new MySqlCommand(query_update_cage, conn);
+            comm_update_cage.ExecuteNonQuery();
+            conn.Close();
+            MessageBox.Show("Discharged", "Cage Vacated!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            loadCageData();
+            loadHospData();
 
 
-            //string query_checkout = "UPDATE hospitalization SET status = 'discharged' WHERE  id =  " + selected_data.hosp_id + "";
+            POS pos = new POS();
+            this.Hide();
+            pos.Show();
+            pos.previousform = this;
 
-            //conn.Open();
-            //MySqlCommand comm_checkout = new MySqlCommand(query_checkout, conn);
-            //comm_checkout.ExecuteNonQuery();
-            //conn.Close();
-
-            //string query_update_cage = "UPDATE cage SET status = 'available' WHERE  id = (SELECT cage_id FROM hospitalization WHERE id  = " + selected_data.hosp_id + ")";
-
-            //conn.Open();
-            //MySqlCommand comm_update_cage = new MySqlCommand(query_update_cage, conn);
-            //comm_update_cage.ExecuteNonQuery();
-            //conn.Close();
-            //MessageBox.Show("Updated", "Cage updated!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            //loadCageData();
-            //loadHospData();
         }
 
         public static string days;

@@ -94,6 +94,7 @@
             this.dtgvPets = new System.Windows.Forms.DataGridView();
             this.label20 = new System.Windows.Forms.Label();
             this.dtgvAcServ = new System.Windows.Forms.DataGridView();
+            this.label22 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvOrders)).BeginInit();
             this.paypanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.quantityTxt)).BeginInit();
@@ -172,12 +173,12 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvOrders.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dtgvOrders.Location = new System.Drawing.Point(33, 260);
+            this.dtgvOrders.Location = new System.Drawing.Point(33, 249);
             this.dtgvOrders.Name = "dtgvOrders";
             this.dtgvOrders.ReadOnly = true;
             this.dtgvOrders.RowHeadersVisible = false;
             this.dtgvOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvOrders.Size = new System.Drawing.Size(988, 208);
+            this.dtgvOrders.Size = new System.Drawing.Size(988, 211);
             this.dtgvOrders.TabIndex = 29;
             // 
             // paypanel
@@ -582,7 +583,7 @@
             this.custpanel.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.custpanel.Location = new System.Drawing.Point(18, 100);
             this.custpanel.Name = "custpanel";
-            this.custpanel.Size = new System.Drawing.Size(53, 12);
+            this.custpanel.Size = new System.Drawing.Size(75, 12);
             this.custpanel.TabIndex = 78;
             this.custpanel.Visible = false;
             // 
@@ -737,7 +738,7 @@
             this.servPanel.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.servPanel.Location = new System.Drawing.Point(211, 8);
             this.servPanel.Name = "servPanel";
-            this.servPanel.Size = new System.Drawing.Size(50, 20);
+            this.servPanel.Size = new System.Drawing.Size(67, 15);
             this.servPanel.TabIndex = 78;
             this.servPanel.Visible = false;
             // 
@@ -894,13 +895,25 @@
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvAcServ.DefaultCellStyle = dataGridViewCellStyle12;
-            this.dtgvAcServ.Location = new System.Drawing.Point(33, 55);
+            this.dtgvAcServ.Location = new System.Drawing.Point(32, 55);
             this.dtgvAcServ.Name = "dtgvAcServ";
             this.dtgvAcServ.ReadOnly = true;
             this.dtgvAcServ.RowHeadersVisible = false;
             this.dtgvAcServ.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvAcServ.Size = new System.Drawing.Size(988, 136);
+            this.dtgvAcServ.Size = new System.Drawing.Size(341, 136);
             this.dtgvAcServ.TabIndex = 88;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.Transparent;
+            this.label22.Font = new System.Drawing.Font("Tw Cen MT", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(432, 9);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(348, 43);
+            this.label22.TabIndex = 90;
+            this.label22.Text = "SERVICES ACQUIRED";
             // 
             // POS
             // 
@@ -909,6 +922,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(40)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(1080, 788);
             this.ControlBox = false;
+            this.Controls.Add(this.label22);
             this.Controls.Add(this.paypanel);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.dtgvAcServ);
@@ -1008,5 +1022,6 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.DataGridView dtgvAcServ;
         private System.Windows.Forms.Button backserviceBtn;
+        private System.Windows.Forms.Label label22;
     }
 }
