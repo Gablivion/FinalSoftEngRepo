@@ -180,7 +180,6 @@ namespace CaPY_SAD
             MySqlCommand comm_log = new MySqlCommand(query_log, conn);
             comm_log.ExecuteNonQuery();
             conn.Close();
-            MessageBox.Show(sales_order_id.ToString());
 
             //Deduct from quantity
             string query_subtract_quantity = "UPDATE sales_order_line set quantity = (quantity - " + quanNum.Value + ") where sales_order_line.id =" + orderline_id + "";

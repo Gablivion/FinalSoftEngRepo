@@ -57,6 +57,7 @@ namespace CaPY_SAD
                 prodaddPanel.Enabled = false;
                 customerTxt.Enabled = false;
                 customerTxt.Text = Hosp.selected_data.custname;
+               // load_accserv();
             }
             else
             {
@@ -811,6 +812,11 @@ namespace CaPY_SAD
             dtgvOrders.Enabled = true;
 
         }
+        //public void load_accserv
+        //{
+            
+            
+        //}
 
         private void hosppayBtn_Click(object sender, EventArgs e)
         {

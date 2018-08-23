@@ -71,11 +71,12 @@ namespace CaPY_SAD
            
             foreach (DataGridViewRow row in this.dtgvInventory.Rows)
             {
-                MessageBox.Show(row.Cells["expformat"].Value.ToString());
+                //MessageBox.Show(row.Cells["expformat"].Value.ToString()); row.Cells["expformat"].Value.ToString()
                 //DateTime dt1 = DateTime.Parse(row.Cells["expformat"].Value.ToString());
                 //DateTime dt2 = DateTime.Now;
-
-                //if (dt1.Date >= dt2.Date)
+                // MessageBox.Show(dt1.ToString());
+                //int res = DateTime.Compare(dt1, dt2);
+                //if (res >= 1 && dt1.ToString() != "0/0/0000")
                 //{
                 //    row.DefaultCellStyle.BackColor = Color.Red;
                 //}
