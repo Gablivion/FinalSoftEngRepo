@@ -267,6 +267,12 @@
     <Compile Include="View_sales.Designer.cs">
       <DependentUpon>View_sales.cs</DependentUpon>
     </Compile>
+    <Compile Include="View_Service_Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View_Service_Reports.Designer.cs">
+      <DependentUpon>View_Service_Reports.cs</DependentUpon>
+    </Compile>
     <Compile Include="View_staff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -384,6 +390,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View_sales.resx">
       <DependentUpon>View_sales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View_Service_Reports.resx">
+      <DependentUpon>View_Service_Reports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View_staff.resx">
       <DependentUpon>View_staff.cs</DependentUpon>

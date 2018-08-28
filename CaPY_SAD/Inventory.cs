@@ -221,7 +221,7 @@ namespace CaPY_SAD
                     reorderBtn.Visible = false;
                 }
 
-                if (name.Contains("Repacked by"))
+                if (name.Contains("Repacked by") || int.Parse(dtgvInventory.Rows[e.RowIndex].Cells["volume"].Value.ToString()) == 0)
                 {
                     repackBtn.Enabled = false;
                     reorderBtn.Visible = false;

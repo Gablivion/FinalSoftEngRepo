@@ -43,7 +43,6 @@ namespace CaPY_SAD
                 orders.Columns.Add("Subtotal", typeof(string));
                 show = show + 1;
             }
-            MessageBox.Show(Inventory.selected_data.reorder.ToString());
             if (Inventory.selected_data.reorder == true)
             {
                 selected_id = Inventory.selected_data.pid;

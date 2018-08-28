@@ -55,19 +55,23 @@ namespace CaPY_SAD
         public void loadRestock()
         {
 
-            String query_restock = "SELECT name, description, quantity FROM products, product_inventory WHERE products.id = product_inventory.products_id AND quantity < reorder";
+            String query_restock = "SELECT name, description, quantity FROM products, product_inventory WHERE products.id = product_inventory.products_id AND quantity < reorder AND status = 'available'";
 
             conn.Open();
             MySqlCommand comm_restock = new MySqlCommand(query_restock, conn);
             MySqlDataAdapter adp = new MySqlDataAdapter(comm_restock);
             conn.Close();
             DataTable dt = new DataTable();
-            adp.Fill(dt);
+            if (adp != null)
+            {
+                adp.Fill(dt);
 
-            dtgvRestock.DataSource = dt;
-            dtgvRestock.Columns["name"].HeaderText = "Name";
-            dtgvRestock.Columns["description"].HeaderText = "Description";
-            dtgvRestock.Columns["quantity"].HeaderText = "Quantity";
+                dtgvRestock.DataSource = dt;
+                dtgvRestock.Columns["name"].HeaderText = "Name";
+                dtgvRestock.Columns["description"].HeaderText = "Description";
+                dtgvRestock.Columns["quantity"].HeaderText = "Quantity";
+            } 
+           
         }
 
         public void loadExpiredProd()
@@ -312,6 +316,5 @@ namespace CaPY_SAD
         {
             dragging = false;
         }
-        
     }
 }

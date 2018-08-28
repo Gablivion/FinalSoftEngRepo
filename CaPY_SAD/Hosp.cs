@@ -30,7 +30,12 @@ namespace CaPY_SAD
             public static Boolean checkout;
             public static int custid;
             public static string custname;
-            
+            public static decimal prodtotal;
+            public static decimal servtotal;
+            public static decimal roomtotal;
+
+            public static decimal total;
+
         }
         private void Hosp_Load(object sender, EventArgs e)
         {
@@ -873,6 +878,7 @@ namespace CaPY_SAD
 
             }
             ServTotalTxt.Text = total.ToString();
+         
         }
         public void prodtotal()
         {
@@ -890,6 +896,7 @@ namespace CaPY_SAD
 
             }
             prodTotalTxt.Text = total.ToString();
+          
         }
 
 
@@ -1157,9 +1164,6 @@ namespace CaPY_SAD
 
         private void coutBtn_Click(object sender, EventArgs e)
         {
-
-           
-
             loadCageData();
             loadHospData();
 
@@ -1169,8 +1173,8 @@ namespace CaPY_SAD
             this.Hide();
             pos.Show();
             pos.previousform = this;
-          
 
+            checkoutPanel.Visible = false;
         }
 
         public static string days;
@@ -1197,14 +1201,24 @@ namespace CaPY_SAD
             dayTxt.Text = days;
             rmtotal = decimal.Parse(days) * cage_price;
             roomTotal.Text = rmtotal.ToString();
+            selected_data.roomtotal = rmtotal;
             prodctot.Text = prodTotalTxt.Text;
             servctot.Text = ServTotalTxt.Text;
-
+            selected_data.prodtotal = decimal.Parse(prodTotalTxt.Text);
+            selected_data.servtotal = decimal.Parse(ServTotalTxt.Text);
             decimal total;
 
             total = decimal.Parse(prodTotalTxt.Text) + decimal.Parse(ServTotalTxt.Text) + decimal.Parse(roomTotal.Text);
-
+            selected_data.total = total;
             totalTxt.Text = total.ToString();
+        }
+
+        private void viewHospReports_Click(object sender, EventArgs e)
+        {
+            View_Service_Reports service_reps = new View_Service_Reports();
+            service_reps.previousform = this;
+            this.Hide();
+            service_reps.Show();
         }
 
 

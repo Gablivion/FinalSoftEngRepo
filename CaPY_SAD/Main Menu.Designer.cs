@@ -123,7 +123,7 @@
             this.hospBtn.Name = "hospBtn";
             this.hospBtn.Size = new System.Drawing.Size(150, 103);
             this.hospBtn.TabIndex = 5;
-            this.hospBtn.Text = "HOSPITALIZATION";
+            this.hospBtn.Text = "SERVICES";
             this.hospBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.hospBtn.UseVisualStyleBackColor = false;
             this.hospBtn.Click += new System.EventHandler(this.hospBtn_Click);
@@ -516,9 +516,9 @@
             this.recordsPanel.Controls.Add(this.productBtn);
             this.recordsPanel.Controls.Add(this.petBtn);
             this.recordsPanel.Controls.Add(this.customerBtn);
-            this.recordsPanel.Location = new System.Drawing.Point(861, 97);
+            this.recordsPanel.Location = new System.Drawing.Point(796, 72);
             this.recordsPanel.Name = "recordsPanel";
-            this.recordsPanel.Size = new System.Drawing.Size(36, 38);
+            this.recordsPanel.Size = new System.Drawing.Size(72, 36);
             this.recordsPanel.TabIndex = 58;
             this.recordsPanel.Visible = false;
             // 
@@ -552,6 +552,7 @@
             this.staffBtn.Text = "STAFF";
             this.staffBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.staffBtn.UseVisualStyleBackColor = false;
+            this.staffBtn.Click += new System.EventHandler(this.staffBtn_Click);
             // 
             // supplierBtn
             // 
@@ -569,6 +570,7 @@
             this.supplierBtn.Text = "SUPPLIERS";
             this.supplierBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.supplierBtn.UseVisualStyleBackColor = false;
+            this.supplierBtn.Click += new System.EventHandler(this.supplierBtn_Click);
             // 
             // serviceBtn
             // 
@@ -586,6 +588,7 @@
             this.serviceBtn.Text = "SERVICES";
             this.serviceBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.serviceBtn.UseVisualStyleBackColor = false;
+            this.serviceBtn.Click += new System.EventHandler(this.serviceBtn_Click);
             // 
             // productBtn
             // 
@@ -603,6 +606,7 @@
             this.productBtn.Text = "PRODUCTS";
             this.productBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.productBtn.UseVisualStyleBackColor = false;
+            this.productBtn.Click += new System.EventHandler(this.productBtn_Click);
             // 
             // petBtn
             // 
@@ -620,6 +624,7 @@
             this.petBtn.Text = "PETS";
             this.petBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.petBtn.UseVisualStyleBackColor = false;
+            this.petBtn.Click += new System.EventHandler(this.petBtn_Click);
             // 
             // customerBtn
             // 
@@ -637,6 +642,7 @@
             this.customerBtn.Text = "CUSTOMERS";
             this.customerBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.customerBtn.UseVisualStyleBackColor = false;
+            this.customerBtn.Click += new System.EventHandler(this.customerBtn_Click);
             // 
             // Menu
             // 

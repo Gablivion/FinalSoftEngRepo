@@ -57,7 +57,12 @@ namespace CaPY_SAD
                 prodaddPanel.Enabled = false;
                 customerTxt.Enabled = false;
                 customerTxt.Text = Hosp.selected_data.custname;
-               // load_accserv();
+                load_acc_services();
+                HospProds();
+                ServTotalTxt.Text = Hosp.selected_data.servtotal.ToString();
+                prodTotalTxt.Text = Hosp.selected_data.prodtotal.ToString();
+                roomfeeTxt.Text = Hosp.selected_data.roomtotal.ToString();
+                totalTxt.Text = Hosp.selected_data.total.ToString();
             }
             else
             {
@@ -68,7 +73,47 @@ namespace CaPY_SAD
             }
         }
 
+        public void HospProds()
+        {
+            String query_inventory = "SELECT products.name as pname,hospitalization_id,hosp_prods.id,products_id,quantity,subtotal from products,hosp_prods WHERE products.id = products_id AND hospitalization_id = " + Hosp.selected_data.hosp_id + "";
 
+            conn.Open();
+            MySqlCommand comm = new MySqlCommand(query_inventory, conn);
+            MySqlDataAdapter adp_inventory = new MySqlDataAdapter(comm);
+            conn.Close();
+            DataTable dt_inventory = new DataTable();
+            adp_inventory.Fill(dt_inventory);
+
+
+            dtgvHospProds.DataSource = dt_inventory;
+            dtgvHospProds.Columns["hospitalization_id"].Visible = false;
+            dtgvHospProds.Columns["id"].Visible = false;
+            dtgvHospProds.Columns["products_id"].Visible = false;
+            dtgvHospProds.Columns["pname"].HeaderText = "Product";
+            dtgvHospProds.Columns["quantity"].HeaderText = "Quantity";
+            dtgvHospProds.Columns["subtotal"].HeaderText = "Subtotal";
+
+        }
+
+
+        public void load_acc_services()
+        {
+            String query_accserv = "SELECT service_transaction.id as id, services.name as name, service_price as price FROM service_transaction, services WHERE services_id = services.id AND hospitalization_id = " + Hosp.selected_data.hosp_id + "";
+
+            conn.Open();
+            MySqlCommand comm_accserve = new MySqlCommand(query_accserv, conn);
+            MySqlDataAdapter adp_accserve = new MySqlDataAdapter(comm_accserve);
+            conn.Close();
+            DataTable dt_accserve = new DataTable();
+            adp_accserve.Fill(dt_accserve);
+
+
+            dtgvAcServ.DataSource = dt_accserve;
+            dtgvAcServ.Columns["id"].Visible = false;
+            dtgvAcServ.Columns["name"].HeaderText = "Name";
+            dtgvAcServ.Columns["price"].HeaderText = "Price";
+
+        }
 
         //Check out Orders
         private void checkoutBtn_Click(object sender, EventArgs e)
@@ -380,7 +425,25 @@ namespace CaPY_SAD
                         MySqlCommand comm_update_cage = new MySqlCommand(query_update_cage, conn);
                         comm_update_cage.ExecuteNonQuery();
                         conn.Close();
+
+                        String query_insert_transactions = "INSERT INTO transactions(staff_id, customers_id, transaction_date, total) VALUES ((SELECT staff.id FROM person,staff WHERE staff.person_id = person.id AND concat(firstname,' ',middlename,' ',lastname) Like '%" + encoderName.Text + "%'), (SELECT customers.id FROM person,customers WHERE person.id = customers.person_id AND concat(firstname, ' ', middlename, ' ', lastname) LIKE '%" + customerTxt.Text + "%'),current_timestamp()," + decimal.Parse(totalTxt.Text) + ")";
+                        conn.Open();
+                        MySqlCommand comm_insert_transaction = new MySqlCommand(query_insert_transactions, conn);
+                        comm_insert_transaction.ExecuteNonQuery();
+                        MySqlDataAdapter adp_insert_transaction = new MySqlDataAdapter(comm_insert_transaction);
+                        conn.Close();
+
+
+                        String query_insert_sales_order = "INSERT INTO sales_order(transactions_id, subtotal) VALUES((SELECT max(id) FROM transactions),'" + totalTxt.Text + "')";
+                        conn.Open();
+                        MySqlCommand comm_sales_order = new MySqlCommand(query_insert_sales_order, conn);
+                        comm_sales_order.ExecuteNonQuery();
+                        MySqlDataAdapter adp_insert_sales_order = new MySqlDataAdapter(comm_sales_order);
+                        conn.Close();
+
+
                         MessageBox.Show("Discharged", "Cage Vacated!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
 
                         this.Hide();
                         previousform.Show();
