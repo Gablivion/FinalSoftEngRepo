@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `fabpets` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `fabpets`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: fabpets
@@ -30,7 +32,7 @@ CREATE TABLE `allergies` (
   PRIMARY KEY (`id`,`pets_id`),
   KEY `fk_allergies_pets1_idx` (`pets_id`),
   CONSTRAINT `fk_allergies_pets1` FOREIGN KEY (`pets_id`) REFERENCES `pets` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +41,7 @@ CREATE TABLE `allergies` (
 
 LOCK TABLES `allergies` WRITE;
 /*!40000 ALTER TABLE `allergies` DISABLE KEYS */;
-INSERT INTO `allergies` VALUES (1,5,'Dust\r\n','2018-08-21 16:57:53');
+INSERT INTO `allergies` VALUES (2,6,'Dust','2018-08-27 05:19:01'),(3,6,'Water','2018-08-27 05:19:05');
 /*!40000 ALTER TABLE `allergies` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -57,7 +59,7 @@ CREATE TABLE `cage` (
   `status` varchar(45) DEFAULT NULL,
   `price` decimal(20,2) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +68,7 @@ CREATE TABLE `cage` (
 
 LOCK TABLES `cage` WRITE;
 /*!40000 ALTER TABLE `cage` DISABLE KEYS */;
-INSERT INTO `cage` VALUES (4,'Kadze','Dog CAge for LArge Breed','unavailable',100.00),(5,'Kages','Dog CAge for LArge Breed','unavailable',200.00);
+INSERT INTO `cage` VALUES (6,'Cage 1','first cage on top left','available',150.00),(7,'Cage 2','first cage on top middle','available',200.00),(8,'Deluxe','first cage on top right','available',400.00),(9,'VIP','middle cage on the corner','available',500.00);
 /*!40000 ALTER TABLE `cage` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -84,7 +86,7 @@ CREATE TABLE `customers` (
   PRIMARY KEY (`id`,`person_id`),
   KEY `fk_customers_person1_idx` (`person_id`),
   CONSTRAINT `fk_customers_person1` FOREIGN KEY (`person_id`) REFERENCES `person` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -93,7 +95,7 @@ CREATE TABLE `customers` (
 
 LOCK TABLES `customers` WRITE;
 /*!40000 ALTER TABLE `customers` DISABLE KEYS */;
-INSERT INTO `customers` VALUES (5,7,'no'),(6,9,'no');
+INSERT INTO `customers` VALUES (1,12,'no'),(2,13,'no'),(7,14,'no');
 /*!40000 ALTER TABLE `customers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -151,7 +153,7 @@ CREATE TABLE `endorsed_prods` (
   PRIMARY KEY (`id`,`hospitalization_id`),
   KEY `fk_endorsed_prods_hospitalization1_idx` (`hospitalization_id`),
   CONSTRAINT `fk_endorsed_prods_hospitalization1` FOREIGN KEY (`hospitalization_id`) REFERENCES `hospitalization` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -160,7 +162,6 @@ CREATE TABLE `endorsed_prods` (
 
 LOCK TABLES `endorsed_prods` WRITE;
 /*!40000 ALTER TABLE `endorsed_prods` DISABLE KEYS */;
-INSERT INTO `endorsed_prods` VALUES (1,4,'deworms','2018-08-21 00:00:00',4,1),(2,4,'Wormies','2018-08-21 00:00:00',1,1);
 /*!40000 ALTER TABLE `endorsed_prods` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -182,7 +183,7 @@ CREATE TABLE `hosp_prods` (
   KEY `fk_hosp_prods_products1_idx` (`products_id`),
   CONSTRAINT `fk_hosp_prods_hospitalization1` FOREIGN KEY (`hospitalization_id`) REFERENCES `hospitalization` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_hosp_prods_products1` FOREIGN KEY (`products_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -191,7 +192,7 @@ CREATE TABLE `hosp_prods` (
 
 LOCK TABLES `hosp_prods` WRITE;
 /*!40000 ALTER TABLE `hosp_prods` DISABLE KEYS */;
-INSERT INTO `hosp_prods` VALUES (1,4,21,'1000.00',4),(2,4,21,'500.00',2),(3,4,21,'500.00',2),(4,4,21,'250.00',1),(5,4,21,'500.00',2),(6,4,21,'250.00',1),(7,4,21,'250.00',1),(8,5,21,'750.00',3);
+INSERT INTO `hosp_prods` VALUES (9,6,37,'90.00',1);
 /*!40000 ALTER TABLE `hosp_prods` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -216,7 +217,7 @@ CREATE TABLE `hospitalization` (
   KEY `fk_hospitalization_cage_idx` (`cage_id`),
   CONSTRAINT `fk_hospitalization_cage` FOREIGN KEY (`cage_id`) REFERENCES `cage` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_hospitalization_pets1` FOREIGN KEY (`pets_id`) REFERENCES `pets` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -225,7 +226,7 @@ CREATE TABLE `hospitalization` (
 
 LOCK TABLES `hospitalization` WRITE;
 /*!40000 ALTER TABLE `hospitalization` DISABLE KEYS */;
-INSERT INTO `hospitalization` VALUES (4,4,5,'2018-08-06 12:44:02',NULL,0.00,'active','no'),(5,5,4,'2018-08-08 12:43:19',NULL,0.00,'active','no');
+INSERT INTO `hospitalization` VALUES (6,6,6,'2018-08-27 13:18:49',NULL,0.00,'discharged','no'),(7,7,7,'2018-08-27 14:55:48',NULL,0.00,'discharged','no');
 /*!40000 ALTER TABLE `hospitalization` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -246,7 +247,7 @@ CREATE TABLE `inventory_log` (
   `staff_id` int(11) NOT NULL,
   `status` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`,`staff_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -255,7 +256,7 @@ CREATE TABLE `inventory_log` (
 
 LOCK TABLES `inventory_log` WRITE;
 /*!40000 ALTER TABLE `inventory_log` DISABLE KEYS */;
-INSERT INTO `inventory_log` VALUES (1,'Stock In (Purchased)','2018-08-21 20:35:43','Shampoo','20','Purchased Item from Gabriel John Pil',4,NULL),(2,'Stock Out (Repack)','2018-08-21 20:37:33','Shampoo','20','For Shelf',4,NULL),(3,'Stock Out (Service Usage)','2018-08-21 20:39:09','Shampoo (Repacked by 100 ml )','20','Stocked out to usage by Gabriel John Pil',4,NULL),(4,'Stock In (Purchased)','2018-08-21 22:41:59','Shampoo','26','Purchased Item from Gabriel John Pil',4,NULL),(5,'Stock Out (Hospitalization Product)','2018-08-21 22:42:11','Shampoo','4','Used in hospitalization',4,NULL),(6,'Stock Out (Hospitalization Product)','2018-08-21 22:43:12','Shampoo','2','Used in hospitalization',4,NULL),(7,'Stock Out (Hospitalization Product)','2018-08-21 22:44:19','Shampoo','2','Used in hospitalization',4,NULL),(8,'Stock Out (Hospitalization Product)','2018-08-21 22:46:25','Shampoo','1','Used in hospitalization',4,NULL),(9,'Stock Out (Hospitalization Product)','2018-08-21 22:47:15','Shampoo','2','Used in hospitalization',4,NULL),(10,'Stock Out (Hospitalization Product)','2018-08-21 22:48:34','Shampoo','1','Used in hospitalization',4,NULL),(11,'Stock Out (Hospitalization Product)','2018-08-21 22:50:54','Shampoo','1','Used in hospitalization',4,NULL),(12,'Stock Out (Hospitalization Product)','2018-08-22 00:49:36','Shampoo','3','Used in hospitalization',4,NULL);
+INSERT INTO `inventory_log` VALUES (13,'Stock In (Purchased)','2018-08-27 13:07:38','Collar (D)','50','Purchased Item from Gabriel Suazo Pil',1,NULL),(14,'Stock In (Purchased)','2018-08-27 13:07:38','Parainfluenza Vaccine','30','Purchased Item from Gabriel Suazo Pil',1,NULL),(15,'Stock In (Purchased)','2018-08-27 13:07:38','Measles Vaccine','25','Purchased Item from Gabriel Suazo Pil',1,NULL),(16,'Stock Out (Repack)','2018-08-27 13:08:06','Measles Vaccine','25','For Shelf',1,NULL),(17,'Stock Out (Repack)','2018-08-27 13:11:05','Parainfluenza Vaccine','10','For Shelf',1,NULL),(18,'Stock Out (Service Usage)','2018-08-27 13:24:31','Measles Vaccine (Repacked by 25 ml )','2','Stocked out to usage by Gabriel Suazo Pil',1,NULL),(19,'Stock Out (Hospitalization Product)','2018-08-27 13:24:45','Collar (D)','1','Used in hospitalization',1,NULL),(20,'Stock Out (Service Usage)','2018-08-27 14:55:53','Measles Vaccine (Repacked by 25 ml )','2','Stocked out to usage by Gabriel Suazo Pil',1,NULL);
 /*!40000 ALTER TABLE `inventory_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -307,7 +308,7 @@ CREATE TABLE `medicines_given` (
   PRIMARY KEY (`id`,`pets_id`,`hosp_id`),
   KEY `fk_medicines_given_pets1_idx` (`pets_id`),
   CONSTRAINT `fk_medicines_given_pets1` FOREIGN KEY (`pets_id`) REFERENCES `pets` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -316,7 +317,6 @@ CREATE TABLE `medicines_given` (
 
 LOCK TABLES `medicines_given` WRITE;
 /*!40000 ALTER TABLE `medicines_given` DISABLE KEYS */;
-INSERT INTO `medicines_given` VALUES (1,4,4,'deworms','Endorsed','2018-08-21 14:51:17'),(2,4,4,'Wormies','Endorsed','2018-08-21 15:10:01');
 /*!40000 ALTER TABLE `medicines_given` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -340,7 +340,7 @@ CREATE TABLE `person` (
   `date_added` timestamp NULL DEFAULT NULL,
   `date_modified` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -349,7 +349,7 @@ CREATE TABLE `person` (
 
 LOCK TABLES `person` WRITE;
 /*!40000 ALTER TABLE `person` DISABLE KEYS */;
-INSERT INTO `person` VALUES (6,'Gabriel','John','Pil','male','1998-04-18','Buhangin','09098736253','gablivion@gmai.co',NULL,NULL),(7,'El','oi','se','female','1998-08-06','Balay','09908766352','eloise@gmail.com','2018-08-06 04:42:47','2018-08-06 04:42:47'),(8,'Daenerys','Dragongirl','Dragon','female','1909-08-06','WEsteros','09090909099','dandan@west.com','2018-08-06 04:52:04','2018-08-06 04:52:04'),(9,'Mati','Ya','Shu','male','1998-08-08','Canada','09099938271','home@gg.com','2018-08-08 04:41:35','2018-08-08 04:41:35');
+INSERT INTO `person` VALUES (10,'Gabriel','Suazo','Pil','male','1998-04-18','Buhangin, Davao City','09989099365','gablivion@gmail.com',NULL,NULL),(11,'Cherub ','Suazo','Pil','female','2001-03-21','Buhangin, Davao City','09989099342','cherubie@gmai.com',NULL,NULL),(12,'Gerard','Susalo','Pil','male','1972-11-15','Sasa, Davao City','09989443422','gsp@yahoo.com',NULL,NULL),(13,'Yvonne','Salinas','Suazo','female','1964-11-27','Buhangin, Davao City','09983356377','yvonnesal1998@yahoo.com',NULL,NULL),(14,'Ely','Santos','Suplayan','female','1989-04-18','Puan, Davao City','09989883422','Elysup@gmail.com',NULL,NULL),(15,'Honey','Gallegos','Lirasan','female','1989-09-07','Bajada, Davao City','09987743422','honeygal@yahoo.com',NULL,NULL);
 /*!40000 ALTER TABLE `person` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -377,7 +377,7 @@ CREATE TABLE `pets` (
   PRIMARY KEY (`id`,`customer_id`),
   KEY `fk_pets_customers1_idx` (`customer_id`),
   CONSTRAINT `fk_pets_customers1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -386,7 +386,7 @@ CREATE TABLE `pets` (
 
 LOCK TABLES `pets` WRITE;
 /*!40000 ALTER TABLE `pets` DISABLE KEYS */;
-INSERT INTO `pets` VALUES (4,5,'Navarra','Brown','Dog','German Sheperd','male','1998-08-06','LDN471','yes','2018-08-06 04:43:31','2018-08-06 04:43:31','no'),(5,6,'Doge','Yellow','Dog','Golden Retriever','male','2017-08-08','N/A','yes','2018-08-08 04:42:09','2018-08-08 04:42:09','no');
+INSERT INTO `pets` VALUES (6,7,'George','White','Cat','Siamese','male','2018-07-24','552015556','yes','2018-08-27 05:16:07','2018-08-27 05:16:07','no'),(7,2,'Connor','Brownish Gold','Dog','Golden Retriever','male','2018-07-09','552015556','yes','2018-08-27 05:16:38','2018-08-27 05:16:38','no'),(8,1,'White','Dirty White','Dog','Labrador Retriever','male','2018-08-27','552035556','yes','2018-08-27 05:17:20','2018-08-27 05:17:20','no');
 /*!40000 ALTER TABLE `pets` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -401,7 +401,7 @@ CREATE TABLE `position` (
   `pos_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`pos_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -410,7 +410,7 @@ CREATE TABLE `position` (
 
 LOCK TABLES `position` WRITE;
 /*!40000 ALTER TABLE `position` DISABLE KEYS */;
-INSERT INTO `position` VALUES (1,'owner'),(2,'staff'),(3,'groomer');
+INSERT INTO `position` VALUES (1,'owner'),(2,'staff');
 /*!40000 ALTER TABLE `position` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -431,7 +431,7 @@ CREATE TABLE `product_inventory` (
   PRIMARY KEY (`id`,`products_id`),
   KEY `fk_product_inventory_products1_idx` (`products_id`),
   CONSTRAINT `fk_product_inventory_products1` FOREIGN KEY (`products_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -440,7 +440,7 @@ CREATE TABLE `product_inventory` (
 
 LOCK TABLES `product_inventory` WRITE;
 /*!40000 ALTER TABLE `product_inventory` DISABLE KEYS */;
-INSERT INTO `product_inventory` VALUES (1,21,'10','0000-00-00','available',NULL),(2,35,'0','0000-00-00','unavailable',NULL);
+INSERT INTO `product_inventory` VALUES (3,37,'49','0000-00-00','available',NULL),(4,39,'20','2019-04-01','available',NULL),(5,38,'0','2019-04-01','unavailable',NULL),(6,40,'21','2019-04-01','available',NULL),(7,41,'10','2019-04-01','available',NULL);
 /*!40000 ALTER TABLE `product_inventory` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -465,7 +465,7 @@ CREATE TABLE `products` (
   `reorder` int(11) DEFAULT NULL,
   `medicine` int(5) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -474,7 +474,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (21,'Shampoo','Dog shamoo',250.00,'1000','ml','no','2018-08-06 04:49:07','2018-08-06 04:49:07','no',11,0),(22,'Dewormer','for deworms',300.00,'100','ml','yes','2018-08-06 04:49:35','2018-08-08 04:14:18','no',20,1),(23,'Dog Food','Foodies for your doggies',1000.00,'500','g','yes','2018-08-06 04:50:08','2018-08-06 04:50:08','no',90,0),(35,'Shampoo (Repacked by 100 ml )','Dog shamoo',1.25,'100','ml','no','2018-08-21 12:37:33','2018-08-21 12:37:33','no',11,0);
+INSERT INTO `products` VALUES (36,'Food Bowl','Bowl for your Dogs',140.00,'0','N/A','no','2018-08-27 05:01:30','2018-08-27 05:01:30','no',10,0),(37,'Collar (D)','Dog collar',90.00,'0','N/A','no','2018-08-27 05:03:05','2018-08-27 05:03:05','no',10,0),(38,'Measles Vaccine','Vaccine Vial for Measles',200.00,'50','ml','yes','2018-08-27 05:05:17','2018-08-27 05:05:17','no',15,1),(39,'Parainfluenza Vaccine','Vaccine Bottle for Parainfluenza',3000.00,'1000','ml','yes','2018-08-27 05:05:56','2018-08-27 05:05:56','no',5,1),(40,'Measles Vaccine (Repacked by 25 ml )','Vaccine Vial for Measles',4.00,'25','ml','yes','2018-08-27 05:08:06','2018-08-27 05:08:06','no',15,1),(41,'Parainfluenza Vaccine (Repacked by 500 ml )','Vaccine Bottle for Parainfluenza',150.00,'500','ml','yes','2018-08-27 05:11:05','2018-08-27 05:11:05','no',5,1);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -497,7 +497,7 @@ CREATE TABLE `purchase_order` (
   KEY `fk_purchase_order_staff1_idx` (`staff_id`),
   CONSTRAINT `fk_products_has_suppliers_suppliers1` FOREIGN KEY (`suppliers_id`) REFERENCES `suppliers` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_purchase_order_staff1` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -506,7 +506,7 @@ CREATE TABLE `purchase_order` (
 
 LOCK TABLES `purchase_order` WRITE;
 /*!40000 ALTER TABLE `purchase_order` DISABLE KEYS */;
-INSERT INTO `purchase_order` VALUES (25,3,4,2860.00,'2018-08-06 04:52:33','delivered'),(26,3,4,200.00,'2018-08-16 12:25:04','delivered'),(27,3,4,20000.00,'2018-08-16 12:26:26','delivered'),(28,3,4,2400.00,'2018-08-21 12:35:32','delivered'),(29,3,4,5460.00,'2018-08-21 14:41:49','delivered');
+INSERT INTO `purchase_order` VALUES (30,1,1,90750.00,'2018-08-27 05:06:45','delivered');
 /*!40000 ALTER TABLE `purchase_order` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -531,7 +531,7 @@ CREATE TABLE `purchase_order_line` (
   KEY `fk_purchase_order_line_purchase_order1_idx` (`purchase_order_id`),
   CONSTRAINT `fk_purchase_order_line_products1` FOREIGN KEY (`products_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_purchase_order_line_purchase_order1` FOREIGN KEY (`purchase_order_id`) REFERENCES `purchase_order` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -540,7 +540,7 @@ CREATE TABLE `purchase_order_line` (
 
 LOCK TABLES `purchase_order_line` WRITE;
 /*!40000 ALTER TABLE `purchase_order_line` DISABLE KEYS */;
-INSERT INTO `purchase_order_line` VALUES (1,21,28,'20',120.00,2400.00,'yes','delivered'),(2,21,29,'26',210.00,5460.00,'yes','delivered');
+INSERT INTO `purchase_order_line` VALUES (3,39,30,'30',2800.00,84000.00,'yes','delivered'),(4,38,30,'25',150.00,3750.00,'yes','delivered'),(5,37,30,'50',60.00,3000.00,'yes','delivered'),(6,36,30,'20',90.00,1800.00,'no','cancelled');
 /*!40000 ALTER TABLE `purchase_order_line` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -559,7 +559,7 @@ CREATE TABLE `sales_order` (
   PRIMARY KEY (`id`,`transactions_id`),
   KEY `fk_order_transactions1_idx` (`transactions_id`),
   CONSTRAINT `fk_order_transactions1` FOREIGN KEY (`transactions_id`) REFERENCES `transactions` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -568,6 +568,7 @@ CREATE TABLE `sales_order` (
 
 LOCK TABLES `sales_order` WRITE;
 /*!40000 ALTER TABLE `sales_order` DISABLE KEYS */;
+INSERT INTO `sales_order` VALUES (1,1,208.00,NULL);
 /*!40000 ALTER TABLE `sales_order` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -655,7 +656,7 @@ CREATE TABLE `service_products` (
   KEY `fk_service_products_services1_idx` (`services_id`),
   CONSTRAINT `fk_service_products_products1` FOREIGN KEY (`products_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_service_products_services1` FOREIGN KEY (`services_id`) REFERENCES `services` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -664,7 +665,7 @@ CREATE TABLE `service_products` (
 
 LOCK TABLES `service_products` WRITE;
 /*!40000 ALTER TABLE `service_products` DISABLE KEYS */;
-INSERT INTO `service_products` VALUES (1,3,35,20);
+INSERT INTO `service_products` VALUES (2,7,40,2),(3,8,41,1);
 /*!40000 ALTER TABLE `service_products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -686,7 +687,7 @@ CREATE TABLE `service_transaction` (
   KEY `fk_service_transaction_pets1_idx` (`pets_id`),
   CONSTRAINT `fk_service_transaction_pets1` FOREIGN KEY (`pets_id`) REFERENCES `pets` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_service_transaction_services1` FOREIGN KEY (`services_id`) REFERENCES `services` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -695,7 +696,7 @@ CREATE TABLE `service_transaction` (
 
 LOCK TABLES `service_transaction` WRITE;
 /*!40000 ALTER TABLE `service_transaction` DISABLE KEYS */;
-INSERT INTO `service_transaction` VALUES (1,3,225.00,4,4);
+INSERT INTO `service_transaction` VALUES (2,7,208.00,6,6),(3,7,208.00,7,7);
 /*!40000 ALTER TABLE `service_transaction` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -718,7 +719,7 @@ CREATE TABLE `services` (
   `archived` varchar(3) DEFAULT NULL,
   `servicescol` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -727,7 +728,7 @@ CREATE TABLE `services` (
 
 LOCK TABLES `services` WRITE;
 /*!40000 ALTER TABLE `services` DISABLE KEYS */;
-INSERT INTO `services` VALUES (3,'Dog Grooming','Dog Grooming for Large Pets and all',200.00,225.00,'available','2018-08-19 11:50:48','2018-08-21 12:38:39','no',NULL),(4,'Grooming for smaller','Just for smaller ones but still clean is cean',200.00,950.00,'available','2018-08-19 11:57:15','2018-08-19 15:10:51','no',NULL),(5,'gROOMING bIGGEST','bIGGEST TASK BOI',NULL,200.00,'available','2018-08-19 11:59:18','2018-08-19 11:59:18','yes',NULL),(6,'Dog Deworm','Deworming for your doggos',122.00,725.00,'available','2018-08-19 13:29:06','2018-08-19 15:10:38','no',NULL);
+INSERT INTO `services` VALUES (7,'Measle Vaccination','Vaccination against Measles',200.00,208.00,'available','2018-08-27 05:21:14','2018-08-27 05:21:14','no',NULL),(8,'Parainfluenza  Vaccination','Vaccination agaist Parainfluenza',200.00,350.00,'available','2018-08-27 05:21:31','2018-08-27 05:21:31','no',NULL),(9,' Lyme disease Vaccination','Vaccination agaist  Lyme disease',200.00,200.00,'available','2018-08-27 05:21:53','2018-08-27 05:21:53','no',NULL),(10,'Pet Grooming L','Pet Grooming for Large Breed',200.00,200.00,'available','2018-08-27 05:22:27','2018-08-27 05:22:27','no',NULL),(11,'Pet Grooming M','Pet Grooming for Medium Breed',180.00,180.00,'available','2018-08-27 05:22:45','2018-08-27 05:22:58','no',NULL),(12,'Pet Grooming S','Pet Grooming for Small Breed',120.00,120.00,'available','2018-08-27 05:23:21','2018-08-27 05:23:21','no',NULL);
 /*!40000 ALTER TABLE `services` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -751,7 +752,7 @@ CREATE TABLE `staff` (
   KEY `fk_staff_position1_idx` (`position_pos_id`),
   CONSTRAINT `fk_staff_person1` FOREIGN KEY (`person_id`) REFERENCES `person` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_staff_position1` FOREIGN KEY (`position_pos_id`) REFERENCES `position` (`pos_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -760,7 +761,7 @@ CREATE TABLE `staff` (
 
 LOCK TABLES `staff` WRITE;
 /*!40000 ALTER TABLE `staff` DISABLE KEYS */;
-INSERT INTO `staff` VALUES (4,6,1,'admin','admin','active','no');
+INSERT INTO `staff` VALUES (1,10,1,'admin','admin','active','no'),(2,11,2,'staff','staff','active','no');
 /*!40000 ALTER TABLE `staff` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -779,7 +780,7 @@ CREATE TABLE `suppliers` (
   PRIMARY KEY (`id`,`person_id`),
   KEY `fk_suppliers_person1_idx` (`person_id`),
   CONSTRAINT `fk_suppliers_person1` FOREIGN KEY (`person_id`) REFERENCES `person` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -788,7 +789,7 @@ CREATE TABLE `suppliers` (
 
 LOCK TABLES `suppliers` WRITE;
 /*!40000 ALTER TABLE `suppliers` DISABLE KEYS */;
-INSERT INTO `suppliers` VALUES (3,'Dragon Dog Retail',8,'no');
+INSERT INTO `suppliers` VALUES (1,'Happy Pets Inc.',14,'no'),(2,'Honey Pet Supplies',15,'no');
 /*!40000 ALTER TABLE `suppliers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -810,7 +811,7 @@ CREATE TABLE `transactions` (
   KEY `fk_transactions_customers1_idx` (`customers_id`),
   CONSTRAINT `fk_transactions_customers1` FOREIGN KEY (`customers_id`) REFERENCES `customers` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_transactions_staff1` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -819,6 +820,7 @@ CREATE TABLE `transactions` (
 
 LOCK TABLES `transactions` WRITE;
 /*!40000 ALTER TABLE `transactions` DISABLE KEYS */;
+INSERT INTO `transactions` VALUES (1,1,2,'2018-08-27 14:56:07',208.00);
 /*!40000 ALTER TABLE `transactions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -835,4 +837,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-08-22  0:59:05
+-- Dump completed on 2018-08-28  8:20:54
