@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_Service_Reports));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dtgvLog = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,8 +46,16 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.quitBtn = new System.Windows.Forms.Button();
+            this.dtgvServRenLog = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.servBtn = new System.Windows.Forms.Button();
+            this.printDialog2 = new System.Windows.Forms.PrintDialog();
+            this.printPreviewDialog2 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDocument2 = new System.Drawing.Printing.PrintDocument();
+            this.renderedresetBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvLog)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvServRenLog)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -68,30 +78,31 @@
             this.dtgvLog.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtgvLog.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvLog.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvLog.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvLog.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dtgvLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvLog.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvLog.DefaultCellStyle = dataGridViewCellStyle10;
             this.dtgvLog.Location = new System.Drawing.Point(17, 157);
             this.dtgvLog.Name = "dtgvLog";
             this.dtgvLog.ReadOnly = true;
             this.dtgvLog.RowHeadersVisible = false;
             this.dtgvLog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvLog.Size = new System.Drawing.Size(926, 494);
+            this.dtgvLog.Size = new System.Drawing.Size(926, 231);
             this.dtgvLog.TabIndex = 90;
+            this.dtgvLog.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvLog_CellClick);
             // 
             // label2
             // 
@@ -210,6 +221,96 @@
             this.quitBtn.TabIndex = 91;
             this.quitBtn.UseVisualStyleBackColor = false;
             // 
+            // dtgvServRenLog
+            // 
+            this.dtgvServRenLog.AllowUserToAddRows = false;
+            this.dtgvServRenLog.AllowUserToDeleteRows = false;
+            this.dtgvServRenLog.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvServRenLog.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dtgvServRenLog.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgvServRenLog.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvServRenLog.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dtgvServRenLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvServRenLog.DefaultCellStyle = dataGridViewCellStyle12;
+            this.dtgvServRenLog.Location = new System.Drawing.Point(17, 443);
+            this.dtgvServRenLog.Name = "dtgvServRenLog";
+            this.dtgvServRenLog.ReadOnly = true;
+            this.dtgvServRenLog.RowHeadersVisible = false;
+            this.dtgvServRenLog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvServRenLog.Size = new System.Drawing.Size(926, 206);
+            this.dtgvServRenLog.TabIndex = 94;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Tw Cen MT", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(316, 396);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(324, 40);
+            this.label4.TabIndex = 95;
+            this.label4.Text = "SERVICES RENDERED";
+            // 
+            // servBtn
+            // 
+            this.servBtn.BackColor = System.Drawing.Color.White;
+            this.servBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.servBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.servBtn.Location = new System.Drawing.Point(886, 414);
+            this.servBtn.Name = "servBtn";
+            this.servBtn.Size = new System.Drawing.Size(57, 27);
+            this.servBtn.TabIndex = 96;
+            this.servBtn.Text = "PRINT";
+            this.servBtn.UseVisualStyleBackColor = false;
+            this.servBtn.Click += new System.EventHandler(this.servBtn_Click);
+            // 
+            // printDialog2
+            // 
+            this.printDialog2.UseEXDialog = true;
+            // 
+            // printPreviewDialog2
+            // 
+            this.printPreviewDialog2.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog2.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog2.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog2.Enabled = true;
+            this.printPreviewDialog2.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog2.Icon")));
+            this.printPreviewDialog2.Name = "printPreviewDialog1";
+            this.printPreviewDialog2.Visible = false;
+            this.printPreviewDialog2.Load += new System.EventHandler(this.printPreviewDialog2_Load);
+            // 
+            // printDocument2
+            // 
+            this.printDocument2.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument2_PrintPage);
+            // 
+            // renderedresetBtn
+            // 
+            this.renderedresetBtn.BackColor = System.Drawing.Color.White;
+            this.renderedresetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.renderedresetBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.renderedresetBtn.Location = new System.Drawing.Point(779, 414);
+            this.renderedresetBtn.Name = "renderedresetBtn";
+            this.renderedresetBtn.Size = new System.Drawing.Size(101, 27);
+            this.renderedresetBtn.TabIndex = 91;
+            this.renderedresetBtn.Text = "SHOW ALL";
+            this.renderedresetBtn.UseVisualStyleBackColor = false;
+            this.renderedresetBtn.Click += new System.EventHandler(this.renderedresetBtn_Click);
+            // 
             // View_Service_Reports
             // 
             this.AllowDrop = true;
@@ -217,6 +318,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(40)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(955, 663);
+            this.Controls.Add(this.renderedresetBtn);
+            this.Controls.Add(this.servBtn);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.dtgvServRenLog);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtgvLog);
             this.Controls.Add(this.panel1);
@@ -226,9 +331,11 @@
             this.Name = "View_Service_Reports";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View_Service_Reports";
+            this.Load += new System.EventHandler(this.View_Service_Reports_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvLog)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvServRenLog)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,5 +356,12 @@
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Windows.Forms.Button quitBtn;
+        private System.Windows.Forms.DataGridView dtgvServRenLog;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button servBtn;
+        private System.Windows.Forms.PrintDialog printDialog2;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog2;
+        private System.Drawing.Printing.PrintDocument printDocument2;
+        private System.Windows.Forms.Button renderedresetBtn;
     }
 }
