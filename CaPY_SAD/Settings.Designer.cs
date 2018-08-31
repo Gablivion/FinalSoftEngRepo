@@ -46,11 +46,11 @@
             this.update_pwordBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.update_pwordBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.update_pwordBtn.ForeColor = System.Drawing.Color.Black;
-            this.update_pwordBtn.Location = new System.Drawing.Point(317, 245);
+            this.update_pwordBtn.Location = new System.Drawing.Point(319, 246);
             this.update_pwordBtn.Name = "update_pwordBtn";
             this.update_pwordBtn.Size = new System.Drawing.Size(90, 47);
             this.update_pwordBtn.TabIndex = 6;
-            this.update_pwordBtn.Text = "UPDATE PASSWORD";
+            this.update_pwordBtn.Text = "UPDATE";
             this.update_pwordBtn.UseVisualStyleBackColor = false;
             this.update_pwordBtn.Click += new System.EventHandler(this.update_pwordBtn_Click);
             // 
@@ -86,11 +86,11 @@
             this.update_unameBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.update_unameBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.update_unameBtn.ForeColor = System.Drawing.Color.Black;
-            this.update_unameBtn.Location = new System.Drawing.Point(319, 85);
+            this.update_unameBtn.Location = new System.Drawing.Point(319, 95);
             this.update_unameBtn.Name = "update_unameBtn";
-            this.update_unameBtn.Size = new System.Drawing.Size(90, 47);
+            this.update_unameBtn.Size = new System.Drawing.Size(88, 26);
             this.update_unameBtn.TabIndex = 2;
-            this.update_unameBtn.Text = "UPDATE USERNAME";
+            this.update_unameBtn.Text = "UPDATE";
             this.update_unameBtn.UseVisualStyleBackColor = false;
             this.update_unameBtn.Click += new System.EventHandler(this.update_unameBtn_Click);
             // 

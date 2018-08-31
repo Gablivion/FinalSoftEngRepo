@@ -48,7 +48,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tw Cen MT", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(440, 32);
+            this.label1.Location = new System.Drawing.Point(469, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(201, 40);
             this.label1.TabIndex = 45;
@@ -79,13 +79,13 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvCustomer.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dtgvCustomer.Location = new System.Drawing.Point(36, 109);
+            this.dtgvCustomer.Location = new System.Drawing.Point(37, 109);
             this.dtgvCustomer.MultiSelect = false;
             this.dtgvCustomer.Name = "dtgvCustomer";
             this.dtgvCustomer.ReadOnly = true;
             this.dtgvCustomer.RowHeadersVisible = false;
             this.dtgvCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvCustomer.Size = new System.Drawing.Size(1008, 454);
+            this.dtgvCustomer.Size = new System.Drawing.Size(1064, 546);
             this.dtgvCustomer.TabIndex = 42;
             this.dtgvCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvCustomer_CellClick);
             // 
@@ -96,7 +96,7 @@
             this.button1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Transparent;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(1038, 0);
+            this.button1.Location = new System.Drawing.Point(1096, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(42, 40);
             this.button1.TabIndex = 41;
@@ -109,7 +109,7 @@
             this.addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.addBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addBtn.ForeColor = System.Drawing.Color.Black;
-            this.addBtn.Location = new System.Drawing.Point(839, 74);
+            this.addBtn.Location = new System.Drawing.Point(896, 73);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(59, 33);
             this.addBtn.TabIndex = 52;
@@ -123,7 +123,7 @@
             this.viewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.viewBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewBtn.ForeColor = System.Drawing.Color.Black;
-            this.viewBtn.Location = new System.Drawing.Point(899, 74);
+            this.viewBtn.Location = new System.Drawing.Point(956, 73);
             this.viewBtn.Name = "viewBtn";
             this.viewBtn.Size = new System.Drawing.Size(59, 33);
             this.viewBtn.TabIndex = 53;
@@ -138,7 +138,7 @@
             this.archiveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.archiveBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.archiveBtn.ForeColor = System.Drawing.Color.Black;
-            this.archiveBtn.Location = new System.Drawing.Point(959, 74);
+            this.archiveBtn.Location = new System.Drawing.Point(1016, 73);
             this.archiveBtn.Name = "archiveBtn";
             this.archiveBtn.Size = new System.Drawing.Size(85, 33);
             this.archiveBtn.TabIndex = 59;
@@ -173,7 +173,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(40)))), ((int)(((byte)(54)))));
-            this.ClientSize = new System.Drawing.Size(1080, 600);
+            this.ClientSize = new System.Drawing.Size(1138, 690);
             this.ControlBox = false;
             this.Controls.Add(this.nameTxt);
             this.Controls.Add(this.label3);

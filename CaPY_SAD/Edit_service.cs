@@ -106,8 +106,8 @@ namespace CaPY_SAD
             dtgvServicesProd.Enabled = false;
             prodPanel.Visible = true;
             prodPanel.Enabled = true;
-            prodPanel.Size = new Size(485, 505);
-            prodPanel.Location = new Point(0, 0);
+            prodPanel.Size = new Size(472, 553);
+            prodPanel.Location = new Point(32, 0);
 
             Type = "Add";
             load_service_details();

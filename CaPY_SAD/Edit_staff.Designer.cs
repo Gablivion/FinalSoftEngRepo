@@ -70,11 +70,11 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dtgvInv = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.cancelBtn = new System.Windows.Forms.Button();
-            this.saveBtn = new System.Windows.Forms.Button();
             this.passCbx = new System.Windows.Forms.CheckBox();
             this.confPass = new System.Windows.Forms.TextBox();
             this.conflabel = new System.Windows.Forms.Label();
+            this.cancelBtn = new System.Windows.Forms.Button();
+            this.saveBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTransactions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvPurchasing)).BeginInit();
@@ -106,7 +106,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tw Cen MT", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(412, 9);
+            this.label1.Location = new System.Drawing.Point(420, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(241, 40);
             this.label1.TabIndex = 74;
@@ -118,7 +118,7 @@
             this.statusbox.Depth = 0;
             this.statusbox.Enabled = false;
             this.statusbox.Font = new System.Drawing.Font("Roboto", 10F);
-            this.statusbox.Location = new System.Drawing.Point(608, 115);
+            this.statusbox.Location = new System.Drawing.Point(678, 114);
             this.statusbox.Margin = new System.Windows.Forms.Padding(0);
             this.statusbox.MouseLocation = new System.Drawing.Point(-1, -1);
             this.statusbox.MouseState = MaterialSkin.MouseState.HOVER;
@@ -135,7 +135,7 @@
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(488, 112);
+            this.label13.Location = new System.Drawing.Point(492, 116);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(66, 28);
             this.label13.TabIndex = 143;
@@ -147,7 +147,7 @@
             this.usernameLabel.BackColor = System.Drawing.Color.Transparent;
             this.usernameLabel.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameLabel.ForeColor = System.Drawing.Color.White;
-            this.usernameLabel.Location = new System.Drawing.Point(488, 148);
+            this.usernameLabel.Location = new System.Drawing.Point(492, 148);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(97, 28);
             this.usernameLabel.TabIndex = 140;
@@ -159,7 +159,7 @@
             this.passwordLabel.BackColor = System.Drawing.Color.Transparent;
             this.passwordLabel.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordLabel.ForeColor = System.Drawing.Color.White;
-            this.passwordLabel.Location = new System.Drawing.Point(488, 184);
+            this.passwordLabel.Location = new System.Drawing.Point(492, 184);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(92, 28);
             this.passwordLabel.TabIndex = 139;
@@ -171,7 +171,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(97, 44);
+            this.label2.Location = new System.Drawing.Point(83, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(117, 28);
             this.label2.TabIndex = 136;
@@ -183,7 +183,7 @@
             this.bdayTxt.Enabled = false;
             this.bdayTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bdayTxt.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.bdayTxt.Location = new System.Drawing.Point(261, 230);
+            this.bdayTxt.Location = new System.Drawing.Point(222, 151);
             this.bdayTxt.Name = "bdayTxt";
             this.bdayTxt.Size = new System.Drawing.Size(234, 26);
             this.bdayTxt.TabIndex = 6;
@@ -194,7 +194,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(488, 10);
+            this.label9.Location = new System.Drawing.Point(492, 14);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(98, 28);
             this.label9.TabIndex = 129;
@@ -206,7 +206,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(488, 41);
+            this.label8.Location = new System.Drawing.Point(492, 47);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(66, 28);
             this.label8.TabIndex = 128;
@@ -218,7 +218,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(97, 173);
+            this.label7.Location = new System.Drawing.Point(83, 184);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 28);
             this.label7.TabIndex = 127;
@@ -230,7 +230,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(97, 105);
+            this.label6.Location = new System.Drawing.Point(83, 111);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(74, 28);
             this.label6.TabIndex = 126;
@@ -242,7 +242,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(97, 140);
+            this.label5.Location = new System.Drawing.Point(83, 150);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(87, 28);
             this.label5.TabIndex = 125;
@@ -254,7 +254,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(97, 10);
+            this.label3.Location = new System.Drawing.Point(83, 10);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 28);
             this.label3.TabIndex = 124;
@@ -266,7 +266,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(97, 75);
+            this.label10.Location = new System.Drawing.Point(83, 81);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(94, 28);
             this.label10.TabIndex = 123;
@@ -276,7 +276,7 @@
             // 
             this.panel1.Controls.Add(this.maleRadio);
             this.panel1.Controls.Add(this.femaleRadio);
-            this.panel1.Location = new System.Drawing.Point(218, 112);
+            this.panel1.Location = new System.Drawing.Point(222, 112);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(175, 33);
             this.panel1.TabIndex = 138;
@@ -327,7 +327,7 @@
             this.positionCmb.Items.AddRange(new object[] {
             "owner",
             "staff"});
-            this.positionCmb.Location = new System.Drawing.Point(651, 163);
+            this.positionCmb.Location = new System.Drawing.Point(678, 81);
             this.positionCmb.Name = "positionCmb";
             this.positionCmb.Size = new System.Drawing.Size(234, 28);
             this.positionCmb.TabIndex = 10;
@@ -338,7 +338,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(488, 74);
+            this.label4.Location = new System.Drawing.Point(492, 81);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 28);
             this.label4.TabIndex = 121;
@@ -348,7 +348,7 @@
             // 
             this.firstnameTxt.Enabled = false;
             this.firstnameTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstnameTxt.Location = new System.Drawing.Point(261, 98);
+            this.firstnameTxt.Location = new System.Drawing.Point(265, 98);
             this.firstnameTxt.MaxLength = 45;
             this.firstnameTxt.Name = "firstnameTxt";
             this.firstnameTxt.Size = new System.Drawing.Size(234, 26);
@@ -359,7 +359,7 @@
             // 
             this.middlenameTxt.Enabled = false;
             this.middlenameTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.middlenameTxt.Location = new System.Drawing.Point(261, 131);
+            this.middlenameTxt.Location = new System.Drawing.Point(265, 131);
             this.middlenameTxt.MaxLength = 45;
             this.middlenameTxt.Name = "middlenameTxt";
             this.middlenameTxt.Size = new System.Drawing.Size(234, 26);
@@ -370,7 +370,7 @@
             // 
             this.lastnameTxt.Enabled = false;
             this.lastnameTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastnameTxt.Location = new System.Drawing.Point(261, 164);
+            this.lastnameTxt.Location = new System.Drawing.Point(265, 164);
             this.lastnameTxt.MaxLength = 45;
             this.lastnameTxt.Name = "lastnameTxt";
             this.lastnameTxt.Size = new System.Drawing.Size(234, 26);
@@ -381,7 +381,7 @@
             // 
             this.addressTxt.Enabled = false;
             this.addressTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressTxt.Location = new System.Drawing.Point(261, 263);
+            this.addressTxt.Location = new System.Drawing.Point(222, 184);
             this.addressTxt.MaxLength = 45;
             this.addressTxt.Name = "addressTxt";
             this.addressTxt.Size = new System.Drawing.Size(234, 26);
@@ -391,7 +391,7 @@
             // 
             this.cnumTxt.Enabled = false;
             this.cnumTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cnumTxt.Location = new System.Drawing.Point(651, 98);
+            this.cnumTxt.Location = new System.Drawing.Point(678, 16);
             this.cnumTxt.MaxLength = 45;
             this.cnumTxt.Name = "cnumTxt";
             this.cnumTxt.Size = new System.Drawing.Size(234, 26);
@@ -401,7 +401,7 @@
             // 
             this.emailTxt.Enabled = false;
             this.emailTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailTxt.Location = new System.Drawing.Point(651, 131);
+            this.emailTxt.Location = new System.Drawing.Point(678, 49);
             this.emailTxt.MaxLength = 45;
             this.emailTxt.Name = "emailTxt";
             this.emailTxt.Size = new System.Drawing.Size(234, 26);
@@ -412,7 +412,7 @@
             // 
             this.usernameTxt.Enabled = false;
             this.usernameTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameTxt.Location = new System.Drawing.Point(651, 230);
+            this.usernameTxt.Location = new System.Drawing.Point(678, 148);
             this.usernameTxt.MaxLength = 45;
             this.usernameTxt.Name = "usernameTxt";
             this.usernameTxt.Size = new System.Drawing.Size(234, 26);
@@ -422,7 +422,7 @@
             // 
             this.passwordTxt.Enabled = false;
             this.passwordTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTxt.Location = new System.Drawing.Point(651, 265);
+            this.passwordTxt.Location = new System.Drawing.Point(678, 183);
             this.passwordTxt.MaxLength = 45;
             this.passwordTxt.Name = "passwordTxt";
             this.passwordTxt.PasswordChar = 'ฅ';
@@ -460,7 +460,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Tw Cen MT", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(412, 400);
+            this.label14.Location = new System.Drawing.Point(412, 413);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(256, 40);
             this.label14.TabIndex = 144;
@@ -468,10 +468,10 @@
             // 
             // editBtn
             // 
-            this.editBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(146)))), ((int)(((byte)(95)))));
+            this.editBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(156)))), ((int)(((byte)(120)))));
             this.editBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.editBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editBtn.Location = new System.Drawing.Point(976, 48);
+            this.editBtn.Location = new System.Drawing.Point(976, 53);
             this.editBtn.Name = "editBtn";
             this.editBtn.Size = new System.Drawing.Size(62, 31);
             this.editBtn.TabIndex = 146;
@@ -510,7 +510,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(43, 428);
+            this.tabControl1.Location = new System.Drawing.Point(43, 441);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(995, 406);
@@ -580,14 +580,21 @@
             this.panel2.Controls.Add(this.passCbx);
             this.panel2.Controls.Add(this.confPass);
             this.panel2.Controls.Add(this.conflabel);
+            this.panel2.Controls.Add(this.addressTxt);
+            this.panel2.Controls.Add(this.passwordTxt);
             this.panel2.Controls.Add(this.cancelBtn);
+            this.panel2.Controls.Add(this.usernameTxt);
+            this.panel2.Controls.Add(this.emailTxt);
+            this.panel2.Controls.Add(this.bdayTxt);
             this.panel2.Controls.Add(this.saveBtn);
+            this.panel2.Controls.Add(this.cnumTxt);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.positionCmb);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
@@ -596,45 +603,17 @@
             this.panel2.Controls.Add(this.usernameLabel);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.passwordLabel);
-            this.panel2.Location = new System.Drawing.Point(43, 79);
+            this.panel2.Location = new System.Drawing.Point(43, 84);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(995, 318);
             this.panel2.TabIndex = 151;
-            // 
-            // cancelBtn
-            // 
-            this.cancelBtn.BackColor = System.Drawing.SystemColors.Control;
-            this.cancelBtn.Enabled = false;
-            this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelBtn.Location = new System.Drawing.Point(500, 270);
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(85, 39);
-            this.cancelBtn.TabIndex = 138;
-            this.cancelBtn.Text = "CANCEL";
-            this.cancelBtn.UseVisualStyleBackColor = false;
-            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
-            // 
-            // saveBtn
-            // 
-            this.saveBtn.BackColor = System.Drawing.SystemColors.Control;
-            this.saveBtn.Enabled = false;
-            this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveBtn.Location = new System.Drawing.Point(405, 270);
-            this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(85, 39);
-            this.saveBtn.TabIndex = 137;
-            this.saveBtn.Text = "SAVE";
-            this.saveBtn.UseVisualStyleBackColor = false;
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // passCbx
             // 
             this.passCbx.AutoSize = true;
             this.passCbx.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passCbx.ForeColor = System.Drawing.Color.White;
-            this.passCbx.Location = new System.Drawing.Point(703, 253);
+            this.passCbx.Location = new System.Drawing.Point(770, 253);
             this.passCbx.Name = "passCbx";
             this.passCbx.Size = new System.Drawing.Size(142, 24);
             this.passCbx.TabIndex = 146;
@@ -646,7 +625,7 @@
             // 
             this.confPass.Enabled = false;
             this.confPass.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confPass.Location = new System.Drawing.Point(608, 221);
+            this.confPass.Location = new System.Drawing.Point(678, 221);
             this.confPass.MaxLength = 45;
             this.confPass.Name = "confPass";
             this.confPass.PasswordChar = 'ฅ';
@@ -660,32 +639,53 @@
             this.conflabel.BackColor = System.Drawing.Color.Transparent;
             this.conflabel.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.conflabel.ForeColor = System.Drawing.Color.White;
-            this.conflabel.Location = new System.Drawing.Point(420, 218);
+            this.conflabel.Location = new System.Drawing.Point(492, 218);
             this.conflabel.Name = "conflabel";
             this.conflabel.Size = new System.Drawing.Size(166, 28);
             this.conflabel.TabIndex = 145;
             this.conflabel.Text = "Confirm Password";
+            // 
+            // cancelBtn
+            // 
+            this.cancelBtn.BackColor = System.Drawing.SystemColors.Control;
+            this.cancelBtn.Enabled = false;
+            this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelBtn.Location = new System.Drawing.Point(509, 270);
+            this.cancelBtn.Name = "cancelBtn";
+            this.cancelBtn.Size = new System.Drawing.Size(80, 39);
+            this.cancelBtn.TabIndex = 138;
+            this.cancelBtn.Text = "CANCEL";
+            this.cancelBtn.UseVisualStyleBackColor = false;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            // 
+            // saveBtn
+            // 
+            this.saveBtn.BackColor = System.Drawing.SystemColors.Control;
+            this.saveBtn.Enabled = false;
+            this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveBtn.Location = new System.Drawing.Point(414, 270);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(80, 39);
+            this.saveBtn.TabIndex = 137;
+            this.saveBtn.Text = "SAVE";
+            this.saveBtn.UseVisualStyleBackColor = false;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // Edit_staff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(40)))), ((int)(((byte)(54)))));
-            this.ClientSize = new System.Drawing.Size(1080, 846);
+            this.ClientSize = new System.Drawing.Size(1080, 880);
             this.ControlBox = false;
             this.Controls.Add(this.label14);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.editBtn);
-            this.Controls.Add(this.passwordTxt);
-            this.Controls.Add(this.usernameTxt);
-            this.Controls.Add(this.emailTxt);
-            this.Controls.Add(this.cnumTxt);
-            this.Controls.Add(this.addressTxt);
             this.Controls.Add(this.lastnameTxt);
             this.Controls.Add(this.middlenameTxt);
             this.Controls.Add(this.firstnameTxt);
-            this.Controls.Add(this.bdayTxt);
-            this.Controls.Add(this.positionCmb);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel2);

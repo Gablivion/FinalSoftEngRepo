@@ -410,5 +410,11 @@ namespace CaPY_SAD
             sorting = 0;
             loadSalesData();
         }
+
+        private void quitBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            previousform.Show();
+        }
     }
 }

@@ -55,7 +55,7 @@
             this.quitBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quitBtn.ForeColor = System.Drawing.Color.Transparent;
             this.quitBtn.Image = ((System.Drawing.Image)(resources.GetObject("quitBtn.Image")));
-            this.quitBtn.Location = new System.Drawing.Point(933, 0);
+            this.quitBtn.Location = new System.Drawing.Point(1096, 0);
             this.quitBtn.Name = "quitBtn";
             this.quitBtn.Size = new System.Drawing.Size(42, 40);
             this.quitBtn.TabIndex = 83;
@@ -87,12 +87,12 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvRefund.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dtgvRefund.Location = new System.Drawing.Point(24, 159);
+            this.dtgvRefund.Location = new System.Drawing.Point(39, 159);
             this.dtgvRefund.Name = "dtgvRefund";
             this.dtgvRefund.ReadOnly = true;
             this.dtgvRefund.RowHeadersVisible = false;
             this.dtgvRefund.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvRefund.Size = new System.Drawing.Size(926, 494);
+            this.dtgvRefund.Size = new System.Drawing.Size(1061, 494);
             this.dtgvRefund.TabIndex = 88;
             // 
             // panel1
@@ -103,9 +103,9 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.startDtp);
             this.panel1.Controls.Add(this.endDtp);
-            this.panel1.Location = new System.Drawing.Point(24, 97);
+            this.panel1.Location = new System.Drawing.Point(39, 97);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(926, 56);
+            this.panel1.Size = new System.Drawing.Size(1061, 56);
             this.panel1.TabIndex = 89;
             // 
             // resetBtn
@@ -113,7 +113,7 @@
             this.resetBtn.BackColor = System.Drawing.Color.White;
             this.resetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.resetBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resetBtn.Location = new System.Drawing.Point(813, 15);
+            this.resetBtn.Location = new System.Drawing.Point(838, 15);
             this.resetBtn.Name = "resetBtn";
             this.resetBtn.Size = new System.Drawing.Size(57, 27);
             this.resetBtn.TabIndex = 91;
@@ -127,7 +127,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tw Cen MT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(140, 14);
+            this.label2.Location = new System.Drawing.Point(165, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 28);
             this.label2.TabIndex = 85;
@@ -139,7 +139,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Tw Cen MT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(495, 14);
+            this.label3.Location = new System.Drawing.Point(520, 14);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 28);
             this.label3.TabIndex = 86;
@@ -150,7 +150,7 @@
             this.startDtp.CustomFormat = "yyyy-MM-dd";
             this.startDtp.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startDtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.startDtp.Location = new System.Drawing.Point(218, 15);
+            this.startDtp.Location = new System.Drawing.Point(243, 15);
             this.startDtp.Name = "startDtp";
             this.startDtp.Size = new System.Drawing.Size(214, 26);
             this.startDtp.TabIndex = 1;
@@ -161,7 +161,7 @@
             this.endDtp.CustomFormat = "yyyy-MM-dd";
             this.endDtp.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.endDtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.endDtp.Location = new System.Drawing.Point(573, 15);
+            this.endDtp.Location = new System.Drawing.Point(598, 15);
             this.endDtp.Name = "endDtp";
             this.endDtp.Size = new System.Drawing.Size(214, 26);
             this.endDtp.TabIndex = 2;
@@ -173,7 +173,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tw Cen MT", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(409, 22);
+            this.label1.Location = new System.Drawing.Point(491, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(156, 40);
             this.label1.TabIndex = 90;
@@ -184,7 +184,7 @@
             this.printBtn.BackColor = System.Drawing.Color.White;
             this.printBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.printBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.printBtn.Location = new System.Drawing.Point(893, 64);
+            this.printBtn.Location = new System.Drawing.Point(1043, 69);
             this.printBtn.Name = "printBtn";
             this.printBtn.Size = new System.Drawing.Size(57, 27);
             this.printBtn.TabIndex = 91;
@@ -215,7 +215,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(40)))), ((int)(((byte)(54)))));
-            this.ClientSize = new System.Drawing.Size(975, 678);
+            this.ClientSize = new System.Drawing.Size(1138, 690);
             this.ControlBox = false;
             this.Controls.Add(this.printBtn);
             this.Controls.Add(this.label1);
