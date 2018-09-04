@@ -51,7 +51,7 @@
             this.quitBtn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quitBtn.ForeColor = System.Drawing.Color.Transparent;
             this.quitBtn.Image = ((System.Drawing.Image)(resources.GetObject("quitBtn.Image")));
-            this.quitBtn.Location = new System.Drawing.Point(390, 0);
+            this.quitBtn.Location = new System.Drawing.Point(420, 0);
             this.quitBtn.Name = "quitBtn";
             this.quitBtn.Size = new System.Drawing.Size(42, 40);
             this.quitBtn.TabIndex = 148;
@@ -64,7 +64,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(55, 213);
+            this.label4.Location = new System.Drawing.Point(70, 215);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 28);
             this.label4.TabIndex = 156;
@@ -76,7 +76,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(55, 147);
+            this.label3.Location = new System.Drawing.Point(70, 149);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 28);
             this.label3.TabIndex = 157;
@@ -88,7 +88,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(55, 114);
+            this.label2.Location = new System.Drawing.Point(70, 116);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 28);
             this.label2.TabIndex = 155;
@@ -100,7 +100,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tw Cen MT", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(54, 30);
+            this.label1.Location = new System.Drawing.Point(69, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(325, 40);
             this.label1.TabIndex = 154;
@@ -110,7 +110,7 @@
             // 
             this.productCmb.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.productCmb.FormattingEnabled = true;
-            this.productCmb.Location = new System.Drawing.Point(187, 114);
+            this.productCmb.Location = new System.Drawing.Point(202, 116);
             this.productCmb.Name = "productCmb";
             this.productCmb.Size = new System.Drawing.Size(191, 29);
             this.productCmb.TabIndex = 1;
@@ -118,7 +118,7 @@
             // quantityTxt
             // 
             this.quantityTxt.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantityTxt.Location = new System.Drawing.Point(187, 149);
+            this.quantityTxt.Location = new System.Drawing.Point(202, 151);
             this.quantityTxt.Name = "quantityTxt";
             this.quantityTxt.Size = new System.Drawing.Size(191, 27);
             this.quantityTxt.TabIndex = 2;
@@ -128,7 +128,7 @@
             this.expirationTxt.CustomFormat = "yyyy-MM-dd";
             this.expirationTxt.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.expirationTxt.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.expirationTxt.Location = new System.Drawing.Point(187, 215);
+            this.expirationTxt.Location = new System.Drawing.Point(202, 217);
             this.expirationTxt.Name = "expirationTxt";
             this.expirationTxt.Size = new System.Drawing.Size(191, 27);
             this.expirationTxt.TabIndex = 3;
@@ -138,7 +138,7 @@
             this.saveBtn.BackColor = System.Drawing.Color.White;
             this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveBtn.Location = new System.Drawing.Point(128, 283);
+            this.saveBtn.Location = new System.Drawing.Point(143, 291);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(77, 34);
             this.saveBtn.TabIndex = 4;
@@ -151,7 +151,7 @@
             this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelBtn.Location = new System.Drawing.Point(227, 283);
+            this.cancelBtn.Location = new System.Drawing.Point(242, 291);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(77, 34);
             this.cancelBtn.TabIndex = 5;
@@ -162,7 +162,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(187, 182);
+            this.textBox1.Location = new System.Drawing.Point(202, 184);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(191, 27);
             this.textBox1.TabIndex = 158;
@@ -173,7 +173,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(55, 180);
+            this.label5.Location = new System.Drawing.Point(70, 182);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 28);
             this.label5.TabIndex = 159;
@@ -186,7 +186,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(40)))), ((int)(((byte)(54)))));
             this.CancelButton = this.cancelBtn;
-            this.ClientSize = new System.Drawing.Size(432, 351);
+            this.ClientSize = new System.Drawing.Size(462, 369);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.cancelBtn);

@@ -48,7 +48,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tw Cen MT", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(407, 32);
+            this.label1.Location = new System.Drawing.Point(491, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(156, 40);
             this.label1.TabIndex = 50;
@@ -79,12 +79,12 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvService.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dtgvService.Location = new System.Drawing.Point(35, 109);
+            this.dtgvService.Location = new System.Drawing.Point(37, 109);
             this.dtgvService.Name = "dtgvService";
             this.dtgvService.ReadOnly = true;
             this.dtgvService.RowHeadersVisible = false;
             this.dtgvService.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvService.Size = new System.Drawing.Size(900, 421);
+            this.dtgvService.Size = new System.Drawing.Size(1064, 546);
             this.dtgvService.TabIndex = 49;
             this.dtgvService.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvService_CellClick);
             this.dtgvService.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.dtgvService_RowStateChanged);
@@ -96,7 +96,7 @@
             this.button1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Transparent;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(929, 0);
+            this.button1.Location = new System.Drawing.Point(1096, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(42, 40);
             this.button1.TabIndex = 48;
@@ -109,7 +109,7 @@
             this.editBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.editBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editBtn.ForeColor = System.Drawing.Color.Black;
-            this.editBtn.Location = new System.Drawing.Point(795, 74);
+            this.editBtn.Location = new System.Drawing.Point(961, 73);
             this.editBtn.Name = "editBtn";
             this.editBtn.Size = new System.Drawing.Size(54, 33);
             this.editBtn.TabIndex = 55;
@@ -123,7 +123,7 @@
             this.addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.addBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addBtn.ForeColor = System.Drawing.Color.Black;
-            this.addBtn.Location = new System.Drawing.Point(739, 74);
+            this.addBtn.Location = new System.Drawing.Point(905, 73);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(54, 33);
             this.addBtn.TabIndex = 54;
@@ -138,7 +138,7 @@
             this.archiveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.archiveBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.archiveBtn.ForeColor = System.Drawing.Color.Black;
-            this.archiveBtn.Location = new System.Drawing.Point(850, 74);
+            this.archiveBtn.Location = new System.Drawing.Point(1016, 73);
             this.archiveBtn.Name = "archiveBtn";
             this.archiveBtn.Size = new System.Drawing.Size(85, 33);
             this.archiveBtn.TabIndex = 58;
@@ -173,7 +173,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(40)))), ((int)(((byte)(54)))));
-            this.ClientSize = new System.Drawing.Size(971, 560);
+            this.ClientSize = new System.Drawing.Size(1138, 690);
             this.ControlBox = false;
             this.Controls.Add(this.nameTxt);
             this.Controls.Add(this.label3);

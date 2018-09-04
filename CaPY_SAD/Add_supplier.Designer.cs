@@ -60,7 +60,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tw Cen MT", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(119, 30);
+            this.label1.Location = new System.Drawing.Point(133, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(232, 40);
             this.label1.TabIndex = 74;
@@ -73,7 +73,7 @@
             this.button1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Transparent;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(429, 0);
+            this.button1.Location = new System.Drawing.Point(457, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(42, 40);
             this.button1.TabIndex = 73;
@@ -86,7 +86,7 @@
             this.orgTxt.BackColor = System.Drawing.Color.Transparent;
             this.orgTxt.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.orgTxt.ForeColor = System.Drawing.Color.White;
-            this.orgTxt.Location = new System.Drawing.Point(48, 369);
+            this.orgTxt.Location = new System.Drawing.Point(59, 381);
             this.orgTxt.Name = "orgTxt";
             this.orgTxt.Size = new System.Drawing.Size(123, 28);
             this.orgTxt.TabIndex = 100;
@@ -98,7 +98,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(48, 124);
+            this.label4.Location = new System.Drawing.Point(59, 136);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(117, 28);
             this.label4.TabIndex = 120;
@@ -109,7 +109,7 @@
             this.bdayTxt.CustomFormat = "yyyy-MM-dd";
             this.bdayTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bdayTxt.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.bdayTxt.Location = new System.Drawing.Point(187, 230);
+            this.bdayTxt.Location = new System.Drawing.Point(203, 242);
             this.bdayTxt.Name = "bdayTxt";
             this.bdayTxt.Size = new System.Drawing.Size(237, 26);
             this.bdayTxt.TabIndex = 6;
@@ -120,7 +120,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(48, 299);
+            this.label9.Location = new System.Drawing.Point(59, 311);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(98, 28);
             this.label9.TabIndex = 111;
@@ -132,7 +132,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(48, 334);
+            this.label8.Location = new System.Drawing.Point(59, 346);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(66, 28);
             this.label8.TabIndex = 110;
@@ -144,7 +144,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(48, 264);
+            this.label7.Location = new System.Drawing.Point(59, 276);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 28);
             this.label7.TabIndex = 109;
@@ -156,7 +156,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(48, 194);
+            this.label6.Location = new System.Drawing.Point(59, 206);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(74, 28);
             this.label6.TabIndex = 108;
@@ -168,7 +168,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(48, 229);
+            this.label5.Location = new System.Drawing.Point(59, 241);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(87, 28);
             this.label5.TabIndex = 107;
@@ -180,7 +180,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(48, 89);
+            this.label3.Location = new System.Drawing.Point(59, 101);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 28);
             this.label3.TabIndex = 106;
@@ -192,7 +192,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(48, 159);
+            this.label2.Location = new System.Drawing.Point(59, 171);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 28);
             this.label2.TabIndex = 105;
@@ -201,7 +201,7 @@
             // organizationTxt
             // 
             this.organizationTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.organizationTxt.Location = new System.Drawing.Point(187, 370);
+            this.organizationTxt.Location = new System.Drawing.Point(203, 382);
             this.organizationTxt.MaxLength = 45;
             this.organizationTxt.Name = "organizationTxt";
             this.organizationTxt.Size = new System.Drawing.Size(237, 26);
@@ -210,7 +210,7 @@
             // emailTxt
             // 
             this.emailTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailTxt.Location = new System.Drawing.Point(187, 335);
+            this.emailTxt.Location = new System.Drawing.Point(203, 347);
             this.emailTxt.MaxLength = 45;
             this.emailTxt.Name = "emailTxt";
             this.emailTxt.Size = new System.Drawing.Size(237, 26);
@@ -220,7 +220,7 @@
             // cnumTxt
             // 
             this.cnumTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cnumTxt.Location = new System.Drawing.Point(187, 300);
+            this.cnumTxt.Location = new System.Drawing.Point(203, 312);
             this.cnumTxt.MaxLength = 45;
             this.cnumTxt.Name = "cnumTxt";
             this.cnumTxt.Size = new System.Drawing.Size(237, 26);
@@ -230,7 +230,7 @@
             // addressTxt
             // 
             this.addressTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressTxt.Location = new System.Drawing.Point(187, 265);
+            this.addressTxt.Location = new System.Drawing.Point(203, 277);
             this.addressTxt.MaxLength = 45;
             this.addressTxt.Name = "addressTxt";
             this.addressTxt.Size = new System.Drawing.Size(237, 26);
@@ -239,7 +239,7 @@
             // lastnameTxt
             // 
             this.lastnameTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastnameTxt.Location = new System.Drawing.Point(187, 160);
+            this.lastnameTxt.Location = new System.Drawing.Point(203, 172);
             this.lastnameTxt.MaxLength = 45;
             this.lastnameTxt.Name = "lastnameTxt";
             this.lastnameTxt.Size = new System.Drawing.Size(237, 26);
@@ -249,7 +249,7 @@
             // middlenameTxt
             // 
             this.middlenameTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.middlenameTxt.Location = new System.Drawing.Point(187, 125);
+            this.middlenameTxt.Location = new System.Drawing.Point(203, 137);
             this.middlenameTxt.MaxLength = 45;
             this.middlenameTxt.Name = "middlenameTxt";
             this.middlenameTxt.Size = new System.Drawing.Size(237, 26);
@@ -259,7 +259,7 @@
             // firstnameTxt
             // 
             this.firstnameTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstnameTxt.Location = new System.Drawing.Point(187, 90);
+            this.firstnameTxt.Location = new System.Drawing.Point(203, 102);
             this.firstnameTxt.MaxLength = 45;
             this.firstnameTxt.Name = "firstnameTxt";
             this.firstnameTxt.Size = new System.Drawing.Size(237, 26);
@@ -272,7 +272,7 @@
             this.saveBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveBtn.Location = new System.Drawing.Point(150, 424);
+            this.saveBtn.Location = new System.Drawing.Point(162, 450);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(77, 34);
             this.saveBtn.TabIndex = 11;
@@ -286,7 +286,7 @@
             this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelBtn.Location = new System.Drawing.Point(244, 424);
+            this.cancelBtn.Location = new System.Drawing.Point(259, 450);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(77, 34);
             this.cancelBtn.TabIndex = 12;
@@ -299,10 +299,10 @@
             this.maleRadio.AutoSize = true;
             this.maleRadio.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maleRadio.ForeColor = System.Drawing.Color.White;
-            this.maleRadio.Location = new System.Drawing.Point(187, 196);
+            this.maleRadio.Location = new System.Drawing.Point(203, 208);
             this.maleRadio.Name = "maleRadio";
             this.maleRadio.Size = new System.Drawing.Size(68, 24);
-            this.maleRadio.TabIndex = 121;
+            this.maleRadio.TabIndex = 4;
             this.maleRadio.TabStop = true;
             this.maleRadio.Text = "MALE";
             this.maleRadio.UseVisualStyleBackColor = true;
@@ -312,10 +312,10 @@
             this.femaleRadio.AutoSize = true;
             this.femaleRadio.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.femaleRadio.ForeColor = System.Drawing.Color.White;
-            this.femaleRadio.Location = new System.Drawing.Point(261, 196);
+            this.femaleRadio.Location = new System.Drawing.Point(277, 208);
             this.femaleRadio.Name = "femaleRadio";
             this.femaleRadio.Size = new System.Drawing.Size(83, 24);
-            this.femaleRadio.TabIndex = 122;
+            this.femaleRadio.TabIndex = 5;
             this.femaleRadio.TabStop = true;
             this.femaleRadio.Text = "FEMALE";
             this.femaleRadio.UseVisualStyleBackColor = true;
@@ -327,7 +327,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(40)))), ((int)(((byte)(54)))));
             this.CancelButton = this.cancelBtn;
-            this.ClientSize = new System.Drawing.Size(471, 473);
+            this.ClientSize = new System.Drawing.Size(499, 524);
             this.ControlBox = false;
             this.Controls.Add(this.femaleRadio);
             this.Controls.Add(this.maleRadio);

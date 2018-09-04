@@ -279,7 +279,7 @@
             this.maleRadio.Location = new System.Drawing.Point(191, 196);
             this.maleRadio.Name = "maleRadio";
             this.maleRadio.Size = new System.Drawing.Size(68, 24);
-            this.maleRadio.TabIndex = 74;
+            this.maleRadio.TabIndex = 4;
             this.maleRadio.TabStop = true;
             this.maleRadio.Text = "MALE";
             this.maleRadio.UseVisualStyleBackColor = true;
@@ -291,7 +291,7 @@
             this.femaleRadio.Location = new System.Drawing.Point(265, 196);
             this.femaleRadio.Name = "femaleRadio";
             this.femaleRadio.Size = new System.Drawing.Size(83, 24);
-            this.femaleRadio.TabIndex = 75;
+            this.femaleRadio.TabIndex = 5;
             this.femaleRadio.TabStop = true;
             this.femaleRadio.Text = "FEMALE";
             this.femaleRadio.UseVisualStyleBackColor = true;

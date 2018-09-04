@@ -48,7 +48,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tw Cen MT", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(395, 32);
+            this.label1.Location = new System.Drawing.Point(479, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(180, 40);
             this.label1.TabIndex = 62;
@@ -61,7 +61,7 @@
             this.button1.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Transparent;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(929, 0);
+            this.button1.Location = new System.Drawing.Point(1096, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(42, 40);
             this.button1.TabIndex = 58;
@@ -93,12 +93,12 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvProducts.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dtgvProducts.Location = new System.Drawing.Point(35, 109);
+            this.dtgvProducts.Location = new System.Drawing.Point(37, 109);
             this.dtgvProducts.Name = "dtgvProducts";
             this.dtgvProducts.ReadOnly = true;
             this.dtgvProducts.RowHeadersVisible = false;
             this.dtgvProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvProducts.Size = new System.Drawing.Size(900, 421);
+            this.dtgvProducts.Size = new System.Drawing.Size(1064, 546);
             this.dtgvProducts.TabIndex = 63;
             this.dtgvProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvProducts_CellClick);
             // 
@@ -108,7 +108,7 @@
             this.editBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.editBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editBtn.ForeColor = System.Drawing.Color.Black;
-            this.editBtn.Location = new System.Drawing.Point(792, 74);
+            this.editBtn.Location = new System.Drawing.Point(958, 74);
             this.editBtn.Name = "editBtn";
             this.editBtn.Size = new System.Drawing.Size(54, 33);
             this.editBtn.TabIndex = 65;
@@ -122,7 +122,7 @@
             this.addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.addBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addBtn.ForeColor = System.Drawing.Color.Black;
-            this.addBtn.Location = new System.Drawing.Point(736, 74);
+            this.addBtn.Location = new System.Drawing.Point(902, 74);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(54, 33);
             this.addBtn.TabIndex = 64;
@@ -137,7 +137,7 @@
             this.archiveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.archiveBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.archiveBtn.ForeColor = System.Drawing.Color.Black;
-            this.archiveBtn.Location = new System.Drawing.Point(850, 74);
+            this.archiveBtn.Location = new System.Drawing.Point(1016, 74);
             this.archiveBtn.Name = "archiveBtn";
             this.archiveBtn.Size = new System.Drawing.Size(85, 33);
             this.archiveBtn.TabIndex = 66;
@@ -148,7 +148,7 @@
             // nameTxt
             // 
             this.nameTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameTxt.Location = new System.Drawing.Point(103, 76);
+            this.nameTxt.Location = new System.Drawing.Point(108, 77);
             this.nameTxt.MaxLength = 45;
             this.nameTxt.Name = "nameTxt";
             this.nameTxt.Size = new System.Drawing.Size(234, 26);
@@ -161,7 +161,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(30, 74);
+            this.label3.Location = new System.Drawing.Point(35, 75);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 28);
             this.label3.TabIndex = 68;
@@ -172,7 +172,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(40)))), ((int)(((byte)(54)))));
-            this.ClientSize = new System.Drawing.Size(971, 560);
+            this.ClientSize = new System.Drawing.Size(1138, 690);
             this.ControlBox = false;
             this.Controls.Add(this.dtgvProducts);
             this.Controls.Add(this.nameTxt);

@@ -71,12 +71,12 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tw Cen MT", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(331, 0);
+            this.label1.Location = new System.Drawing.Point(361, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(291, 40);
+            this.label1.Size = new System.Drawing.Size(350, 40);
             this.label1.TabIndex = 78;
-            this.label1.Text = "Delivered Products";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label1.Text = "DELIVERED PRODUCTS";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // quitBtn
             // 
@@ -85,7 +85,7 @@
             this.quitBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quitBtn.ForeColor = System.Drawing.Color.Transparent;
             this.quitBtn.Image = ((System.Drawing.Image)(resources.GetObject("quitBtn.Image")));
-            this.quitBtn.Location = new System.Drawing.Point(891, 0);
+            this.quitBtn.Location = new System.Drawing.Point(1024, 0);
             this.quitBtn.Name = "quitBtn";
             this.quitBtn.Size = new System.Drawing.Size(42, 40);
             this.quitBtn.TabIndex = 77;
@@ -118,12 +118,12 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvPurchaseOrders.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dtgvPurchaseOrders.Location = new System.Drawing.Point(38, 147);
+            this.dtgvPurchaseOrders.Location = new System.Drawing.Point(51, 168);
             this.dtgvPurchaseOrders.Name = "dtgvPurchaseOrders";
             this.dtgvPurchaseOrders.ReadOnly = true;
             this.dtgvPurchaseOrders.RowHeadersVisible = false;
             this.dtgvPurchaseOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvPurchaseOrders.Size = new System.Drawing.Size(856, 258);
+            this.dtgvPurchaseOrders.Size = new System.Drawing.Size(965, 258);
             this.dtgvPurchaseOrders.TabIndex = 76;
             this.dtgvPurchaseOrders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvPurchaseOrders_CellClick);
             this.dtgvPurchaseOrders.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.dtgvPurchaseOrders_RowStateChanged);
@@ -153,13 +153,13 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvPurchaseOrderLines.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dtgvPurchaseOrderLines.Location = new System.Drawing.Point(26, 495);
+            this.dtgvPurchaseOrderLines.Location = new System.Drawing.Point(51, 484);
             this.dtgvPurchaseOrderLines.MultiSelect = false;
             this.dtgvPurchaseOrderLines.Name = "dtgvPurchaseOrderLines";
             this.dtgvPurchaseOrderLines.ReadOnly = true;
             this.dtgvPurchaseOrderLines.RowHeadersVisible = false;
             this.dtgvPurchaseOrderLines.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvPurchaseOrderLines.Size = new System.Drawing.Size(379, 227);
+            this.dtgvPurchaseOrderLines.Size = new System.Drawing.Size(421, 247);
             this.dtgvPurchaseOrderLines.TabIndex = 81;
             this.dtgvPurchaseOrderLines.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvPurchaseOrderLines_CellClick);
             // 
@@ -169,11 +169,11 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tw Cen MT", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(95, 444);
+            this.label2.Location = new System.Drawing.Point(135, 437);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(209, 40);
+            this.label2.Size = new System.Drawing.Size(252, 40);
             this.label2.TabIndex = 84;
-            this.label2.Text = "Order Details";
+            this.label2.Text = "ORDER DETAILS";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // addBtn
@@ -182,11 +182,11 @@
             this.addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.addBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addBtn.ForeColor = System.Drawing.Color.Black;
-            this.addBtn.Location = new System.Drawing.Point(38, 48);
+            this.addBtn.Location = new System.Drawing.Point(126, 78);
             this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(215, 34);
+            this.addBtn.Size = new System.Drawing.Size(102, 27);
             this.addBtn.TabIndex = 85;
-            this.addBtn.Text = "View Purchase Orders";
+            this.addBtn.Text = "VIEW POs";
             this.addBtn.UseVisualStyleBackColor = false;
             this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
@@ -195,7 +195,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(570, 414);
+            this.label3.Location = new System.Drawing.Point(692, 77);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(138, 28);
             this.label3.TabIndex = 86;
@@ -205,7 +205,7 @@
             // 
             this.totalTxt.Enabled = false;
             this.totalTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalTxt.Location = new System.Drawing.Point(718, 415);
+            this.totalTxt.Location = new System.Drawing.Point(840, 78);
             this.totalTxt.Name = "totalTxt";
             this.totalTxt.Size = new System.Drawing.Size(176, 26);
             this.totalTxt.TabIndex = 87;
@@ -236,12 +236,12 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvInv.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dtgvInv.Location = new System.Drawing.Point(528, 495);
+            this.dtgvInv.Location = new System.Drawing.Point(595, 484);
             this.dtgvInv.Name = "dtgvInv";
             this.dtgvInv.ReadOnly = true;
             this.dtgvInv.RowHeadersVisible = false;
             this.dtgvInv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvInv.Size = new System.Drawing.Size(379, 227);
+            this.dtgvInv.Size = new System.Drawing.Size(421, 247);
             this.dtgvInv.TabIndex = 88;
             this.dtgvInv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvInv_CellClick);
             // 
@@ -251,11 +251,11 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Tw Cen MT", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(619, 444);
+            this.label4.Location = new System.Drawing.Point(681, 437);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(203, 40);
+            this.label4.Size = new System.Drawing.Size(248, 40);
             this.label4.TabIndex = 84;
-            this.label4.Text = "To Inventory";
+            this.label4.Text = "TO INVENTORY";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // stockInBtn
@@ -264,7 +264,7 @@
             this.stockInBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.stockInBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stockInBtn.ForeColor = System.Drawing.Color.Black;
-            this.stockInBtn.Location = new System.Drawing.Point(814, 724);
+            this.stockInBtn.Location = new System.Drawing.Point(924, 733);
             this.stockInBtn.Name = "stockInBtn";
             this.stockInBtn.Size = new System.Drawing.Size(92, 28);
             this.stockInBtn.TabIndex = 89;
@@ -280,7 +280,7 @@
             this.toInventoryBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toInventoryBtn.ForeColor = System.Drawing.Color.Black;
             this.toInventoryBtn.Image = ((System.Drawing.Image)(resources.GetObject("toInventoryBtn.Image")));
-            this.toInventoryBtn.Location = new System.Drawing.Point(443, 579);
+            this.toInventoryBtn.Location = new System.Drawing.Point(506, 561);
             this.toInventoryBtn.Name = "toInventoryBtn";
             this.toInventoryBtn.Size = new System.Drawing.Size(54, 28);
             this.toInventoryBtn.TabIndex = 91;
@@ -295,7 +295,7 @@
             this.backOrderlineBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backOrderlineBtn.ForeColor = System.Drawing.Color.Black;
             this.backOrderlineBtn.Image = ((System.Drawing.Image)(resources.GetObject("backOrderlineBtn.Image")));
-            this.backOrderlineBtn.Location = new System.Drawing.Point(443, 628);
+            this.backOrderlineBtn.Location = new System.Drawing.Point(506, 610);
             this.backOrderlineBtn.Name = "backOrderlineBtn";
             this.backOrderlineBtn.Size = new System.Drawing.Size(54, 28);
             this.backOrderlineBtn.TabIndex = 92;
@@ -308,7 +308,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(462, 14);
+            this.label5.Location = new System.Drawing.Point(516, 14);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(39, 22);
             this.label5.TabIndex = 100;
@@ -320,7 +320,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(125, 14);
+            this.label6.Location = new System.Drawing.Point(179, 14);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(45, 22);
             this.label6.TabIndex = 99;
@@ -331,7 +331,7 @@
             this.endDtp.CustomFormat = "yyyy-MM-dd";
             this.endDtp.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.endDtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.endDtp.Location = new System.Drawing.Point(518, 12);
+            this.endDtp.Location = new System.Drawing.Point(572, 12);
             this.endDtp.Name = "endDtp";
             this.endDtp.Size = new System.Drawing.Size(214, 26);
             this.endDtp.TabIndex = 98;
@@ -342,7 +342,7 @@
             this.startDtp.CustomFormat = "yyyy-MM-dd";
             this.startDtp.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startDtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.startDtp.Location = new System.Drawing.Point(181, 12);
+            this.startDtp.Location = new System.Drawing.Point(235, 12);
             this.startDtp.Name = "startDtp";
             this.startDtp.Size = new System.Drawing.Size(214, 26);
             this.startDtp.TabIndex = 97;
@@ -355,9 +355,9 @@
             this.panel1.Controls.Add(this.endDtp);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(38, 88);
+            this.panel1.Location = new System.Drawing.Point(51, 109);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(856, 53);
+            this.panel1.Size = new System.Drawing.Size(965, 53);
             this.panel1.TabIndex = 101;
             // 
             // expirationDtp
@@ -365,7 +365,7 @@
             this.expirationDtp.CustomFormat = "yyyy-MM-dd";
             this.expirationDtp.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.expirationDtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.expirationDtp.Location = new System.Drawing.Point(191, 744);
+            this.expirationDtp.Location = new System.Drawing.Point(213, 744);
             this.expirationDtp.Name = "expirationDtp";
             this.expirationDtp.Size = new System.Drawing.Size(214, 26);
             this.expirationDtp.TabIndex = 157;
@@ -376,7 +376,7 @@
             this.expirationLabel.BackColor = System.Drawing.Color.Transparent;
             this.expirationLabel.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.expirationLabel.ForeColor = System.Drawing.Color.White;
-            this.expirationLabel.Location = new System.Drawing.Point(21, 741);
+            this.expirationLabel.Location = new System.Drawing.Point(46, 743);
             this.expirationLabel.Name = "expirationLabel";
             this.expirationLabel.Size = new System.Drawing.Size(146, 28);
             this.expirationLabel.TabIndex = 158;
@@ -387,9 +387,9 @@
             this.printBtn.BackColor = System.Drawing.Color.White;
             this.printBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.printBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.printBtn.Location = new System.Drawing.Point(806, 55);
+            this.printBtn.Location = new System.Drawing.Point(51, 78);
             this.printBtn.Name = "printBtn";
-            this.printBtn.Size = new System.Drawing.Size(88, 27);
+            this.printBtn.Size = new System.Drawing.Size(69, 27);
             this.printBtn.TabIndex = 159;
             this.printBtn.Text = "PRINT";
             this.printBtn.UseVisualStyleBackColor = false;
@@ -419,7 +419,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(40)))), ((int)(((byte)(54)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(933, 785);
+            this.ClientSize = new System.Drawing.Size(1066, 811);
             this.Controls.Add(this.printBtn);
             this.Controls.Add(this.expirationDtp);
             this.Controls.Add(this.expirationLabel);
