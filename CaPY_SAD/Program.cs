@@ -16,7 +16,7 @@ namespace CaPY_SAD
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Hosp());
+            Application.Run(new Login());
         }
     }
 }

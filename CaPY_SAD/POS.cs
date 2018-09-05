@@ -287,7 +287,7 @@ namespace CaPY_SAD
                 // Insert product detials in Gridview
                 orders.Rows.Add(selected_id, expiration, prodTxt.Text, priceTxt.Text, quantityTxt.Text, subTotalTxt.Text);
                 dtgvOrders.DataSource = orders;
-                dtgvOrders.Columns["id"].Visible = false;
+                dtgvOrders.Columns["id"].Visible = true;
 
                 getTotal();
             }
@@ -535,16 +535,16 @@ namespace CaPY_SAD
                             comm_updateavail.ExecuteNonQuery();
                             conn.Close();
 
-                            resetFields();
-                            custpayTxt.Text = "";
-                            paytotalTxt.Text = "0";
-                            moneyTxt.Text = "0";
-                            changeTxt.Text = "0";
-                            paypanel.Visible = false;
-                            paypanel.Enabled = false;
-                            orders.Clear();
+                         
                         }
-
+                        resetFields();
+                        custpayTxt.Text = "";
+                        paytotalTxt.Text = "0";
+                        moneyTxt.Text = "0";
+                        changeTxt.Text = "0";
+                        paypanel.Visible = false;
+                        paypanel.Enabled = false;
+                        orders.Clear();
 
                     }
 
