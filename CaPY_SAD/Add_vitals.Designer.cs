@@ -73,7 +73,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tw Cen MT", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(142, 37);
+            this.label1.Location = new System.Drawing.Point(160, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(198, 40);
             this.label1.TabIndex = 148;
@@ -86,7 +86,7 @@
             this.quitBtn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quitBtn.ForeColor = System.Drawing.Color.Transparent;
             this.quitBtn.Image = ((System.Drawing.Image)(resources.GetObject("quitBtn.Image")));
-            this.quitBtn.Location = new System.Drawing.Point(428, 0);
+            this.quitBtn.Location = new System.Drawing.Point(476, 0);
             this.quitBtn.Name = "quitBtn";
             this.quitBtn.Size = new System.Drawing.Size(42, 40);
             this.quitBtn.TabIndex = 147;
@@ -101,7 +101,7 @@
             this.attitudeCmb.Items.AddRange(new object[] {
             "Normal",
             "Abnormal"});
-            this.attitudeCmb.Location = new System.Drawing.Point(217, 453);
+            this.attitudeCmb.Location = new System.Drawing.Point(244, 458);
             this.attitudeCmb.Name = "attitudeCmb";
             this.attitudeCmb.Size = new System.Drawing.Size(209, 28);
             this.attitudeCmb.TabIndex = 12;
@@ -114,7 +114,7 @@
             this.bowelCmb.Items.AddRange(new object[] {
             "Normal",
             "Abnormal"});
-            this.bowelCmb.Location = new System.Drawing.Point(217, 421);
+            this.bowelCmb.Location = new System.Drawing.Point(244, 426);
             this.bowelCmb.Name = "bowelCmb";
             this.bowelCmb.Size = new System.Drawing.Size(209, 28);
             this.bowelCmb.TabIndex = 11;
@@ -127,7 +127,7 @@
             this.vomitingCmb.Items.AddRange(new object[] {
             "Normal",
             "Abnormal"});
-            this.vomitingCmb.Location = new System.Drawing.Point(217, 389);
+            this.vomitingCmb.Location = new System.Drawing.Point(244, 394);
             this.vomitingCmb.Name = "vomitingCmb";
             this.vomitingCmb.Size = new System.Drawing.Size(209, 28);
             this.vomitingCmb.TabIndex = 10;
@@ -140,7 +140,7 @@
             this.urinationCmb.Items.AddRange(new object[] {
             "Normal",
             "Abnormal"});
-            this.urinationCmb.Location = new System.Drawing.Point(217, 357);
+            this.urinationCmb.Location = new System.Drawing.Point(244, 362);
             this.urinationCmb.Name = "urinationCmb";
             this.urinationCmb.Size = new System.Drawing.Size(209, 28);
             this.urinationCmb.TabIndex = 9;
@@ -153,7 +153,7 @@
             this.coughingCmb.Items.AddRange(new object[] {
             "Normal",
             "Abnormal"});
-            this.coughingCmb.Location = new System.Drawing.Point(217, 325);
+            this.coughingCmb.Location = new System.Drawing.Point(244, 330);
             this.coughingCmb.Name = "coughingCmb";
             this.coughingCmb.Size = new System.Drawing.Size(209, 28);
             this.coughingCmb.TabIndex = 8;
@@ -166,7 +166,7 @@
             this.drinkingCmb.Items.AddRange(new object[] {
             "Normal",
             "Abnormal"});
-            this.drinkingCmb.Location = new System.Drawing.Point(217, 293);
+            this.drinkingCmb.Location = new System.Drawing.Point(244, 298);
             this.drinkingCmb.Name = "drinkingCmb";
             this.drinkingCmb.Size = new System.Drawing.Size(209, 28);
             this.drinkingCmb.TabIndex = 7;
@@ -179,7 +179,7 @@
             this.appetiteCmb.Items.AddRange(new object[] {
             "Normal",
             "Abnormal"});
-            this.appetiteCmb.Location = new System.Drawing.Point(217, 261);
+            this.appetiteCmb.Location = new System.Drawing.Point(244, 266);
             this.appetiteCmb.Name = "appetiteCmb";
             this.appetiteCmb.Size = new System.Drawing.Size(209, 28);
             this.appetiteCmb.TabIndex = 6;
@@ -189,7 +189,7 @@
             this.bdayTxt.CustomFormat = "yyyy-MM-dd";
             this.bdayTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bdayTxt.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.bdayTxt.Location = new System.Drawing.Point(217, 102);
+            this.bdayTxt.Location = new System.Drawing.Point(244, 107);
             this.bdayTxt.Name = "bdayTxt";
             this.bdayTxt.Size = new System.Drawing.Size(209, 26);
             this.bdayTxt.TabIndex = 1;
@@ -200,7 +200,7 @@
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(44, 453);
+            this.label15.Location = new System.Drawing.Point(64, 458);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(143, 28);
             this.label15.TabIndex = 159;
@@ -212,7 +212,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(44, 421);
+            this.label14.Location = new System.Drawing.Point(64, 426);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(123, 28);
             this.label14.TabIndex = 158;
@@ -224,7 +224,7 @@
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(44, 389);
+            this.label13.Location = new System.Drawing.Point(64, 394);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(149, 28);
             this.label13.TabIndex = 157;
@@ -236,7 +236,7 @@
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(44, 357);
+            this.label12.Location = new System.Drawing.Point(64, 362);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(152, 28);
             this.label12.TabIndex = 156;
@@ -248,7 +248,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(44, 325);
+            this.label11.Location = new System.Drawing.Point(64, 330);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(150, 28);
             this.label11.TabIndex = 155;
@@ -260,7 +260,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(44, 293);
+            this.label10.Location = new System.Drawing.Point(64, 298);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(145, 28);
             this.label10.TabIndex = 154;
@@ -272,7 +272,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(44, 261);
+            this.label9.Location = new System.Drawing.Point(64, 266);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(144, 28);
             this.label9.TabIndex = 153;
@@ -284,7 +284,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(44, 229);
+            this.label8.Location = new System.Drawing.Point(64, 234);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(152, 28);
             this.label8.TabIndex = 152;
@@ -296,7 +296,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(44, 197);
+            this.label7.Location = new System.Drawing.Point(64, 202);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(101, 28);
             this.label7.TabIndex = 151;
@@ -308,7 +308,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(44, 165);
+            this.label6.Location = new System.Drawing.Point(64, 170);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(123, 28);
             this.label6.TabIndex = 150;
@@ -320,7 +320,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(44, 133);
+            this.label5.Location = new System.Drawing.Point(64, 138);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 28);
             this.label5.TabIndex = 160;
@@ -332,7 +332,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(44, 101);
+            this.label4.Location = new System.Drawing.Point(64, 106);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 28);
             this.label4.TabIndex = 149;
@@ -341,7 +341,7 @@
             // saveBtn
             // 
             this.saveBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveBtn.Location = new System.Drawing.Point(147, 517);
+            this.saveBtn.Location = new System.Drawing.Point(147, 531);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(77, 34);
             this.saveBtn.TabIndex = 13;
@@ -353,7 +353,7 @@
             // 
             this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelBtn.Location = new System.Drawing.Point(247, 517);
+            this.cancelBtn.Location = new System.Drawing.Point(247, 531);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(77, 34);
             this.cancelBtn.TabIndex = 14;
@@ -363,24 +363,24 @@
             // 
             // weightTxt
             // 
-            this.weightTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.weightTxt.Location = new System.Drawing.Point(217, 134);
+            this.weightTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.weightTxt.Location = new System.Drawing.Point(244, 139);
             this.weightTxt.Name = "weightTxt";
             this.weightTxt.Size = new System.Drawing.Size(120, 26);
             this.weightTxt.TabIndex = 161;
             // 
             // tempTxt
             // 
-            this.tempTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tempTxt.Location = new System.Drawing.Point(216, 166);
+            this.tempTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tempTxt.Location = new System.Drawing.Point(243, 171);
             this.tempTxt.Name = "tempTxt";
             this.tempTxt.Size = new System.Drawing.Size(120, 26);
             this.tempTxt.TabIndex = 162;
             // 
             // resperateTxt
             // 
-            this.resperateTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resperateTxt.Location = new System.Drawing.Point(216, 198);
+            this.resperateTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resperateTxt.Location = new System.Drawing.Point(243, 203);
             this.resperateTxt.Maximum = new decimal(new int[] {
             300,
             0,
@@ -392,8 +392,8 @@
             // 
             // heartrateTxt
             // 
-            this.heartrateTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.heartrateTxt.Location = new System.Drawing.Point(216, 230);
+            this.heartrateTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.heartrateTxt.Location = new System.Drawing.Point(243, 235);
             this.heartrateTxt.Maximum = new decimal(new int[] {
             300,
             0,
@@ -409,7 +409,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(344, 137);
+            this.label2.Location = new System.Drawing.Point(371, 142);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 21);
             this.label2.TabIndex = 165;
@@ -421,7 +421,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(344, 169);
+            this.label3.Location = new System.Drawing.Point(371, 174);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 21);
             this.label3.TabIndex = 166;
@@ -433,7 +433,7 @@
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(344, 201);
+            this.label16.Location = new System.Drawing.Point(371, 206);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(43, 21);
             this.label16.TabIndex = 167;
@@ -445,7 +445,7 @@
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(344, 233);
+            this.label17.Location = new System.Drawing.Point(371, 238);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(43, 21);
             this.label17.TabIndex = 168;
@@ -458,7 +458,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(40)))), ((int)(((byte)(54)))));
             this.CancelButton = this.cancelBtn;
-            this.ClientSize = new System.Drawing.Size(471, 568);
+            this.ClientSize = new System.Drawing.Size(518, 611);
             this.ControlBox = false;
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);

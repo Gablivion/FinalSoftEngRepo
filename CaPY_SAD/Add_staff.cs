@@ -232,8 +232,8 @@ namespace CaPY_SAD
         private void addpos_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             pospanel.Visible = true;
-            pospanel.Location = new Point(32, 84);
-            pospanel.Size = new Size(437, 533);
+            pospanel.Location = new Point(65, 18);
+            pospanel.Size = new Size(421, 633);
             lblStaff.Text = "ADD POSITION";
         }
 

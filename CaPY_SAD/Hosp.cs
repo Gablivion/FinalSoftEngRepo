@@ -39,7 +39,7 @@ namespace CaPY_SAD
         }
         private void Hosp_Load(object sender, EventArgs e)
         {
-            detailPanel.Size = new Size(1134, 336);
+            detailPanel.Size = new Size(1168, 365);
             detailPanel.Location = new Point(21, 604);
             detailPanel.Visible = true;
             dischargeBtn.Enabled = false;
@@ -111,15 +111,15 @@ namespace CaPY_SAD
         {
             cagePanel.Visible = false;
             addCagePanel.Visible = true;
-            addCagePanel.Size = new Size(486, 233);
-            addCagePanel.Location = new Point(367, 380);
+            addCagePanel.Size = new Size(1131, 229);
+            addCagePanel.Location = new Point(33, 388);
         }
 
         private void addHospBtn_Click(object sender, EventArgs e)
         {
             cagePanel.Visible = true;
-            cagePanel.Size = new Size(486, 233);
-            cagePanel.Location = new Point(367, 380);
+            cagePanel.Size = new Size(1135, 229);
+            cagePanel.Location = new Point(33, 388);
 
         }
 
@@ -231,8 +231,8 @@ namespace CaPY_SAD
                     conn.Close();
 
                     addHospPanel.Visible = true;
-                    addHospPanel.Size = new Size(486, 233);
-                    addHospPanel.Location = new Point(367, 380);
+                    addHospPanel.Size = new Size(1143, 233);
+                    addHospPanel.Location = new Point(21, 388);
 
                 }
             }
