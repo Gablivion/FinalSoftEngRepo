@@ -118,18 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="petBackBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
-        TUUH4gEJDDMLvZMzzwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEaSURBVFhH
-        7ZfNasJQEEazEfypvoevoba+hb6KS1c+hAvBVbf2b6dtF30VtyqixDN2glJyLy3NZKD0wIHEDPcb8CaZ
-        JP/8lDRNq9jW03IhuINrFB6woZfsIUzCN5J8xVQv20JQF7+GC1usaJkNBITChZmW2UBAD0PhS7zR0uJh
-        8Vj4CptaWjwsfouu4bK58nhF0/A7DIW/YUtLi4fFY+HvaBrex1D4ASc4Ktgh1iVc7vNQuDX30sDH57EL
-        R+8G9t5/wfw7m3CHY8zbSL9xgNVzAwInsdtwgZdiKwiJNSEDSClNxB7Fj1jTUjsIib2MnrCUJmKv42d0
-        b+IFS2kiNpK5D6Xym+1QmkGQ31ieQaDfh0kGoX6fZn+QJDkBWxJHaMcH26cAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="quitBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6

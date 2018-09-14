@@ -132,6 +132,8 @@ namespace CaPY_SAD
             recordsPanel.Visible = true;
             recordsPanel.Size = new Size(877, 726);
             recordsPanel.Location = new Point(183, 60);
+
+            salesPanel.Visible = false;
         }
 
         private void inventoryBtn_Click(object sender, EventArgs e)
@@ -233,6 +235,8 @@ namespace CaPY_SAD
             salesPanel.Visible = true;
             salesPanel.Size = new Size(877, 746);
             salesPanel.Location = new Point(183, 60);
+
+            recordsPanel.Visible = false;
         }
 
         private void posBtn_Click_1(object sender, EventArgs e)
