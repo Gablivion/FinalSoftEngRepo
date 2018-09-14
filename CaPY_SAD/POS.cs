@@ -118,7 +118,7 @@ namespace CaPY_SAD
         //Check out Orders
         private void checkoutBtn_Click(object sender, EventArgs e)
         {
-            if (dtgvOrders.SelectedRows.Count > 0 && customerTxt.Text != "" || dtgvAcServ.SelectedRows.Count > 0 && customerTxt.Text != "")
+            if (dtgvOrders.SelectedRows.Count > 0 || customerTxt.Text != "" || Hosp.selected_data.checkout == true)
             {
                 paypanel.Visible = true;
                 paypanel.Enabled = true;
@@ -287,7 +287,7 @@ namespace CaPY_SAD
                 // Insert product detials in Gridview
                 orders.Rows.Add(selected_id, expiration, prodTxt.Text, priceTxt.Text, quantityTxt.Text, subTotalTxt.Text);
                 dtgvOrders.DataSource = orders;
-                dtgvOrders.Columns["id"].Visible = true;
+                dtgvOrders.Columns["id"].Visible = false;
 
                 getTotal();
             }
@@ -412,7 +412,7 @@ namespace CaPY_SAD
                 {
                     if (Hosp.selected_data.checkout == true)
                     {
-                        string query_checkout = "UPDATE hospitalization SET status = 'discharged' WHERE  id =  " + Hosp.selected_data.hosp_id + "";
+                        string query_checkout = "UPDATE hospitalization SET subtotal = "+ paytotalTxt.Text + " status = 'discharged' WHERE  id =  " + Hosp.selected_data.hosp_id + "";
 
                         conn.Open();
                         MySqlCommand comm_checkout = new MySqlCommand(query_checkout, conn);

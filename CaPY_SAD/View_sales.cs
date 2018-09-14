@@ -32,8 +32,30 @@ namespace CaPY_SAD
         {
 
             loadSalesData();
+            decimal total = 0;
+
+            for (int i = 0; i <= dtgvLog.Rows.Count - 1; i++)
+            {
+
+                string subs = dtgvLog.Rows[i].Cells["subtotal"].Value.ToString();
+
+                decimal decimal_sub = decimal.Parse(subs);
+
+                total = total + decimal_sub;
+
+
+            }
+
+            sales_tot.Text = total.ToString();
         }
-     
+        public static decimal total_sales;
+        private void dtgvLog_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
+        {
+
+           
+
+        }
+
 
         //Data Set for Report
         DataSet sales = new DataSet();
@@ -141,7 +163,6 @@ namespace CaPY_SAD
 
             int startY = 220;
             int offsetY = 0;
-            
 
             int startX = 1;
 
@@ -178,20 +199,33 @@ namespace CaPY_SAD
                 graphic.DrawString( dtgvLog.Rows[printedLines].Cells[5].FormattedValue.ToString(), font, brush, startX  + 570, startY + offsetY + 20);
                
                 offsetY += (int)fontHeight + 20;
+               
 
-                
-              
+
+
                 ++printedLines;
-
+               
                 if (offsetY >= 700)
                 {
+                    
                     e.HasMorePages = true;
                     offsetY = 0;
                     return;
                 }
+                
             }
+            e.Graphics.DrawRectangle(Pens.Black, startX, startY + offsetY + 20, 840, 1);
+            string sale = "Total Sales: ";
+            e.Graphics.DrawString(sale, new Font("Arial", 33, FontStyle.Bold), Brushes.Black, startX + 60, startY + offsetY + 30);
 
+            string sales_total = "Php " + sales_tot.Text;
+            e.Graphics.DrawString(sales_total, new Font("Arial", 22, FontStyle.Bold), Brushes.Black, startX + 570, startY + offsetY + 40);
 
+            string prof = "Total Profit: ";
+            e.Graphics.DrawString(prof, new Font("Arial", 33, FontStyle.Bold), Brushes.Black, startX + 60, startY + offsetY + 70);
+
+            string profit = "Php " + sales_tot.Text;
+            e.Graphics.DrawString(profit, new Font("Arial", 22, FontStyle.Bold), Brushes.Black, startX + 570, startY + offsetY + 100);
         }
         
 
