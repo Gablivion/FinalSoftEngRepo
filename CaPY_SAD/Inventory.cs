@@ -178,8 +178,8 @@ namespace CaPY_SAD
             repackDetails();
             repackPanel.Visible = true;
 
-            repackPanel.Size = new Size(947, 540);
-            repackPanel.Location = new Point(12, 12);
+            repackPanel.Size = new Size(1138, 693);
+            repackPanel.Location = new Point(0, 0);
             
         }
 

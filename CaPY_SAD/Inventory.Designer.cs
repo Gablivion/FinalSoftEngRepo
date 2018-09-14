@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inventory));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.stockoutBtn = new System.Windows.Forms.Button();
             this.quitBtn = new System.Windows.Forms.Button();
@@ -75,7 +75,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tw Cen MT", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(420, 9);
+            this.label1.Location = new System.Drawing.Point(471, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(196, 40);
             this.label1.TabIndex = 74;
@@ -87,7 +87,7 @@
             this.stockoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.stockoutBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stockoutBtn.ForeColor = System.Drawing.Color.Black;
-            this.stockoutBtn.Location = new System.Drawing.Point(732, 76);
+            this.stockoutBtn.Location = new System.Drawing.Point(873, 103);
             this.stockoutBtn.Name = "stockoutBtn";
             this.stockoutBtn.Size = new System.Drawing.Size(92, 42);
             this.stockoutBtn.TabIndex = 75;
@@ -98,11 +98,12 @@
             // quitBtn
             // 
             this.quitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(42)))), ((int)(((byte)(15)))));
+            this.quitBtn.FlatAppearance.BorderSize = 0;
             this.quitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.quitBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quitBtn.ForeColor = System.Drawing.Color.Transparent;
             this.quitBtn.Image = ((System.Drawing.Image)(resources.GetObject("quitBtn.Image")));
-            this.quitBtn.Location = new System.Drawing.Point(929, 0);
+            this.quitBtn.Location = new System.Drawing.Point(1096, 0);
             this.quitBtn.Name = "quitBtn";
             this.quitBtn.Size = new System.Drawing.Size(42, 40);
             this.quitBtn.TabIndex = 76;
@@ -115,7 +116,7 @@
             this.logBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logBtn.ForeColor = System.Drawing.Color.Black;
-            this.logBtn.Location = new System.Drawing.Point(833, 76);
+            this.logBtn.Location = new System.Drawing.Point(974, 103);
             this.logBtn.Name = "logBtn";
             this.logBtn.Size = new System.Drawing.Size(126, 42);
             this.logBtn.TabIndex = 77;
@@ -130,11 +131,11 @@
             this.repackBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.repackBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.repackBtn.ForeColor = System.Drawing.Color.Black;
-            this.repackBtn.Location = new System.Drawing.Point(630, 76);
+            this.repackBtn.Location = new System.Drawing.Point(771, 103);
             this.repackBtn.Name = "repackBtn";
             this.repackBtn.Size = new System.Drawing.Size(92, 42);
             this.repackBtn.TabIndex = 78;
-            this.repackBtn.Text = "Repack";
+            this.repackBtn.Text = "REPACK";
             this.repackBtn.UseVisualStyleBackColor = false;
             this.repackBtn.Click += new System.EventHandler(this.repackBtn_Click);
             // 
@@ -146,29 +147,29 @@
             this.dtgvInventory.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtgvInventory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvInventory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dtgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvInventory.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dtgvInventory.Location = new System.Drawing.Point(12, 128);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvInventory.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dtgvInventory.Location = new System.Drawing.Point(39, 151);
             this.dtgvInventory.Name = "dtgvInventory";
             this.dtgvInventory.ReadOnly = true;
             this.dtgvInventory.RowHeadersVisible = false;
             this.dtgvInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvInventory.Size = new System.Drawing.Size(947, 424);
+            this.dtgvInventory.Size = new System.Drawing.Size(1061, 502);
             this.dtgvInventory.TabIndex = 66;
             this.dtgvInventory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvInventory_CellClick);
             // 
@@ -192,9 +193,9 @@
             this.repackPanel.Controls.Add(this.cancelRepackBtn);
             this.repackPanel.Controls.Add(this.label4);
             this.repackPanel.Controls.Add(this.addLabel);
-            this.repackPanel.Location = new System.Drawing.Point(12, 12);
+            this.repackPanel.Location = new System.Drawing.Point(171, 50);
             this.repackPanel.Name = "repackPanel";
-            this.repackPanel.Size = new System.Drawing.Size(181, 28);
+            this.repackPanel.Size = new System.Drawing.Size(64, 40);
             this.repackPanel.TabIndex = 161;
             this.repackPanel.Visible = false;
             // 
@@ -203,7 +204,7 @@
             this.origpriceTxt.AutoSize = true;
             this.origpriceTxt.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.origpriceTxt.ForeColor = System.Drawing.Color.White;
-            this.origpriceTxt.Location = new System.Drawing.Point(674, 312);
+            this.origpriceTxt.Location = new System.Drawing.Point(889, 432);
             this.origpriceTxt.Name = "origpriceTxt";
             this.origpriceTxt.Size = new System.Drawing.Size(99, 28);
             this.origpriceTxt.TabIndex = 24;
@@ -215,7 +216,7 @@
             this.reorderTxt.AutoSize = true;
             this.reorderTxt.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reorderTxt.ForeColor = System.Drawing.Color.White;
-            this.reorderTxt.Location = new System.Drawing.Point(674, 271);
+            this.reorderTxt.Location = new System.Drawing.Point(889, 404);
             this.reorderTxt.Name = "reorderTxt";
             this.reorderTxt.Size = new System.Drawing.Size(82, 28);
             this.reorderTxt.TabIndex = 23;
@@ -227,7 +228,7 @@
             this.descTxt.AutoSize = true;
             this.descTxt.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descTxt.ForeColor = System.Drawing.Color.White;
-            this.descTxt.Location = new System.Drawing.Point(674, 130);
+            this.descTxt.Location = new System.Drawing.Point(889, 304);
             this.descTxt.Name = "descTxt";
             this.descTxt.Size = new System.Drawing.Size(52, 28);
             this.descTxt.TabIndex = 20;
@@ -239,7 +240,7 @@
             this.unitTxt.AutoSize = true;
             this.unitTxt.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unitTxt.ForeColor = System.Drawing.Color.White;
-            this.unitTxt.Location = new System.Drawing.Point(674, 176);
+            this.unitTxt.Location = new System.Drawing.Point(889, 339);
             this.unitTxt.Name = "unitTxt";
             this.unitTxt.Size = new System.Drawing.Size(48, 28);
             this.unitTxt.TabIndex = 19;
@@ -251,7 +252,7 @@
             this.expirableTxt.AutoSize = true;
             this.expirableTxt.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.expirableTxt.ForeColor = System.Drawing.Color.White;
-            this.expirableTxt.Location = new System.Drawing.Point(674, 222);
+            this.expirableTxt.Location = new System.Drawing.Point(889, 367);
             this.expirableTxt.Name = "expirableTxt";
             this.expirableTxt.Size = new System.Drawing.Size(96, 28);
             this.expirableTxt.TabIndex = 18;
@@ -261,10 +262,10 @@
             // productTxt
             // 
             this.productTxt.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productTxt.Location = new System.Drawing.Point(451, 112);
+            this.productTxt.Location = new System.Drawing.Point(565, 207);
             this.productTxt.MaxLength = 45;
             this.productTxt.Name = "productTxt";
-            this.productTxt.Size = new System.Drawing.Size(179, 27);
+            this.productTxt.Size = new System.Drawing.Size(222, 27);
             this.productTxt.TabIndex = 17;
             // 
             // label6
@@ -272,7 +273,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(248, 111);
+            this.label6.Location = new System.Drawing.Point(351, 206);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(138, 28);
             this.label6.TabIndex = 16;
@@ -281,7 +282,7 @@
             // repackBy
             // 
             this.repackBy.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.repackBy.Location = new System.Drawing.Point(451, 188);
+            this.repackBy.Location = new System.Drawing.Point(565, 283);
             this.repackBy.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -293,7 +294,7 @@
             0,
             0});
             this.repackBy.Name = "repackBy";
-            this.repackBy.Size = new System.Drawing.Size(178, 27);
+            this.repackBy.Size = new System.Drawing.Size(221, 27);
             this.repackBy.TabIndex = 15;
             this.repackBy.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.repackBy.Value = new decimal(new int[] {
@@ -308,7 +309,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(248, 187);
+            this.label5.Location = new System.Drawing.Point(351, 282);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label5.Size = new System.Drawing.Size(103, 28);
@@ -320,7 +321,7 @@
             // 
             this.repackedQuan.Enabled = false;
             this.repackedQuan.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.repackedQuan.Location = new System.Drawing.Point(450, 260);
+            this.repackedQuan.Location = new System.Drawing.Point(564, 355);
             this.repackedQuan.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -332,7 +333,7 @@
             0,
             0});
             this.repackedQuan.Name = "repackedQuan";
-            this.repackedQuan.Size = new System.Drawing.Size(178, 27);
+            this.repackedQuan.Size = new System.Drawing.Size(221, 27);
             this.repackedQuan.TabIndex = 13;
             this.repackedQuan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.repackedQuan.Value = new decimal(new int[] {
@@ -346,7 +347,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(248, 259);
+            this.label3.Location = new System.Drawing.Point(351, 354);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(177, 28);
             this.label3.TabIndex = 12;
@@ -356,7 +357,7 @@
             // 
             this.itemVol.Enabled = false;
             this.itemVol.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.itemVol.Location = new System.Drawing.Point(451, 151);
+            this.itemVol.Location = new System.Drawing.Point(565, 246);
             this.itemVol.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -368,7 +369,7 @@
             0,
             0});
             this.itemVol.Name = "itemVol";
-            this.itemVol.Size = new System.Drawing.Size(178, 27);
+            this.itemVol.Size = new System.Drawing.Size(221, 27);
             this.itemVol.TabIndex = 11;
             this.itemVol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.itemVol.Value = new decimal(new int[] {
@@ -382,7 +383,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(248, 150);
+            this.label2.Location = new System.Drawing.Point(351, 245);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(126, 28);
             this.label2.TabIndex = 10;
@@ -393,7 +394,7 @@
             this.saveRepackBtn.BackColor = System.Drawing.Color.White;
             this.saveRepackBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveRepackBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveRepackBtn.Location = new System.Drawing.Point(415, 345);
+            this.saveRepackBtn.Location = new System.Drawing.Point(469, 448);
             this.saveRepackBtn.Name = "saveRepackBtn";
             this.saveRepackBtn.Size = new System.Drawing.Size(87, 38);
             this.saveRepackBtn.TabIndex = 9;
@@ -404,7 +405,7 @@
             // Quan
             // 
             this.Quan.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Quan.Location = new System.Drawing.Point(451, 223);
+            this.Quan.Location = new System.Drawing.Point(565, 318);
             this.Quan.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -416,7 +417,7 @@
             0,
             0});
             this.Quan.Name = "Quan";
-            this.Quan.Size = new System.Drawing.Size(178, 27);
+            this.Quan.Size = new System.Drawing.Size(221, 27);
             this.Quan.TabIndex = 7;
             this.Quan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Quan.Value = new decimal(new int[] {
@@ -431,7 +432,7 @@
             this.cancelRepackBtn.BackColor = System.Drawing.Color.White;
             this.cancelRepackBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelRepackBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelRepackBtn.Location = new System.Drawing.Point(508, 345);
+            this.cancelRepackBtn.Location = new System.Drawing.Point(582, 448);
             this.cancelRepackBtn.Name = "cancelRepackBtn";
             this.cancelRepackBtn.Size = new System.Drawing.Size(87, 38);
             this.cancelRepackBtn.TabIndex = 6;
@@ -444,7 +445,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(248, 222);
+            this.label4.Location = new System.Drawing.Point(351, 317);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 28);
             this.label4.TabIndex = 0;
@@ -455,7 +456,7 @@
             this.addLabel.AutoSize = true;
             this.addLabel.Font = new System.Drawing.Font("Tw Cen MT", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addLabel.ForeColor = System.Drawing.Color.White;
-            this.addLabel.Location = new System.Drawing.Point(408, 36);
+            this.addLabel.Location = new System.Drawing.Point(451, 62);
             this.addLabel.Name = "addLabel";
             this.addLabel.Size = new System.Drawing.Size(236, 40);
             this.addLabel.TabIndex = 0;
@@ -468,11 +469,11 @@
             this.reorderBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.reorderBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reorderBtn.ForeColor = System.Drawing.Color.Black;
-            this.reorderBtn.Location = new System.Drawing.Point(530, 75);
+            this.reorderBtn.Location = new System.Drawing.Point(671, 102);
             this.reorderBtn.Name = "reorderBtn";
             this.reorderBtn.Size = new System.Drawing.Size(92, 42);
             this.reorderBtn.TabIndex = 162;
-            this.reorderBtn.Text = "ReOrder";
+            this.reorderBtn.Text = "REORDER";
             this.reorderBtn.UseVisualStyleBackColor = false;
             this.reorderBtn.Visible = false;
             this.reorderBtn.Click += new System.EventHandler(this.reorderBtn_Click);
@@ -480,7 +481,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Red;
-            this.panel1.Location = new System.Drawing.Point(14, 90);
+            this.panel1.Location = new System.Drawing.Point(42, 116);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(22, 17);
             this.panel1.TabIndex = 68;
@@ -488,7 +489,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Lime;
-            this.panel2.Location = new System.Drawing.Point(122, 90);
+            this.panel2.Location = new System.Drawing.Point(150, 116);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(22, 17);
             this.panel2.TabIndex = 69;
@@ -497,11 +498,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Tw Cen MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(42, 90);
+            this.label7.Location = new System.Drawing.Point(70, 116);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 15);
+            this.label7.Size = new System.Drawing.Size(77, 16);
             this.label7.TabIndex = 163;
             this.label7.Text = "Low Stocks";
             // 
@@ -509,11 +510,11 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Tw Cen MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(154, 92);
+            this.label8.Location = new System.Drawing.Point(182, 116);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 15);
+            this.label8.Size = new System.Drawing.Size(67, 16);
             this.label8.TabIndex = 164;
             this.label8.Text = "Sufficient";
             // 
@@ -523,7 +524,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(40)))), ((int)(((byte)(54)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(971, 564);
+            this.ClientSize = new System.Drawing.Size(1138, 690);
             this.ControlBox = false;
             this.Controls.Add(this.repackPanel);
             this.Controls.Add(this.dtgvInventory);
@@ -531,12 +532,12 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.quitBtn);
             this.Controls.Add(this.reorderBtn);
             this.Controls.Add(this.repackBtn);
             this.Controls.Add(this.logBtn);
             this.Controls.Add(this.stockoutBtn);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.quitBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

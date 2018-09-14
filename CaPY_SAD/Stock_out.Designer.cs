@@ -82,6 +82,7 @@
             // 
             this.quitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(42)))), ((int)(((byte)(15)))));
             this.quitBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.quitBtn.FlatAppearance.BorderSize = 0;
             this.quitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.quitBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quitBtn.ForeColor = System.Drawing.Color.White;
@@ -137,7 +138,7 @@
             this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveBtn.ForeColor = System.Drawing.Color.Black;
-            this.saveBtn.Location = new System.Drawing.Point(133, 317);
+            this.saveBtn.Location = new System.Drawing.Point(133, 327);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(77, 34);
             this.saveBtn.TabIndex = 103;
@@ -151,7 +152,7 @@
             this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelBtn.ForeColor = System.Drawing.Color.Black;
-            this.cancelBtn.Location = new System.Drawing.Point(229, 317);
+            this.cancelBtn.Location = new System.Drawing.Point(229, 327);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(77, 34);
             this.cancelBtn.TabIndex = 104;
@@ -165,7 +166,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(40)))), ((int)(((byte)(54)))));
             this.CancelButton = this.quitBtn;
-            this.ClientSize = new System.Drawing.Size(438, 380);
+            this.ClientSize = new System.Drawing.Size(438, 392);
             this.ControlBox = false;
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.saveBtn);

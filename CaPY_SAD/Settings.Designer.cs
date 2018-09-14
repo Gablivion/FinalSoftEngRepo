@@ -42,7 +42,7 @@
             // 
             // update_pwordBtn
             // 
-            this.update_pwordBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(205)))), ((int)(((byte)(93)))));
+            this.update_pwordBtn.BackColor = System.Drawing.Color.White;
             this.update_pwordBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.update_pwordBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.update_pwordBtn.ForeColor = System.Drawing.Color.Black;
@@ -57,6 +57,7 @@
             // quitBtn
             // 
             this.quitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(42)))), ((int)(((byte)(15)))));
+            this.quitBtn.FlatAppearance.BorderSize = 0;
             this.quitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.quitBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quitBtn.ForeColor = System.Drawing.Color.White;
@@ -82,7 +83,7 @@
             // 
             // update_unameBtn
             // 
-            this.update_unameBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(205)))), ((int)(((byte)(93)))));
+            this.update_unameBtn.BackColor = System.Drawing.Color.White;
             this.update_unameBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.update_unameBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.update_unameBtn.ForeColor = System.Drawing.Color.Black;

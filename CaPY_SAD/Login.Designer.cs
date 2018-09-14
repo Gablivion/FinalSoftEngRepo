@@ -44,7 +44,7 @@
             // usrTxt
             // 
             this.usrTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usrTxt.Location = new System.Drawing.Point(137, 171);
+            this.usrTxt.Location = new System.Drawing.Point(163, 182);
             this.usrTxt.Name = "usrTxt";
             this.usrTxt.Size = new System.Drawing.Size(186, 26);
             this.usrTxt.TabIndex = 1;
@@ -52,7 +52,7 @@
             // passTxt
             // 
             this.passTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passTxt.Location = new System.Drawing.Point(137, 212);
+            this.passTxt.Location = new System.Drawing.Point(163, 223);
             this.passTxt.Name = "passTxt";
             this.passTxt.PasswordChar = 'ฅ';
             this.passTxt.Size = new System.Drawing.Size(186, 26);
@@ -64,7 +64,7 @@
             this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginBtn.ForeColor = System.Drawing.Color.Black;
-            this.loginBtn.Location = new System.Drawing.Point(83, 312);
+            this.loginBtn.Location = new System.Drawing.Point(107, 323);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(75, 33);
             this.loginBtn.TabIndex = 3;
@@ -79,7 +79,7 @@
             this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelBtn.ForeColor = System.Drawing.Color.Black;
-            this.cancelBtn.Location = new System.Drawing.Point(181, 312);
+            this.cancelBtn.Location = new System.Drawing.Point(205, 323);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 33);
             this.cancelBtn.TabIndex = 4;
@@ -101,7 +101,7 @@
             this.panel1.Controls.Add(this.passTxt);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(345, 385);
+            this.panel1.Size = new System.Drawing.Size(393, 408);
             this.panel1.TabIndex = 5;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -110,7 +110,7 @@
             this.passCbx.AutoSize = true;
             this.passCbx.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passCbx.ForeColor = System.Drawing.Color.White;
-            this.passCbx.Location = new System.Drawing.Point(137, 244);
+            this.passCbx.Location = new System.Drawing.Point(163, 255);
             this.passCbx.Name = "passCbx";
             this.passCbx.Size = new System.Drawing.Size(142, 24);
             this.passCbx.TabIndex = 125;
@@ -123,7 +123,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(22, 211);
+            this.label4.Location = new System.Drawing.Point(43, 222);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(105, 28);
             this.label4.TabIndex = 5;
@@ -134,7 +134,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(22, 170);
+            this.label3.Location = new System.Drawing.Point(43, 181);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(105, 28);
             this.label3.TabIndex = 5;
@@ -145,7 +145,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tw Cen MT", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(20, 71);
+            this.label2.Location = new System.Drawing.Point(44, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(305, 37);
             this.label2.TabIndex = 5;
@@ -156,7 +156,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tw Cen MT", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(55, 34);
+            this.label1.Location = new System.Drawing.Point(79, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(235, 37);
             this.label1.TabIndex = 5;
@@ -170,7 +170,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(40)))), ((int)(((byte)(54)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.CancelButton = this.cancelBtn;
-            this.ClientSize = new System.Drawing.Size(369, 409);
+            this.ClientSize = new System.Drawing.Size(417, 432);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
