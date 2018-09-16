@@ -90,7 +90,7 @@ namespace CaPY_SAD
             dtgvHospitalization.Columns["d_in"].Visible = false;
             dtgvHospitalization.Columns["date_in"].HeaderText = "Admission Date";
             dtgvHospitalization.Columns["date_out"].HeaderText = "Discharge Date";
-            dtgvHospitalization.Columns["subtotal"].HeaderText = "Subtotal";
+            dtgvHospitalization.Columns["subtotal"].Visible = false;
             dtgvHospitalization.Columns["status"].HeaderText = "Status";
 
 
@@ -919,6 +919,14 @@ namespace CaPY_SAD
 
             totalTxt.Text = total.ToString();
 
+            
+
+            string query_subtotal = "UPDATE hospitalization SET subtotal = " + total + " WHERE  id =  " + Hosp.selected_data.hosp_id + "";
+            conn.Open();
+            MySqlCommand comm_subtotal = new MySqlCommand(query_subtotal, conn);
+            comm_subtotal.ExecuteNonQuery();
+            conn.Close();
+
         }
 
 
@@ -1211,6 +1219,12 @@ namespace CaPY_SAD
             total = decimal.Parse(prodTotalTxt.Text) + decimal.Parse(ServTotalTxt.Text) + decimal.Parse(roomTotal.Text);
             selected_data.total = total;
             totalTxt.Text = total.ToString();
+
+            string query_subtotal = "UPDATE hospitalization SET subtotal = " + totalTxt.Text + " WHERE  id =  " + Hosp.selected_data.hosp_id + "";
+            conn.Open();
+            MySqlCommand comm_subtotal = new MySqlCommand(query_subtotal, conn);
+            comm_subtotal.ExecuteNonQuery();
+            conn.Close();
         }
 
         private void viewHospReports_Click(object sender, EventArgs e)

@@ -113,7 +113,7 @@ namespace CaPY_SAD
         public void orderline()
         {
 
-            String query_order_line = "SELECT sales_order_line.id as id, products.name as product, sales_order_line.price, quantity, subtotal FROM sales_order_line, products WHERE order_id = " + sales_order_id + " AND products.id = sales_order_line.products_id group by sales_order_line.id";
+            String query_order_line = "SELECT sales_order_line.id as id, products.name as product, sales_order_line.price, quantity, subtotal FROM sales_order_line, products WHERE order_id = " + sales_order_id + " AND products.id = sales_order_line.products_id  AND refunded = 'no' group by sales_order_line.id ";
 
             conn.Open();
             MySqlCommand comm = new MySqlCommand(query_order_line, conn);
@@ -187,7 +187,13 @@ namespace CaPY_SAD
             MySqlCommand comm_subtract = new MySqlCommand(query_subtract_quantity, conn);
             comm_subtract.ExecuteNonQuery();
             conn.Close();
-            
+
+            string query_updateavail = "UPDATE sales_order_line SET refunded = 'yes' WHERE quantity <= 0";
+            conn.Open();
+            MySqlCommand comm_updateavail = new MySqlCommand(query_updateavail, conn);
+            comm_updateavail.ExecuteNonQuery();
+            conn.Close();
+
             MessageBox.Show("Item Refunded and back to the inventory!");
             toInventoryBtn.Enabled = false;
             custTxt.Text = "";
@@ -200,7 +206,9 @@ namespace CaPY_SAD
 
             loadSalesData();
             orderline();
-            
+
+            dtgvOrderline.DataSource = null;
+
         }
 
         private void backOrderlineBtn_Click(object sender, EventArgs e)

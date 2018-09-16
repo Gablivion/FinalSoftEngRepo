@@ -38,10 +38,17 @@
             this.editBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cancelBtn = new System.Windows.Forms.Button();
+            this.middlenameTxt = new System.Windows.Forms.TextBox();
+            this.bdayTxt = new System.Windows.Forms.DateTimePicker();
+            this.firstnameTxt = new System.Windows.Forms.TextBox();
+            this.emailTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.cnumTxt = new System.Windows.Forms.TextBox();
             this.saveBtn = new System.Windows.Forms.Button();
+            this.addressTxt = new System.Windows.Forms.TextBox();
             this.femaleRadio = new MaterialSkin.Controls.MaterialRadioButton();
             this.maleRadio = new MaterialSkin.Controls.MaterialRadioButton();
+            this.lastnameTxt = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,13 +56,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.emailTxt = new System.Windows.Forms.TextBox();
-            this.firstnameTxt = new System.Windows.Forms.TextBox();
-            this.middlenameTxt = new System.Windows.Forms.TextBox();
-            this.lastnameTxt = new System.Windows.Forms.TextBox();
-            this.addressTxt = new System.Windows.Forms.TextBox();
-            this.cnumTxt = new System.Windows.Forms.TextBox();
-            this.bdayTxt = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTransactions)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -63,6 +63,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(42)))), ((int)(((byte)(15)))));
+            this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Transparent;
@@ -185,6 +186,48 @@
             this.cancelBtn.UseVisualStyleBackColor = false;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
+            // middlenameTxt
+            // 
+            this.middlenameTxt.Enabled = false;
+            this.middlenameTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.middlenameTxt.Location = new System.Drawing.Point(185, 72);
+            this.middlenameTxt.Name = "middlenameTxt";
+            this.middlenameTxt.Size = new System.Drawing.Size(234, 26);
+            this.middlenameTxt.TabIndex = 146;
+            this.middlenameTxt.TextChanged += new System.EventHandler(this.firstnameTxt_TextChanged);
+            // 
+            // bdayTxt
+            // 
+            this.bdayTxt.CalendarFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bdayTxt.CustomFormat = "yyyy-MM-dd";
+            this.bdayTxt.Enabled = false;
+            this.bdayTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bdayTxt.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.bdayTxt.Location = new System.Drawing.Point(576, 37);
+            this.bdayTxt.Name = "bdayTxt";
+            this.bdayTxt.Size = new System.Drawing.Size(234, 26);
+            this.bdayTxt.TabIndex = 132;
+            // 
+            // firstnameTxt
+            // 
+            this.firstnameTxt.Enabled = false;
+            this.firstnameTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstnameTxt.Location = new System.Drawing.Point(185, 39);
+            this.firstnameTxt.Name = "firstnameTxt";
+            this.firstnameTxt.Size = new System.Drawing.Size(234, 26);
+            this.firstnameTxt.TabIndex = 147;
+            this.firstnameTxt.TextChanged += new System.EventHandler(this.firstnameTxt_TextChanged);
+            // 
+            // emailTxt
+            // 
+            this.emailTxt.Enabled = false;
+            this.emailTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailTxt.Location = new System.Drawing.Point(576, 136);
+            this.emailTxt.Name = "emailTxt";
+            this.emailTxt.Size = new System.Drawing.Size(234, 26);
+            this.emailTxt.TabIndex = 144;
+            this.emailTxt.Leave += new System.EventHandler(this.emailTxt_Leave);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -196,6 +239,15 @@
             this.label3.Size = new System.Drawing.Size(98, 28);
             this.label3.TabIndex = 136;
             this.label3.Text = "Firstname";
+            // 
+            // cnumTxt
+            // 
+            this.cnumTxt.Enabled = false;
+            this.cnumTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cnumTxt.Location = new System.Drawing.Point(576, 103);
+            this.cnumTxt.Name = "cnumTxt";
+            this.cnumTxt.Size = new System.Drawing.Size(234, 26);
+            this.cnumTxt.TabIndex = 148;
             // 
             // saveBtn
             // 
@@ -210,6 +262,15 @@
             this.saveBtn.Text = "SAVE";
             this.saveBtn.UseVisualStyleBackColor = false;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
+            // addressTxt
+            // 
+            this.addressTxt.Enabled = false;
+            this.addressTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addressTxt.Location = new System.Drawing.Point(576, 70);
+            this.addressTxt.Name = "addressTxt";
+            this.addressTxt.Size = new System.Drawing.Size(234, 26);
+            this.addressTxt.TabIndex = 143;
             // 
             // femaleRadio
             // 
@@ -249,6 +310,16 @@
             this.maleRadio.TabStop = true;
             this.maleRadio.Text = "Male";
             this.maleRadio.UseVisualStyleBackColor = false;
+            // 
+            // lastnameTxt
+            // 
+            this.lastnameTxt.Enabled = false;
+            this.lastnameTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastnameTxt.Location = new System.Drawing.Point(185, 103);
+            this.lastnameTxt.Name = "lastnameTxt";
+            this.lastnameTxt.Size = new System.Drawing.Size(234, 26);
+            this.lastnameTxt.TabIndex = 145;
+            this.lastnameTxt.TextChanged += new System.EventHandler(this.firstnameTxt_TextChanged);
             // 
             // label9
             // 
@@ -333,76 +404,6 @@
             this.label5.Size = new System.Drawing.Size(87, 28);
             this.label5.TabIndex = 137;
             this.label5.Text = "Birthday";
-            // 
-            // emailTxt
-            // 
-            this.emailTxt.Enabled = false;
-            this.emailTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailTxt.Location = new System.Drawing.Point(576, 136);
-            this.emailTxt.Name = "emailTxt";
-            this.emailTxt.Size = new System.Drawing.Size(234, 26);
-            this.emailTxt.TabIndex = 144;
-            this.emailTxt.Leave += new System.EventHandler(this.emailTxt_Leave);
-            // 
-            // firstnameTxt
-            // 
-            this.firstnameTxt.Enabled = false;
-            this.firstnameTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstnameTxt.Location = new System.Drawing.Point(185, 39);
-            this.firstnameTxt.Name = "firstnameTxt";
-            this.firstnameTxt.Size = new System.Drawing.Size(234, 26);
-            this.firstnameTxt.TabIndex = 147;
-            this.firstnameTxt.TextChanged += new System.EventHandler(this.firstnameTxt_TextChanged);
-            // 
-            // middlenameTxt
-            // 
-            this.middlenameTxt.Enabled = false;
-            this.middlenameTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.middlenameTxt.Location = new System.Drawing.Point(185, 72);
-            this.middlenameTxt.Name = "middlenameTxt";
-            this.middlenameTxt.Size = new System.Drawing.Size(234, 26);
-            this.middlenameTxt.TabIndex = 146;
-            this.middlenameTxt.TextChanged += new System.EventHandler(this.firstnameTxt_TextChanged);
-            // 
-            // lastnameTxt
-            // 
-            this.lastnameTxt.Enabled = false;
-            this.lastnameTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastnameTxt.Location = new System.Drawing.Point(185, 103);
-            this.lastnameTxt.Name = "lastnameTxt";
-            this.lastnameTxt.Size = new System.Drawing.Size(234, 26);
-            this.lastnameTxt.TabIndex = 145;
-            this.lastnameTxt.TextChanged += new System.EventHandler(this.firstnameTxt_TextChanged);
-            // 
-            // addressTxt
-            // 
-            this.addressTxt.Enabled = false;
-            this.addressTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressTxt.Location = new System.Drawing.Point(576, 70);
-            this.addressTxt.Name = "addressTxt";
-            this.addressTxt.Size = new System.Drawing.Size(234, 26);
-            this.addressTxt.TabIndex = 143;
-            // 
-            // cnumTxt
-            // 
-            this.cnumTxt.Enabled = false;
-            this.cnumTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cnumTxt.Location = new System.Drawing.Point(576, 103);
-            this.cnumTxt.Name = "cnumTxt";
-            this.cnumTxt.Size = new System.Drawing.Size(234, 26);
-            this.cnumTxt.TabIndex = 148;
-            // 
-            // bdayTxt
-            // 
-            this.bdayTxt.CalendarFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bdayTxt.CustomFormat = "yyyy-MM-dd";
-            this.bdayTxt.Enabled = false;
-            this.bdayTxt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bdayTxt.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.bdayTxt.Location = new System.Drawing.Point(576, 37);
-            this.bdayTxt.Name = "bdayTxt";
-            this.bdayTxt.Size = new System.Drawing.Size(234, 26);
-            this.bdayTxt.TabIndex = 132;
             // 
             // View_customer
             // 

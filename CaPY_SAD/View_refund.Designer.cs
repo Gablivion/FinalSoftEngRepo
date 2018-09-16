@@ -51,6 +51,7 @@
             // quitBtn
             // 
             this.quitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(42)))), ((int)(((byte)(15)))));
+            this.quitBtn.FlatAppearance.BorderSize = 0;
             this.quitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.quitBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quitBtn.ForeColor = System.Drawing.Color.Transparent;
@@ -173,11 +174,11 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tw Cen MT", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(491, 22);
+            this.label1.Location = new System.Drawing.Point(500, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 40);
+            this.label1.Size = new System.Drawing.Size(139, 40);
             this.label1.TabIndex = 90;
-            this.label1.Text = "REFUNDS";
+            this.label1.Text = "REFUND";
             // 
             // printBtn
             // 

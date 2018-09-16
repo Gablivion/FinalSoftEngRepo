@@ -47,6 +47,7 @@
             // quitBtn
             // 
             this.quitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(42)))), ((int)(((byte)(15)))));
+            this.quitBtn.FlatAppearance.BorderSize = 0;
             this.quitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.quitBtn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quitBtn.ForeColor = System.Drawing.Color.Transparent;
@@ -122,6 +123,7 @@
             this.quantityTxt.Name = "quantityTxt";
             this.quantityTxt.Size = new System.Drawing.Size(191, 27);
             this.quantityTxt.TabIndex = 2;
+            this.quantityTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // expirationTxt
             // 
