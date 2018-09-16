@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
+
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -54,7 +54,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
-=======
+
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle145 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle146 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle147 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -79,8 +79,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle166 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle167 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle168 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hosp));
->>>>>>> 8085e2801b451fda9b698e5cd0d19a11859e8874
+       //     System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hosp));
+
             this.label1 = new System.Windows.Forms.Label();
             this.addHospBtn = new System.Windows.Forms.Button();
             this.addcageBtn = new System.Windows.Forms.Button();
@@ -318,7 +318,7 @@
             this.dtgvCage.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvCage.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtgvCage.BorderStyle = System.Windows.Forms.BorderStyle.None;
-<<<<<<< HEAD
+
             dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle25.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -336,7 +336,7 @@
             dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvCage.DefaultCellStyle = dataGridViewCellStyle26;
-=======
+
             dataGridViewCellStyle145.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle145.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle145.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -354,7 +354,8 @@
             dataGridViewCellStyle146.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle146.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvCage.DefaultCellStyle = dataGridViewCellStyle146;
->>>>>>> 8085e2801b451fda9b698e5cd0d19a11859e8874
+
+
             this.dtgvCage.Location = new System.Drawing.Point(313, 58);
             this.dtgvCage.Name = "dtgvCage";
             this.dtgvCage.ReadOnly = true;
@@ -423,7 +424,7 @@
             this.dtgvHospitalization.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtgvHospitalization.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvHospitalization.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-<<<<<<< HEAD
+
             dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -441,7 +442,7 @@
             dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvHospitalization.DefaultCellStyle = dataGridViewCellStyle28;
-=======
+
             dataGridViewCellStyle147.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle147.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle147.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -459,7 +460,7 @@
             dataGridViewCellStyle148.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle148.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvHospitalization.DefaultCellStyle = dataGridViewCellStyle148;
->>>>>>> 8085e2801b451fda9b698e5cd0d19a11859e8874
+
             this.dtgvHospitalization.Location = new System.Drawing.Point(24, 38);
             this.dtgvHospitalization.Name = "dtgvHospitalization";
             this.dtgvHospitalization.ReadOnly = true;
@@ -759,7 +760,7 @@
             this.dtgvMeds.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtgvMeds.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvMeds.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-<<<<<<< HEAD
+
             dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -777,7 +778,7 @@
             dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvMeds.DefaultCellStyle = dataGridViewCellStyle30;
-=======
+
             dataGridViewCellStyle149.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle149.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle149.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -795,7 +796,7 @@
             dataGridViewCellStyle150.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle150.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvMeds.DefaultCellStyle = dataGridViewCellStyle150;
->>>>>>> 8085e2801b451fda9b698e5cd0d19a11859e8874
+
             this.dtgvMeds.Location = new System.Drawing.Point(46, 60);
             this.dtgvMeds.Name = "dtgvMeds";
             this.dtgvMeds.ReadOnly = true;
@@ -839,7 +840,7 @@
             this.dtgvVitals.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtgvVitals.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvVitals.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-<<<<<<< HEAD
+
             dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -857,7 +858,7 @@
             dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvVitals.DefaultCellStyle = dataGridViewCellStyle32;
-=======
+
             dataGridViewCellStyle151.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle151.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle151.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -875,7 +876,7 @@
             dataGridViewCellStyle152.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle152.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvVitals.DefaultCellStyle = dataGridViewCellStyle152;
->>>>>>> 8085e2801b451fda9b698e5cd0d19a11859e8874
+
             this.dtgvVitals.Location = new System.Drawing.Point(6, 30);
             this.dtgvVitals.Name = "dtgvVitals";
             this.dtgvVitals.ReadOnly = true;
@@ -924,7 +925,7 @@
             this.dtgvAvailProd.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtgvAvailProd.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvAvailProd.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-<<<<<<< HEAD
+
             dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -942,7 +943,7 @@
             dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvAvailProd.DefaultCellStyle = dataGridViewCellStyle34;
-=======
+
             dataGridViewCellStyle153.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle153.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle153.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -960,7 +961,7 @@
             dataGridViewCellStyle154.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle154.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvAvailProd.DefaultCellStyle = dataGridViewCellStyle154;
->>>>>>> 8085e2801b451fda9b698e5cd0d19a11859e8874
+
             this.dtgvAvailProd.Location = new System.Drawing.Point(20, 33);
             this.dtgvAvailProd.Name = "dtgvAvailProd";
             this.dtgvAvailProd.ReadOnly = true;
@@ -1355,7 +1356,7 @@
             this.dtgvEndorsed.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtgvEndorsed.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvEndorsed.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-<<<<<<< HEAD
+
             dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1373,7 +1374,7 @@
             dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvEndorsed.DefaultCellStyle = dataGridViewCellStyle36;
-=======
+
             dataGridViewCellStyle155.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle155.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle155.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1391,7 +1392,7 @@
             dataGridViewCellStyle156.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle156.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvEndorsed.DefaultCellStyle = dataGridViewCellStyle156;
->>>>>>> 8085e2801b451fda9b698e5cd0d19a11859e8874
+
             this.dtgvEndorsed.Location = new System.Drawing.Point(564, 52);
             this.dtgvEndorsed.Name = "dtgvEndorsed";
             this.dtgvEndorsed.ReadOnly = true;
@@ -1423,7 +1424,7 @@
             this.dtgvAddProd.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtgvAddProd.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvAddProd.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-<<<<<<< HEAD
+
             dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle37.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1441,7 +1442,7 @@
             dataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvAddProd.DefaultCellStyle = dataGridViewCellStyle38;
-=======
+
             dataGridViewCellStyle157.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle157.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle157.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1459,7 +1460,7 @@
             dataGridViewCellStyle158.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle158.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvAddProd.DefaultCellStyle = dataGridViewCellStyle158;
->>>>>>> 8085e2801b451fda9b698e5cd0d19a11859e8874
+
             this.dtgvAddProd.Location = new System.Drawing.Point(20, 52);
             this.dtgvAddProd.Name = "dtgvAddProd";
             this.dtgvAddProd.ReadOnly = true;
@@ -1531,7 +1532,7 @@
             this.dtgvServices.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtgvServices.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvServices.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-<<<<<<< HEAD
+
             dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle39.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1549,7 +1550,7 @@
             dataGridViewCellStyle40.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvServices.DefaultCellStyle = dataGridViewCellStyle40;
-=======
+
             dataGridViewCellStyle159.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle159.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle159.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1567,7 +1568,7 @@
             dataGridViewCellStyle160.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle160.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvServices.DefaultCellStyle = dataGridViewCellStyle160;
->>>>>>> 8085e2801b451fda9b698e5cd0d19a11859e8874
+
             this.dtgvServices.Location = new System.Drawing.Point(21, 54);
             this.dtgvServices.Name = "dtgvServices";
             this.dtgvServices.ReadOnly = true;
@@ -1634,7 +1635,7 @@
             this.dtgvAccServices.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtgvAccServices.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvAccServices.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-<<<<<<< HEAD
+
             dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle41.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle41.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1652,7 +1653,7 @@
             dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvAccServices.DefaultCellStyle = dataGridViewCellStyle42;
-=======
+
             dataGridViewCellStyle161.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle161.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle161.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1670,7 +1671,7 @@
             dataGridViewCellStyle162.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle162.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvAccServices.DefaultCellStyle = dataGridViewCellStyle162;
->>>>>>> 8085e2801b451fda9b698e5cd0d19a11859e8874
+
             this.dtgvAccServices.Location = new System.Drawing.Point(17, 42);
             this.dtgvAccServices.Name = "dtgvAccServices";
             this.dtgvAccServices.ReadOnly = true;
@@ -1688,7 +1689,7 @@
             this.dtgvServProd.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtgvServProd.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvServProd.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-<<<<<<< HEAD
+
             dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle43.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle43.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1706,7 +1707,7 @@
             dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvServProd.DefaultCellStyle = dataGridViewCellStyle44;
-=======
+
             dataGridViewCellStyle163.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle163.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle163.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1724,7 +1725,7 @@
             dataGridViewCellStyle164.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle164.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvServProd.DefaultCellStyle = dataGridViewCellStyle164;
->>>>>>> 8085e2801b451fda9b698e5cd0d19a11859e8874
+
             this.dtgvServProd.Location = new System.Drawing.Point(17, 251);
             this.dtgvServProd.Name = "dtgvServProd";
             this.dtgvServProd.ReadOnly = true;
@@ -1766,11 +1767,11 @@
             this.petPanel.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.petPanel.Location = new System.Drawing.Point(20, 8);
             this.petPanel.Name = "petPanel";
-<<<<<<< HEAD
+
             this.petPanel.Size = new System.Drawing.Size(220, 77);
-=======
+
             this.petPanel.Size = new System.Drawing.Size(696, 208);
->>>>>>> 8085e2801b451fda9b698e5cd0d19a11859e8874
+
             this.petPanel.TabIndex = 161;
             this.petPanel.Visible = false;
             // 
@@ -1797,7 +1798,7 @@
             this.dtgvPet.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtgvPet.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvPet.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-<<<<<<< HEAD
+
             dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle45.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle45.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1815,7 +1816,7 @@
             dataGridViewCellStyle46.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvPet.DefaultCellStyle = dataGridViewCellStyle46;
-=======
+
             dataGridViewCellStyle165.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle165.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle165.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1833,7 +1834,7 @@
             dataGridViewCellStyle166.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle166.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvPet.DefaultCellStyle = dataGridViewCellStyle166;
->>>>>>> 8085e2801b451fda9b698e5cd0d19a11859e8874
+
             this.dtgvPet.Location = new System.Drawing.Point(40, 46);
             this.dtgvPet.Name = "dtgvPet";
             this.dtgvPet.ReadOnly = true;
@@ -2022,7 +2023,7 @@
             this.dtgvAllergies.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtgvAllergies.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvAllergies.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-<<<<<<< HEAD
+
             dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle47.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle47.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2040,7 +2041,7 @@
             dataGridViewCellStyle48.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvAllergies.DefaultCellStyle = dataGridViewCellStyle48;
-=======
+
             dataGridViewCellStyle167.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle167.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle167.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2058,7 +2059,7 @@
             dataGridViewCellStyle168.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle168.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvAllergies.DefaultCellStyle = dataGridViewCellStyle168;
->>>>>>> 8085e2801b451fda9b698e5cd0d19a11859e8874
+
             this.dtgvAllergies.Location = new System.Drawing.Point(786, 143);
             this.dtgvAllergies.Name = "dtgvAllergies";
             this.dtgvAllergies.ReadOnly = true;
