@@ -201,8 +201,6 @@ namespace CaPY_SAD
                 offsetY += (int)fontHeight + 20;
                
 
-
-
                 ++printedLines;
                
                 if (offsetY >= 700)
