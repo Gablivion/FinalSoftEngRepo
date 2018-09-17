@@ -706,6 +706,7 @@
             0,
             0,
             0});
+            this.quantityTxt.ValueChanged += new System.EventHandler(this.quantityTxt_ValueChanged);
             // 
             // addBtn
             // 

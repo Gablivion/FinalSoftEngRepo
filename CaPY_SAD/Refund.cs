@@ -138,7 +138,7 @@ namespace CaPY_SAD
         private void toInventoryBtn_Click(object sender, EventArgs e)
         {
             string query_refund= "INSERT INTO sales_refund(sales_order_id, sales_order_line_id, staff_id, customers_id, product, quantity, amount, date) "
-                + "VALUES (" + sales_order_id + "," + orderline_id + ", (SELECT staff.id FROM person,staff WHERE staff.person_id = person.id AND concat(firstname,' ',middlename,' ',lastname) Like '%" + EncTxt.Text + "%'),(SELECT customers.id FROM person,customers WHERE customers.person_id = person.id AND concat(firstname,' ',middlename,' ',lastname) Like '%" + custTxt.Text + "%'),'" + prodTxt.Text + "'," + quanNum.Value + "," + decimal.Parse(SubtotalTxt.Text) + ",current_timestamp())";
+                + "VALUES (" + sales_order_id + "," + orderline_id + ", (SELECT staff.id FROM person,staff WHERE staff.person_id = person.id AND concat(firstname,' ',middlename,' ',lastname) Like '%" + EncTxt.Text + "%'),(SELECT customers.id FROM person,customers WHERE customers.person_id = person.id AND concat(firstname,' ',middlename,' ',lastname) Like '%" + custTxt.Text + "%'),'" + prodTxt.Text + "'," + quanNum.Value + "," + decimal.Parse(SubtotalTxt.Text) * -1 + ",current_timestamp())";
             conn.Open();
             MySqlCommand comm_cage = new MySqlCommand(query_refund, conn);
             comm_cage.ExecuteNonQuery();
@@ -182,11 +182,12 @@ namespace CaPY_SAD
             conn.Close();
 
             //Deduct from quantity
-            string query_subtract_quantity = "UPDATE sales_order_line SET quantity = (quantity - " + quanNum.Value + "), subtotal = price * " + quanNum.Value + "  WHERE sales_order_line.id = " + orderline_id + "";
+            string query_subtract_quantity = "UPDATE sales_order_line SET quantity = (quantity - " + quanNum.Value + ") WHERE sales_order_line.id = " + orderline_id + "";
             conn.Open();
             MySqlCommand comm_subtract = new MySqlCommand(query_subtract_quantity, conn);
             comm_subtract.ExecuteNonQuery();
             conn.Close();
+
 
             string query_updateavail = "UPDATE sales_order_line SET refunded = 'yes' WHERE quantity <= 0";
             conn.Open();
@@ -194,7 +195,7 @@ namespace CaPY_SAD
             comm_updateavail.ExecuteNonQuery();
             conn.Close();
 
-            string q_update_sales_order = "UPDATE sales_order,sales_order_line SET sales_order.subtotal = sales_order.subtotal * -1 , sales_order.refunded ='yes'  WHERE sales_order_line.refunded = 'yes'  AND sales_order.id = sales_order_line.order_id  AND sales_order.id = "+sales_order_id+" ";
+            string q_update_sales_order = "UPDATE sales_order,sales_order_line SET sales_order.refunded ='yes'  WHERE sales_order_line.refunded = 'yes'  AND sales_order.id = sales_order_line.order_id  AND sales_order.id = " + sales_order_id+" ";
             conn.Open();
             MySqlCommand comm_update_sales_order = new MySqlCommand(q_update_sales_order, conn);
             comm_update_sales_order.ExecuteNonQuery();
