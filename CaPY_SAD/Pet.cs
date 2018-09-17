@@ -154,11 +154,16 @@ namespace CaPY_SAD
                 loadPetData();
 
             }
-        }
 
+        }
         private void nameTxt_TextChanged(object sender, EventArgs e)
         {
             loadPetData();
+        }
+
+        private void dtgvPet_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

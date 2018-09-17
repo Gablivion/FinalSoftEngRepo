@@ -182,7 +182,7 @@ namespace CaPY_SAD
             conn.Close();
 
             //Deduct from quantity
-            string query_subtract_quantity = "UPDATE sales_order_line set quantity = (quantity - " + quanNum.Value + ") where sales_order_line.id =" + orderline_id + "";
+            string query_subtract_quantity = "UPDATE sales_order_line SET quantity = (quantity - " + quanNum.Value + "), subtotal = price * " + quanNum.Value + "  WHERE sales_order_line.id = " + orderline_id + "";
             conn.Open();
             MySqlCommand comm_subtract = new MySqlCommand(query_subtract_quantity, conn);
             comm_subtract.ExecuteNonQuery();
@@ -193,6 +193,14 @@ namespace CaPY_SAD
             MySqlCommand comm_updateavail = new MySqlCommand(query_updateavail, conn);
             comm_updateavail.ExecuteNonQuery();
             conn.Close();
+
+            string q_update_sales_order = "UPDATE sales_order,sales_order_line SET sales_order.subtotal = sales_order.subtotal * -1 , sales_order.refunded ='yes'  WHERE sales_order_line.refunded = 'yes'  AND sales_order.id = sales_order_line.order_id  AND sales_order.id = "+sales_order_id+" ";
+            conn.Open();
+            MySqlCommand comm_update_sales_order = new MySqlCommand(q_update_sales_order, conn);
+            comm_update_sales_order.ExecuteNonQuery();
+            conn.Close();
+
+
 
             MessageBox.Show("Item Refunded and back to the inventory!");
             toInventoryBtn.Enabled = false;

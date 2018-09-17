@@ -197,7 +197,7 @@
             this.dtgvOrders.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dtgvOrders.RowHeadersVisible = false;
             this.dtgvOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvOrders.Size = new System.Drawing.Size(1081, 382);
+            this.dtgvOrders.Size = new System.Drawing.Size(1048, 382);
             this.dtgvOrders.TabIndex = 29;
             this.dtgvOrders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvOrders_CellClick);
             // 
@@ -218,15 +218,9 @@
             this.paypanel.Controls.Add(this.label6);
             this.paypanel.Enabled = false;
             this.paypanel.ImeMode = System.Windows.Forms.ImeMode.Off;
-
-            this.paypanel.Location = new System.Drawing.Point(348, 446);
-            this.paypanel.Name = "paypanel";
-            this.paypanel.Size = new System.Drawing.Size(756, 300);
-
             this.paypanel.Location = new System.Drawing.Point(911, 456);
             this.paypanel.Name = "paypanel";
             this.paypanel.Size = new System.Drawing.Size(64, 18);
-
             this.paypanel.TabIndex = 68;
             this.paypanel.Visible = false;
             // 
@@ -373,11 +367,7 @@
             this.button1.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-
-            this.button1.Location = new System.Drawing.Point(1083, 0);
-
             this.button1.Location = new System.Drawing.Point(1084, 0);
-
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(42, 40);
             this.button1.TabIndex = 64;
@@ -890,11 +880,7 @@
             this.hosppayPanel.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.hosppayPanel.Location = new System.Drawing.Point(897, 503);
             this.hosppayPanel.Name = "hosppayPanel";
-
-            this.hosppayPanel.Size = new System.Drawing.Size(771, 10);
-
             this.hosppayPanel.Size = new System.Drawing.Size(54, 26);
-
             this.hosppayPanel.TabIndex = 69;
             this.hosppayPanel.Visible = false;
             // 
@@ -1025,11 +1011,7 @@
             dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgvAcServ.DefaultCellStyle = dataGridViewCellStyle13;
-
-            this.dtgvAcServ.Location = new System.Drawing.Point(44, 58);
-
             this.dtgvAcServ.Location = new System.Drawing.Point(73, 58);
-
             this.dtgvAcServ.Name = "dtgvAcServ";
             this.dtgvAcServ.ReadOnly = true;
             this.dtgvAcServ.RowHeadersVisible = false;

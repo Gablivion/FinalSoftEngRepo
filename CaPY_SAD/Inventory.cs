@@ -196,8 +196,6 @@ namespace CaPY_SAD
             selected_data.reorder = true;
             this.Hide();
             addpo.Show();
-
-        
         }
 
         private void dtgvInventory_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -210,13 +208,17 @@ namespace CaPY_SAD
                 string name = dtgvInventory.Rows[e.RowIndex].Cells["product"].Value.ToString();
                 int quan = int.Parse(dtgvInventory.Rows[e.RowIndex].Cells["quantity"].Value.ToString());
                 medval = int.Parse(dtgvInventory.Rows[e.RowIndex].Cells["medicine"].Value.ToString());
-                int reorder = int.Parse(dtgvInventory.Rows[e.RowIndex].Cells["reorder"].Value.ToString());
-                if (quan <= reorder)
+                int reorder_point = int.Parse(dtgvInventory.Rows[e.RowIndex].Cells["reorder"].Value.ToString());
+                MessageBox.Show( quan.ToString());
+                MessageBox.Show(reorder_point.ToString());
+
+                if (quan <= reorder_point && !(name.Contains("Repacked by")))
                 {
-                    reorderBtn.Visible = true;
                     reorderBtn.Enabled = true;
+                    reorderBtn.Visible = true;
+                    
                 }
-                else
+                else if (quan > reorder_point && name.Contains("Repacked by"))
                 {
                     reorderBtn.Visible = false;
                 }

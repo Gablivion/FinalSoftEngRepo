@@ -412,7 +412,7 @@ namespace CaPY_SAD
                 {
                     if (Hosp.selected_data.checkout == true)
                     {
-                        string query_checkout = "UPDATE hospitalization SET subtotal = "+ paytotalTxt.Text + " status = 'discharged' WHERE  id =  " + Hosp.selected_data.hosp_id + "";
+                        string query_checkout = "UPDATE hospitalization SET subtotal = "+ paytotalTxt.Text + ", status = 'discharged' WHERE  id =  " + Hosp.selected_data.hosp_id + "";
 
                         conn.Open();
                         MySqlCommand comm_checkout = new MySqlCommand(query_checkout, conn);

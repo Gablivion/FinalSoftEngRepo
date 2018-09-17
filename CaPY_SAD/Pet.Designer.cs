@@ -102,6 +102,7 @@
             this.dtgvPet.Size = new System.Drawing.Size(1064, 546);
             this.dtgvPet.TabIndex = 55;
             this.dtgvPet.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvPet_CellClick);
+            this.dtgvPet.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvPet_CellContentClick);
             // 
             // editBtn
             // 

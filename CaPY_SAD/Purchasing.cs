@@ -77,8 +77,11 @@ namespace CaPY_SAD
             dtgvPurchaseOrders.Columns["status"].HeaderText = "Status";
 
         }
-
-        public void getTotal()
+        public class purchase
+        {
+            public static decimal p_total;
+        }
+            public void getTotal()
         {
             decimal total = 0;
 
@@ -94,6 +97,7 @@ namespace CaPY_SAD
 
             }
             string total_string = total.ToString();
+            purchase.p_total = total;
             totalTxt.Text = total_string;
         }
 

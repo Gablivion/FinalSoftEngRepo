@@ -214,18 +214,24 @@ namespace CaPY_SAD
                 }
                 
             }
-            e.Graphics.DrawRectangle(Pens.Black, startX, startY + offsetY + 20, 840, 1);
+
+            offsetY += (int)fontHeight + 50;
+            e.Graphics.DrawRectangle(Pens.Black, startX, startY + offsetY, 840, 1);
+            offsetY += (int)fontHeight + 30;
+
             string sale = "Total Sales: ";
-            e.Graphics.DrawString(sale, new Font("Arial", 33, FontStyle.Bold), Brushes.Black, startX + 60, startY + offsetY + 30);
+            e.Graphics.DrawString(sale, new Font("Arial", 20, FontStyle.Bold), Brushes.Black, startX + 300, startY + offsetY);
 
             string sales_total = "Php " + sales_tot.Text;
-            e.Graphics.DrawString(sales_total, new Font("Arial", 22, FontStyle.Bold), Brushes.Black, startX + 570, startY + offsetY + 40);
+            e.Graphics.DrawString(sales_total, new Font("Arial", 20, FontStyle.Bold), Brushes.Black, startX + 570, startY + offsetY);
 
+            offsetY += (int)fontHeight + 50;
             string prof = "Total Profit: ";
-            e.Graphics.DrawString(prof, new Font("Arial", 33, FontStyle.Bold), Brushes.Black, startX + 60, startY + offsetY + 70);
+            e.Graphics.DrawString(prof, new Font("Arial", 20, FontStyle.Bold), Brushes.Black, startX + 300, startY + offsetY);
 
-            string profit = "Php " + sales_tot.Text;
-            e.Graphics.DrawString(profit, new Font("Arial", 22, FontStyle.Bold), Brushes.Black, startX + 570, startY + offsetY + 100);
+            string profit = "Php ----";
+            e.Graphics.DrawString(profit, new Font("Arial", 20, FontStyle.Bold), Brushes.Black, startX + 570, startY + offsetY);
+
         }
         
 

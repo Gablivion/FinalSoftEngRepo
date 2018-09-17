@@ -317,10 +317,19 @@ namespace CaPY_SAD
                 if (dtgvHospitalization.Rows[e.RowIndex].Cells["status"].Value.ToString() == "discharged")
                 {
                     dischargeBtn.Enabled = false;
+                    addProdBtn.Enabled = false;
+                    addEndorsedBtn.Enabled = false;
+                    servAdd.Enabled = false;
+                    addvitalBtn.Enabled = false;
+
                 }
                 else
                 {
                     dischargeBtn.Enabled = true;
+                    addProdBtn.Enabled = true;
+                    addEndorsedBtn.Enabled = true;
+                    servAdd.Enabled = true;
+                    addvitalBtn.Enabled = true;
                 }
 
             }
