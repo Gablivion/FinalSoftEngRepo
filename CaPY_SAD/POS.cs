@@ -352,7 +352,6 @@ namespace CaPY_SAD
             {
                 quantityTxt.ForeColor = System.Drawing.Color.Black;
             }
-
         }
 
         // Reset Fields
@@ -517,13 +516,13 @@ namespace CaPY_SAD
                             comm_sales_order_line.ExecuteNonQuery();
                             conn.Close();
 
-                            string query_add_quantity = "UPDATE product_inventory SET quantity = quantity - " + int.Parse(quantityTxt.Text) + " WHERE id = " + int.Parse(inv_id) + " ";
+                            string query_add_quantity = "UPDATE product_inventory SET quantity = quantity - " + int.Parse(prod_quantity) + " WHERE id = " + int.Parse(inv_id) + " ";
                             conn.Open();
                             MySqlCommand comm_add_quantity = new MySqlCommand(query_add_quantity, conn);
                             comm_add_quantity.ExecuteNonQuery();
                             conn.Close();
 
-                            string query_log = "INSERT INTO inventory_log (process_type,date,product,quantity,remarks,staff_id) VALUES('Stock Out (Sales Order)' , current_timestamp(),'" + prodTxt.Text + "','" + quantityTxt.Text + "', 'Purchased by " + custpayTxt.Text + "', (SELECT staff.id FROM person,staff WHERE person.id = staff.person_id AND concat(firstname,' ', middlename,' ',lastname) = '" + encoderName.Text + "'))";
+                            string query_log = "INSERT INTO inventory_log (process_type,date,product,quantity,remarks,staff_id) VALUES('Stock Out (Sales Order)' , current_timestamp(),'" + prodTxt.Text + "','" + prod_subtotal + "', 'Purchased by " + custpayTxt.Text + "', (SELECT staff.id FROM person,staff WHERE person.id = staff.person_id AND concat(firstname,' ', middlename,' ',lastname) = '" + encoderName.Text + "'))";
                             conn.Open();
                             MySqlCommand comm_log = new MySqlCommand(query_log, conn);
                             comm_log.ExecuteNonQuery();
