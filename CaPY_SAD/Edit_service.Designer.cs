@@ -306,7 +306,7 @@
             this.cancelprodBtn.BackColor = System.Drawing.Color.White;
             this.cancelprodBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelprodBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelprodBtn.Location = new System.Drawing.Point(227, 240);
+            this.cancelprodBtn.Location = new System.Drawing.Point(215, 241);
             this.cancelprodBtn.Name = "cancelprodBtn";
             this.cancelprodBtn.Size = new System.Drawing.Size(77, 34);
             this.cancelprodBtn.TabIndex = 109;
@@ -316,16 +316,17 @@
             // 
             // quantityTxt
             // 
-            this.quantityTxt.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantityTxt.Location = new System.Drawing.Point(145, 184);
+            this.quantityTxt.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quantityTxt.Location = new System.Drawing.Point(99, 176);
             this.quantityTxt.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.quantityTxt.Name = "quantityTxt";
-            this.quantityTxt.Size = new System.Drawing.Size(249, 27);
+            this.quantityTxt.Size = new System.Drawing.Size(107, 43);
             this.quantityTxt.TabIndex = 107;
+            this.quantityTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.quantityTxt.Value = new decimal(new int[] {
             1,
             0,
@@ -337,7 +338,7 @@
             this.addprodBtn.BackColor = System.Drawing.Color.White;
             this.addprodBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addprodBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addprodBtn.Location = new System.Drawing.Point(120, 240);
+            this.addprodBtn.Location = new System.Drawing.Point(99, 241);
             this.addprodBtn.Name = "addprodBtn";
             this.addprodBtn.Size = new System.Drawing.Size(77, 34);
             this.addprodBtn.TabIndex = 108;
@@ -351,7 +352,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(31, 133);
+            this.label8.Location = new System.Drawing.Point(12, 134);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(61, 28);
             this.label8.TabIndex = 105;
@@ -364,7 +365,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(31, 189);
+            this.label9.Location = new System.Drawing.Point(3, 186);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(89, 28);
             this.label9.TabIndex = 105;
@@ -373,11 +374,11 @@
             // 
             // nameCmb
             // 
-            this.nameCmb.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameCmb.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameCmb.FormattingEnabled = true;
-            this.nameCmb.Location = new System.Drawing.Point(145, 133);
+            this.nameCmb.Location = new System.Drawing.Point(99, 131);
             this.nameCmb.Name = "nameCmb";
-            this.nameCmb.Size = new System.Drawing.Size(249, 29);
+            this.nameCmb.Size = new System.Drawing.Size(307, 30);
             this.nameCmb.TabIndex = 106;
             // 
             // saveBtn

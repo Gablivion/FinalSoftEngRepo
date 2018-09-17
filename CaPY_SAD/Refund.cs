@@ -138,7 +138,7 @@ namespace CaPY_SAD
         private void toInventoryBtn_Click(object sender, EventArgs e)
         {
             string query_refund= "INSERT INTO sales_refund(sales_order_id, sales_order_line_id, staff_id, customers_id, product, quantity, amount, date) "
-                + "VALUES (" + sales_order_id + "," + orderline_id + ", (SELECT staff.id FROM person,staff WHERE staff.person_id = person.id AND concat(firstname,' ',middlename,' ',lastname) Like '%" + EncTxt.Text + "%'),(SELECT customers.id FROM person,customers WHERE customers.person_id = person.id AND concat(firstname,' ',middlename,' ',lastname) Like '%" + custTxt.Text + "%'),'" + prodTxt.Text + "'," + quanNum.Value + "," + decimal.Parse(SubtotalTxt.Text) * -1 + ",current_timestamp())";
+                + "VALUES (" + sales_order_id + "," + orderline_id + ", (SELECT staff.id FROM person,staff WHERE staff.person_id = person.id AND concat(firstname,' ',middlename,' ',lastname) Like '%" + EncTxt.Text + "%'),(SELECT customers.id FROM person,customers WHERE customers.person_id = person.id AND concat(firstname,' ',middlename,' ',lastname) Like '%" + custTxt.Text + "%'),'" + prodTxt.Text + "'," + quanNum.Value + "," + decimal.Parse(SubtotalTxt.Text) + ",current_timestamp())";
             conn.Open();
             MySqlCommand comm_cage = new MySqlCommand(query_refund, conn);
             comm_cage.ExecuteNonQuery();

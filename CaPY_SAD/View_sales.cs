@@ -32,31 +32,12 @@ namespace CaPY_SAD
         {
 
             loadSalesData();
-            decimal total = 0;
-
-            for (int i = 0; i <= dtgvLog.Rows.Count - 1; i++)
-            {
-
-                string subs = dtgvLog.Rows[i].Cells["subtotal"].Value.ToString();
-
-                decimal decimal_sub = decimal.Parse(subs);
-
-                total = total + decimal_sub;
-
-
-            }
-
-            sales_tot.Text = total.ToString();
+            
         }
         public static decimal total_sales;
         private void dtgvLog_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
         {
-
-           
-
         }
-
-
         //Data Set for Report
         DataSet sales = new DataSet();
         public static int sorting = 0;
@@ -99,12 +80,80 @@ namespace CaPY_SAD
             dtgvLog.Columns["Staff"].HeaderText = "Staff";
             dtgvLog.Columns["transaction_date"].HeaderText = "Date";
 
-          
-        }
+            decimal total = 0;
 
+            for (int i = 0; i <= dtgvLog.Rows.Count - 1; i++)
+            {
+
+                string subs = dtgvLog.Rows[i].Cells["subtotal"].Value.ToString();
+
+                decimal decimal_sub = decimal.Parse(subs);
+
+                total = total + decimal_sub;
+
+
+            }
+
+            sales_tot.Text = total.ToString();
+            Expenses();
+
+
+        }
+        public static decimal expense;
+        public void Expenses()
+        {
+            decimal p_expense;
+            decimal r_expense;
+
+
+            String query_p_exp = "SELECT DATE_FORMAT(date, '%Y/%m/%d %H:%i %p') as p_date, sum(total) as p_total FROM purchase_order, staff, person,suppliers WHERE purchase_order.suppliers_id = suppliers.id AND purchase_order.staff_id = staff.id AND staff.person_id = person.id  AND date(date) BETWEEN '" + startDtp.Text + "' AND '" + endDtp.Text + "'";
+
+            conn.Open();
+            MySqlCommand comm_p = new MySqlCommand(query_p_exp, conn);
+            MySqlDataAdapter adp_p = new MySqlDataAdapter(comm_p);
+            conn.Close();
+            DataTable dt_p = new DataTable();
+            adp_p.Fill(dt_p);
+            if (dt_p.Rows[0]["p_total"].ToString() != "")
+            {
+                
+                p_expense = decimal.Parse(dt_p.Rows[0]["p_total"].ToString());
+            }
+            else
+            {
+                p_expense = 0;
+            }
+            
+            String query_r_exp = "SELECT DATE_FORMAT(date, '%Y/%m/%d %H:%i %p') as r_date, sum(amount*quantity) as r_total FROM sales_refund WHERE DATE(date) BETWEEN '" + startDtp.Text + "' AND '" + endDtp.Text + "'";
+            conn.Open();
+            MySqlCommand comm_r = new MySqlCommand(query_r_exp, conn);
+            MySqlDataAdapter adp_r = new MySqlDataAdapter(comm_r);
+            conn.Close();
+            DataTable dt_r = new DataTable();
+            adp_r.Fill(dt_r);
+
+            if (dt_r.Rows[0]["r_total"].ToString() != "")
+            {
+                r_expense = decimal.Parse(dt_r.Rows[0]["r_total"].ToString());
+            }
+            else
+            {
+                r_expense = 0;
+            }
+   
+            expense = r_expense + p_expense;
+        }
         private void startDtp_ValueChanged(object sender, EventArgs e)
         {
-            loadSalesData();
+            if (startDtp.Value < endDtp.Value)
+            {
+                loadSalesData();
+            }
+            else
+            {
+                MessageBox.Show("Invalid Start/End Date");
+            }
+       
         }
 
         private void printBtn_Click(object sender, EventArgs e)
@@ -219,16 +268,25 @@ namespace CaPY_SAD
 
             string sale = "Total Sales: ";
             e.Graphics.DrawString(sale, new Font("Arial", 20, FontStyle.Bold), Brushes.Black, startX + 300, startY + offsetY);
-
+            
             string sales_total = "Php " + sales_tot.Text;
             e.Graphics.DrawString(sales_total, new Font("Arial", 20, FontStyle.Bold), Brushes.Black, startX + 570, startY + offsetY);
 
-            offsetY += (int)fontHeight + 50;
+            offsetY += (int)fontHeight + 30;
+            string exp = "Total Expense: ";
+            e.Graphics.DrawString(exp, new Font("Arial", 20, FontStyle.Bold), Brushes.Black, startX + 300, startY + offsetY);
+
+            string expensess = "Php " + expense.ToString();
+            e.Graphics.DrawString(expensess, new Font("Arial", 20, FontStyle.Bold), Brushes.Black, startX + 570, startY + offsetY);
+
+            decimal profit = decimal.Parse(sales_tot.Text) - expense;
+
+            offsetY += (int)fontHeight + 30;
             string prof = "Total Profit: ";
             e.Graphics.DrawString(prof, new Font("Arial", 20, FontStyle.Bold), Brushes.Black, startX + 300, startY + offsetY);
 
-            string profit = "Php ----";
-            e.Graphics.DrawString(profit, new Font("Arial", 20, FontStyle.Bold), Brushes.Black, startX + 570, startY + offsetY);
+            string stringprofit = "Php " + profit.ToString();
+            e.Graphics.DrawString(stringprofit, new Font("Arial", 20, FontStyle.Bold), Brushes.Black, startX + 570, startY + offsetY);
 
         }
         

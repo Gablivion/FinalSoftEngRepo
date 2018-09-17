@@ -86,6 +86,7 @@ namespace CaPY_SAD
             dtgvService.Columns["name"].HeaderText = "Name";
             dtgvService.Columns["description"].HeaderText = "Description";
             dtgvService.Columns["price"].HeaderText = "Price";
+            dtgvService.Columns["base_price"].Visible = false;
             dtgvService.Columns["status"].HeaderText = "Availability";
             dtgvService.Columns["date_added"].HeaderText = "Date Added";
             dtgvService.Columns["date_modified"].HeaderText = "Date Modified";

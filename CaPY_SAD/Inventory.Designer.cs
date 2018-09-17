@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inventory));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.stockoutBtn = new System.Windows.Forms.Button();
             this.quitBtn = new System.Windows.Forms.Button();
@@ -147,23 +147,23 @@
             this.dtgvInventory.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtgvInventory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvInventory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvInventory.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvInventory.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtgvInventory.Location = new System.Drawing.Point(39, 151);
             this.dtgvInventory.Name = "dtgvInventory";
             this.dtgvInventory.ReadOnly = true;
@@ -195,7 +195,7 @@
             this.repackPanel.Controls.Add(this.addLabel);
             this.repackPanel.Location = new System.Drawing.Point(171, 50);
             this.repackPanel.Name = "repackPanel";
-            this.repackPanel.Size = new System.Drawing.Size(64, 40);
+            this.repackPanel.Size = new System.Drawing.Size(236, 10);
             this.repackPanel.TabIndex = 161;
             this.repackPanel.Visible = false;
             // 
@@ -204,7 +204,7 @@
             this.origpriceTxt.AutoSize = true;
             this.origpriceTxt.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.origpriceTxt.ForeColor = System.Drawing.Color.White;
-            this.origpriceTxt.Location = new System.Drawing.Point(889, 432);
+            this.origpriceTxt.Location = new System.Drawing.Point(877, 576);
             this.origpriceTxt.Name = "origpriceTxt";
             this.origpriceTxt.Size = new System.Drawing.Size(99, 28);
             this.origpriceTxt.TabIndex = 24;
@@ -216,7 +216,7 @@
             this.reorderTxt.AutoSize = true;
             this.reorderTxt.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reorderTxt.ForeColor = System.Drawing.Color.White;
-            this.reorderTxt.Location = new System.Drawing.Point(889, 404);
+            this.reorderTxt.Location = new System.Drawing.Point(877, 548);
             this.reorderTxt.Name = "reorderTxt";
             this.reorderTxt.Size = new System.Drawing.Size(82, 28);
             this.reorderTxt.TabIndex = 23;
@@ -228,7 +228,7 @@
             this.descTxt.AutoSize = true;
             this.descTxt.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descTxt.ForeColor = System.Drawing.Color.White;
-            this.descTxt.Location = new System.Drawing.Point(889, 304);
+            this.descTxt.Location = new System.Drawing.Point(877, 448);
             this.descTxt.Name = "descTxt";
             this.descTxt.Size = new System.Drawing.Size(52, 28);
             this.descTxt.TabIndex = 20;
@@ -240,7 +240,7 @@
             this.unitTxt.AutoSize = true;
             this.unitTxt.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unitTxt.ForeColor = System.Drawing.Color.White;
-            this.unitTxt.Location = new System.Drawing.Point(889, 339);
+            this.unitTxt.Location = new System.Drawing.Point(877, 483);
             this.unitTxt.Name = "unitTxt";
             this.unitTxt.Size = new System.Drawing.Size(48, 28);
             this.unitTxt.TabIndex = 19;
@@ -252,7 +252,7 @@
             this.expirableTxt.AutoSize = true;
             this.expirableTxt.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.expirableTxt.ForeColor = System.Drawing.Color.White;
-            this.expirableTxt.Location = new System.Drawing.Point(889, 367);
+            this.expirableTxt.Location = new System.Drawing.Point(877, 511);
             this.expirableTxt.Name = "expirableTxt";
             this.expirableTxt.Size = new System.Drawing.Size(96, 28);
             this.expirableTxt.TabIndex = 18;
@@ -485,6 +485,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(22, 17);
             this.panel1.TabIndex = 68;
+            this.panel1.Visible = false;
             // 
             // panel2
             // 
@@ -493,6 +494,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(22, 17);
             this.panel2.TabIndex = 69;
+            this.panel2.Visible = false;
             // 
             // label7
             // 
@@ -505,6 +507,7 @@
             this.label7.Size = new System.Drawing.Size(77, 16);
             this.label7.TabIndex = 163;
             this.label7.Text = "Low Stocks";
+            this.label7.Visible = false;
             // 
             // label8
             // 
@@ -517,6 +520,7 @@
             this.label8.Size = new System.Drawing.Size(67, 16);
             this.label8.TabIndex = 164;
             this.label8.Text = "Sufficient";
+            this.label8.Visible = false;
             // 
             // Inventory
             // 
@@ -582,11 +586,11 @@
         private System.Windows.Forms.Label addLabel;
         private System.Windows.Forms.TextBox productTxt;
         private System.Windows.Forms.Button reorderBtn;
+        private System.Windows.Forms.Label origpriceTxt;
+        private System.Windows.Forms.Label reorderTxt;
         private System.Windows.Forms.Label descTxt;
         private System.Windows.Forms.Label unitTxt;
         private System.Windows.Forms.Label expirableTxt;
-        private System.Windows.Forms.Label reorderTxt;
-        private System.Windows.Forms.Label origpriceTxt;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label7;

@@ -139,15 +139,11 @@ namespace CaPY_SAD
 
         public void repackDetails()
         {
-            String query = "SELECT products.id as prod_id, product_inventory.id as pid, products.name as name , product_inventory.quantity as quantity, volume, DATE_FORMAT(expiration_date, '%Y/%m/%d') as expiration, description, unit, expirable, reorder, price FROM products, product_inventory where products.id = product_inventory.products_id AND product_inventory.id = '" + selected_data.inventory_id + "'";
-            
-            MySqlCommand comm = new MySqlCommand(query, conn);
-            comm.CommandText = query;
-
-
+            String query_repack = "SELECT products.id as prod_id, product_inventory.id as pid, products.name as name, product_inventory.quantity as quantity, volume, DATE_FORMAT(expiration_date, '%Y/%m/%d') as expiration, description, unit, expirable, reorder, price FROM products, product_inventory where products.id = product_inventory.products_id AND product_inventory.id = '" + selected_data.inventory_id + "'";
+            MySqlCommand comm = new MySqlCommand(query_repack, conn);
+            comm.CommandText = query_repack;
             conn.Open();
             MySqlDataReader drd = comm.ExecuteReader();
-
 
             while (drd.Read())
             {
@@ -169,6 +165,7 @@ namespace CaPY_SAD
                 origpriceTxt.Text = price;
             }
             conn.Close();
+        
         }
 
 
@@ -203,30 +200,41 @@ namespace CaPY_SAD
             if (e.RowIndex > -1)
             {
                 int selected_id = int.Parse(dtgvInventory.Rows[e.RowIndex].Cells["id"].Value.ToString());
-                selected_data.inventory_id = selected_id;
+                 selected_data.inventory_id = selected_id;
                 selected_data.pid = int.Parse(dtgvInventory.Rows[e.RowIndex].Cells["pid"].Value.ToString());
                 string name = dtgvInventory.Rows[e.RowIndex].Cells["product"].Value.ToString();
                 int quan = int.Parse(dtgvInventory.Rows[e.RowIndex].Cells["quantity"].Value.ToString());
                 medval = int.Parse(dtgvInventory.Rows[e.RowIndex].Cells["medicine"].Value.ToString());
                 int reorder_point = int.Parse(dtgvInventory.Rows[e.RowIndex].Cells["reorder"].Value.ToString());
-                MessageBox.Show( quan.ToString());
-                MessageBox.Show(reorder_point.ToString());
+               
 
-                if (quan <= reorder_point && !(name.Contains("Repacked by")))
+                if (quan <= reorder_point)
                 {
                     reorderBtn.Enabled = true;
                     reorderBtn.Visible = true;
-                    
+                    if (name.Contains("Repacked by"))
+                    {
+                        reorderBtn.Visible = false;
+                    }
+                 
+                   
+
                 }
-                else if (quan > reorder_point && name.Contains("Repacked by"))
+                else if (quan > reorder_point)
                 {
                     reorderBtn.Visible = false;
+                    if (name.Contains("Repacked by"))
+                    {
+                        reorderBtn.Visible = false;
+                    }
+                    
+                  
                 }
 
                 if (name.Contains("Repacked by") || int.Parse(dtgvInventory.Rows[e.RowIndex].Cells["volume"].Value.ToString()) == 0)
                 {
                     repackBtn.Enabled = false;
-                    reorderBtn.Visible = false;
+                    
                 }
                 else
                 {
@@ -318,7 +326,7 @@ namespace CaPY_SAD
                 conn.Close();
 
             }
-            /*
+            /* delete
             string query_repack = "INSERT INTO inventory_repack (product_inventory_id,product_inventory_products_id,quantity,status,expiration_date) VALUES(" + pid + "," + prod_id + "," + (int)(repackedQuan.Value) + ", 'available','" + exp + "')";
             conn.Open();
             MySqlCommand comm_repack = new MySqlCommand(query_repack, conn);
